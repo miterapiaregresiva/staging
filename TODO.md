@@ -2,23 +2,26 @@
 
 > **STAGING ONLY:** este archivo pertenece exclusivamente al repositorio `miterapiaregresiva/stg`. No debe copiarse, sincronizarse ni promocionarse a producción.
 
-## Prioridad inmediata — Easy Paced Reading
+## Easy Paced Reading — bloque implementado en staging
 
-Estado actual del bloque:
+Estado actual:
 
 - [x] **Sprint 06 — Lectura móvil y navegación tranquila.** Implementado en `stg`, pendiente únicamente de revisión visual conjunta.
 - [x] **Sprint 07 — Sistema editorial de lectura.** Implementado en `stg`, pendiente únicamente de revisión visual conjunta.
 - [x] **Sprint 08 — Jerarquía de acciones y reducción de ruido.** Implementado en `stg`, pendiente únicamente de revisión visual conjunta.
-- [ ] **Sprint 09 — Refinamiento visual y accesibilidad editorial.** Ver [`SPRINT-09.md`](SPRINT-09.md). **SIGUIENTE A IMPLEMENTAR.**
+- [x] **Sprint 09 — Refinamiento visual y accesibilidad editorial.** Implementado en `stg`, pendiente de revisión visual/manual final. Ver [`SPRINT-09.md`](SPRINT-09.md).
 
 Principio rector del bloque: **easy paced reading**. La prioridad es una lectura fácil, pausada, clara y agradable, con baja carga cognitiva, navegación predecible, conversión sin presión y una experiencia móvil especialmente cómoda.
 
-Regla de implementación:
+### Siguiente paso antes de producción
 
-1. aplicar cada sprint primero en `stg`;
-2. validar sus criterios de aceptación antes de promover cambios a producción;
-3. no mezclar cambios de producción con staging;
-4. completar una revisión conjunta móvil, escritorio, teclado, zoom y accesibilidad al cerrar Sprint 09.
+- [ ] Revisión conjunta de los Sprints 06–09 en `stg`.
+- [ ] Comprobar móvil 360, 390 y 430 px, tablet y escritorio.
+- [ ] Recorrer navegación, FAQ, créditos, WhatsApp y footer solo con teclado.
+- [ ] Revisar reflow/zoom a 200 % y, cuando sea posible, 400 %.
+- [ ] Revisar contraste de controles sobre fotografías claras y oscuras.
+- [ ] Repetir Lighthouse/axe tras el despliegue actual como apoyo, sin sustituir revisión manual.
+- [ ] Solo después de esta validación decidir qué commits promover a producción.
 
 ## Pendiente secundario — sección de autores
 
