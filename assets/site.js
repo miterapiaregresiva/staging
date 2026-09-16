@@ -39,12 +39,14 @@ document.addEventListener('DOMContentLoaded',()=>{
 .mobile-menu-toggle{display:none}
 @media(max-width:700px){
   .site-header{position:sticky;top:0}
-  .site-header .nav{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;padding:.35rem 1.25rem;min-height:64px;text-align:left}
-  .site-header .brand-lockup{margin:0;justify-content:flex-start;gap:.55rem;width:auto;max-width:min(100%,18rem);min-height:0}
+  .site-header .nav{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;padding:.35rem 1.25rem;min-height:68px;text-align:left}
+  .site-header .brand-lockup{margin:0;justify-content:flex-start;gap:.55rem;width:auto;max-width:min(100%,20rem);min-height:0}
   .site-header .brand-lockup .brand-symbol{width:48px;height:48px;flex:0 0 48px}
-  .site-header .brand-lockup .brand-copy{display:block;min-width:0;text-align:left}
-  .site-header .brand-lockup .brand-domain{display:block;font-size:clamp(.98rem,4.4vw,1.2rem);line-height:1.1;overflow:hidden;text-overflow:ellipsis}
-  .site-header .brand-lockup .brand-tagline,.site-header .brand-lockup .brand-service{display:none}
+  .site-header .brand-lockup .brand-copy{display:flex;flex-direction:column;gap:.22rem;min-width:0;text-align:left}
+  .site-header .brand-lockup .brand-domain{display:block;font-size:clamp(.98rem,4.4vw,1.2rem);line-height:1.05;overflow:hidden;text-overflow:ellipsis}
+  .site-header .brand-lockup .brand-tagline{display:none}
+  .site-header .brand-lockup .brand-service{display:block;white-space:normal;font-size:.58rem;line-height:1.2;letter-spacing:.09em;color:#514b52}
+  .site-header .brand-lockup .brand-service::before,.site-header .brand-lockup .brand-service::after{display:none}
   .mobile-menu-toggle{grid-column:2;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-width:48px;min-height:48px;padding:.55rem .7rem;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--text);font:inherit;font-size:.95rem;font-weight:650;cursor:pointer}
   .mobile-menu-toggle:hover,.mobile-menu-toggle[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent-strong)}
   .mobile-menu-toggle:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
@@ -63,8 +65,10 @@ document.addEventListener('DOMContentLoaded',()=>{
 }
 @media(max-width:390px){
   .site-header .nav{padding-inline:1rem}
+  .site-header .brand-lockup{max-width:min(100%,17rem)}
   .site-header .brand-lockup .brand-symbol{width:44px;height:44px;flex-basis:44px}
   .site-header .brand-lockup .brand-domain{font-size:.96rem}
+  .site-header .brand-lockup .brand-service{font-size:.54rem;letter-spacing:.065em}
   .mobile-menu-toggle{padding-inline:.6rem}
   .site-header .mobile-nav-enhanced.mobile-menu-open .menu{padding-inline:1rem}
 }
