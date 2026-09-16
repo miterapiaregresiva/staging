@@ -1,0 +1,67 @@
+/* Sprint 09 — refinamiento visual y accesibilidad editorial */
+
+/* Cards: menos apariencia de componente comercial. */
+.card{
+  border-radius:18px;
+  box-shadow:0 4px 16px rgba(55,34,63,.035);
+}
+.card-media{
+  border-radius:17px 17px 0 0;
+}
+
+/* Medios editoriales: pausas claras, sin dominar la lectura. */
+.hero-media,.feature-media,.author-visual{
+  border-radius:20px;
+  box-shadow:0 5px 18px rgba(55,34,63,.055);
+}
+.prose figure,
+.prose .feature-media{
+  margin-block:2.5rem 3rem;
+}
+.prose figure{
+  margin-inline:0;
+}
+
+/* Interacción y targets. */
+.button{
+  min-height:48px;
+  padding:.75rem 1.15rem;
+}
+.site-footer nav a{
+  min-height:44px;
+}
+
+/* FAQ: aire suficiente sin convertir cada pregunta en una card pesada. */
+.faq details{
+  margin:1rem 0;
+}
+.faq summary{
+  padding:1.15rem 1.25rem;
+  line-height:1.45;
+}
+.faq details p{
+  padding:0 1.25rem 1.15rem;
+}
+
+/* Metadatos y textos auxiliares conservan contraste y no heredan el tamaño editorial completo. */
+.breadcrumbs,.meta,.smallprint,.author-sources,.site-footer{
+  line-height:1.55;
+}
+
+@media(max-width:700px){
+  /* Pequeño respiro visual para imágenes dentro de prosa sin provocar scroll horizontal. */
+  .prose figure,
+  .prose .feature-media{
+    margin-left:-.5rem;
+    margin-right:-.5rem;
+  }
+  .site-footer nav a{
+    min-height:48px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+  }
+}
