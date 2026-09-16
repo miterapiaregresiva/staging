@@ -2,9 +2,26 @@
 
 > **STAGING ONLY:** este archivo pertenece exclusivamente al repositorio `miterapiaregresiva/stg`. No debe copiarse, sincronizarse ni promocionarse a producción.
 
-## Prioridad inmediata
+## Prioridad inmediata — Easy Paced Reading
 
-### 1. Normalizar la sección de autores
+Implementar **antes de nuevos refinamientos secundarios** y en este orden:
+
+- [ ] **Sprint 06 — Lectura móvil y navegación tranquila.** Ver [`SPRINT-06.md`](SPRINT-06.md). **SIGUIENTE A IMPLEMENTAR.**
+- [ ] **Sprint 07 — Sistema editorial de lectura.** Ver [`SPRINT-07.md`](SPRINT-07.md).
+- [ ] **Sprint 08 — Jerarquía de acciones y reducción de ruido.** Ver [`SPRINT-08.md`](SPRINT-08.md).
+- [ ] **Sprint 09 — Refinamiento visual y accesibilidad editorial.** Ver [`SPRINT-09.md`](SPRINT-09.md).
+
+Principio rector del bloque: **easy paced reading**. La prioridad es una lectura fácil, pausada, clara y agradable, con baja carga cognitiva, navegación predecible, conversión sin presión y una experiencia móvil especialmente cómoda.
+
+Regla de implementación:
+
+1. aplicar cada sprint primero en `stg`;
+2. validar sus criterios de aceptación antes de comenzar el siguiente;
+3. no mezclar cambios de sprints posteriores salvo dependencia técnica inevitable;
+4. no promover automáticamente estos cambios a producción;
+5. completar una revisión conjunta móvil, escritorio, teclado, zoom y accesibilidad al cerrar Sprint 09.
+
+## Pendiente secundario — sección de autores
 
 Patrón visual y estructural: fichas de **Brian Weiss** y **Michael Newton**.
 
