@@ -1,4 +1,4 @@
-name: Normalize staging site
+name: Materialize static site UI
 on:
   push:
     paths:
@@ -6,49 +6,251 @@ on:
 permissions:
   contents: write
 jobs:
-  normalize:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Materialize square footer brand in HTML
+
+      - name: Materialize static navigation, footer and assets
         shell: python
         run: |
           from pathlib import Path
+          import html
+          import json
           import re
 
-          footer = '<footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand-column"><a class="footer-brand-lockup" href="" aria-label="Mi Terapia Regresiva, inicio"><img class="footer-brand-symbol" src="assets/images/branding/mi-terapia-regresiva-simbolo.svg" alt="" width="180" height="180" loading="lazy"><span class="footer-brand-domain"><strong>miterapiaregresiva</strong><span class="domain-tld">.com</span></span><span class="footer-brand-tagline">Explora tu historia. Comprende tu presente.</span><span class="footer-brand-divider" aria-hidden="true"><span class="footer-brand-dot"></span></span><span class="footer-brand-service">Terapia regresiva en Tenerife</span></a></div><nav aria-label="Enlaces del sitio"><a href="terapia-regresiva/">Terapia regresiva</a><a href="como-trabajo/">Cómo trabajo</a><a href="sobre-mi/">Sobre mí</a><a href="articulos/">Artículos</a><a href="contacto/">Contacto</a></nav><nav aria-label="Recursos y legal"><a href="biblioteca-de-terapia-regresiva/">Biblioteca</a><a href="preguntas-frecuentes/">Preguntas frecuentes</a><a href="politica-de-privacidad/">Política de privacidad</a><a href="licencias-de-recursos/">Licencias de recursos</a><a href="https://www.instagram.com/miterapiaregresiva/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Mi Terapia Regresiva, abre en una pestaña nueva">Instagram · @miterapiaregresiva</a></nav></div><div class="wrap footer-legal"><p>© 2023–2026 Mi Terapia Regresiva · Código bajo <a href="https://github.com/miterapiaregresiva/miterapiaregresiva.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GNU AGPL v3.0</a> · Desarrollo web: <a href="https://gofiodesign.eu/" target="_blank" rel="noopener noreferrer">Gofio Design</a></p></div></footer>'
+          ROOT = Path('.')
+          HTML_FILES = list(ROOT.rglob('*.html'))
+
+          footer = '''<footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand-column"><a class="footer-brand-lockup" href="" aria-label="Mi Terapia Regresiva, inicio"><img class="footer-brand-symbol" src="assets/images/branding/miterapiaregresiva-equipo-identidad-simbolo-marca-1080x1080.svg" alt="" width="180" height="180" loading="lazy"><span class="footer-brand-domain"><strong>miterapiaregresiva</strong><span class="domain-tld">.com</span></span><span class="footer-brand-tagline">Explora tu historia. Comprende tu presente.</span><span class="footer-brand-divider" aria-hidden="true"><span class="footer-brand-dot"></span></span><span class="footer-brand-service">Terapia regresiva presencial en Tenerife · Canarias</span></a></div><nav aria-label="Enlaces del sitio"><a href="terapia-regresiva/">Terapia regresiva</a><a href="como-trabajo/">Cómo trabajo</a><a href="sobre-mi/">Sobre mí</a><a href="articulos/">Artículos</a><a href="contacto/">Contacto</a></nav><nav aria-label="Recursos y legal"><a href="biblioteca-de-terapia-regresiva/">Biblioteca</a><a href="preguntas-frecuentes/">Preguntas frecuentes</a><a href="politica-de-privacidad/">Política de privacidad</a><a href="licencias-de-recursos/">Licencias de recursos</a><a href="https://www.instagram.com/miterapiaregresiva/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Mi Terapia Regresiva, abre en una pestaña nueva">Instagram · @miterapiaregresiva</a></nav><nav class="footer-contact" aria-label="Contacto"><a class="footer-whatsapp" href="https://wa.me/34650805613?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20las%20sesiones%20de%20terapia%20regresiva." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp: solicitar información, abre en una pestaña nueva"><span class="footer-whatsapp-icon" aria-hidden="true"></span><span>WhatsApp · Solicitar información</span></a></nav></div><div class="wrap footer-legal"><p>© 2023–2026 Mi Terapia Regresiva · Código bajo <a href="https://github.com/miterapiaregresiva/miterapiaregresiva.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GNU AGPL v3.0</a> · Desarrollo web: <a href="https://gofiodesign.eu/" target="_blank" rel="noopener noreferrer">Gofio Design</a></p></div></footer>'''
+
+          toggle = '<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="mobile-menu-label">Menú</span><span class="mobile-menu-icon" aria-hidden="true">☰</span></button>'
+          static_css_link = '<link rel="stylesheet" href="assets/site-static.css?v=20260916-1">'
+
+          static_css = r'''/* Static UI materialized in HTML/CSS. JavaScript only enhances interaction. */
+          .mobile-menu-toggle{display:none}
+          .editorial-link{font-weight:550;text-decoration:underline;text-decoration-thickness:.08em;text-underline-offset:.22em}
+          .actions .editorial-link{display:inline-flex;align-items:center;min-height:48px;padding:.55rem .1rem}
+          .button{min-height:48px;padding:.75rem 1.15rem}
+
+          .site-footer .footer-grid{grid-template-columns:minmax(260px,1.3fr) repeat(3,minmax(0,1fr));gap:2rem;align-items:start}
+          .site-footer .footer-brand-column{display:flex;justify-content:center;min-width:0}
+          .site-footer .footer-brand-lockup{width:min(100%,360px);margin-inline:auto;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:var(--text);line-height:1.1}
+          .site-footer .footer-brand-symbol{width:clamp(118px,13vw,170px);height:auto;aspect-ratio:1;object-fit:contain;margin:0 auto .8rem}
+          .site-footer .footer-brand-domain{display:block;white-space:nowrap;font-size:clamp(1.28rem,2vw,1.75rem);letter-spacing:-.045em}
+          .site-footer .footer-brand-domain strong{font-weight:720}
+          .site-footer .footer-brand-domain .domain-tld{font-weight:300;color:#514b52}
+          .site-footer .footer-brand-tagline{display:block;margin-top:.7rem;font-size:.72rem;font-weight:400;letter-spacing:.095em;color:#3f393f;text-align:center}
+          .site-footer .footer-brand-divider{width:min(100%,285px);display:flex;align-items:center;gap:.7rem;margin-top:1rem;color:#514b52}
+          .site-footer .footer-brand-divider::before,.site-footer .footer-brand-divider::after{content:"";height:1px;flex:1;background:currentColor;opacity:.55}
+          .site-footer .footer-brand-dot{display:block;width:7px;height:7px;border-radius:50%;background:currentColor;flex:0 0 7px}
+          .site-footer .footer-brand-service{display:block;width:100%;max-width:34ch;margin:.8rem auto 0;text-align:center;text-wrap:balance;white-space:normal;line-height:1.35;font-size:.62rem;font-weight:450;letter-spacing:.12em;color:#514b52}
+          .site-footer .footer-brand-lockup:hover .footer-brand-domain strong{color:var(--accent-strong)}
+          .site-footer nav{align-items:center;text-align:center}
+          .site-footer nav a{justify-content:center}
+          .site-footer .footer-contact{align-items:center;justify-content:flex-start}
+          .footer-whatsapp{display:inline-flex!important;align-items:center!important;justify-content:center;gap:.55rem;min-height:48px;padding:.45rem .6rem;text-decoration:none;color:var(--text)!important;font-weight:600;line-height:1.35;text-align:center}
+          .footer-whatsapp-icon{display:inline-block;width:22px;height:22px;flex:0 0 22px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16.75 2.25c-7.1 0-12.87 5.76-12.87 12.86 0 2.27.6 4.49 1.73 6.44L3.77 28.25l6.86-1.8a12.87 12.87 0 1 0 6.12-24.2zm0 23.33c-1.94 0-3.84-.53-5.49-1.54l-.39-.23-4.07 1.07 1.09-3.97-.26-.41a10.42 10.42 0 1 1 9.12 5.08zm5.72-7.81c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.55-1.85-1.73-2.16-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.25-.63-.51-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.61s1.12 3.03 1.28 3.24c.16.21 2.21 3.37 5.35 4.73.75.32 1.33.52 1.78.66.75.24 1.43.21 1.97.13.6-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37z'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16.75 2.25c-7.1 0-12.87 5.76-12.87 12.86 0 2.27.6 4.49 1.73 6.44L3.77 28.25l6.86-1.8a12.87 12.87 0 1 0 6.12-24.2zm0 23.33c-1.94 0-3.84-.53-5.49-1.54l-.39-.23-4.07 1.07 1.09-3.97-.26-.41a10.42 10.42 0 1 1 9.12 5.08zm5.72-7.81c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.55-1.85-1.73-2.16-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.25-.63-.51-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.61s1.12 3.03 1.28 3.24c.16.21 2.21 3.37 5.35 4.73.75.32 1.33.52 1.78.66.75.24 1.43.21 1.97.13.6-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37z'/%3E%3C/svg%3E") center/contain no-repeat}
+          .footer-legal{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--line);font-size:.84rem;text-align:center}
+          .footer-legal p{margin:0}
+
+          @media(max-width:900px){
+            .site-footer .footer-grid{grid-template-columns:1fr 1fr}
+            .site-footer .footer-brand-column{grid-column:1/-1}
+            .site-footer .footer-contact{grid-column:1/-1}
+          }
+
+          @media(max-width:700px){
+            .site-header{position:sticky;top:0}
+            .site-header .nav{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;padding:.35rem 1.25rem;min-height:68px;text-align:left}
+            .site-header .brand-lockup{margin:0;justify-content:flex-start;gap:.55rem;width:auto;max-width:min(100%,20rem);min-height:0}
+            .site-header .brand-lockup .brand-symbol{width:48px;height:48px;flex:0 0 48px}
+            .site-header .brand-lockup .brand-copy{display:flex;flex-direction:column;gap:.22rem;min-width:0;text-align:left}
+            .site-header .brand-lockup .brand-domain{display:block;font-size:clamp(.98rem,4.4vw,1.2rem);line-height:1.05;overflow:hidden;text-overflow:ellipsis}
+            .site-header .brand-lockup .brand-tagline{display:none}
+            .site-header .brand-lockup .brand-service{display:block;white-space:normal;font-size:.58rem;line-height:1.2;letter-spacing:.09em;color:#514b52}
+            .site-header .brand-lockup .brand-service::before,.site-header .brand-lockup .brand-service::after{display:none}
+            .site-header .mobile-nav-enhanced>.mobile-menu-toggle{grid-column:2;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-width:48px;min-height:48px;padding:.55rem .7rem;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--text);font:inherit;font-size:.95rem;font-weight:650;cursor:pointer}
+            .mobile-menu-toggle:hover,.mobile-menu-toggle[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent-strong)}
+            .mobile-menu-icon{font-size:1.25rem;line-height:1;width:1.15rem;text-align:center}
+            .site-header .mobile-nav-enhanced .menu{display:none!important}
+            .site-header .mobile-nav-enhanced.mobile-menu-open .menu{position:absolute;top:100%;left:0;right:0;z-index:30;display:flex!important;flex-direction:column;align-items:stretch;width:100%;gap:.15rem;padding:.55rem 1.25rem .85rem;background:rgba(251,249,252,.98);border-top:1px solid rgba(107,63,120,.12);border-bottom:1px solid var(--line);box-shadow:0 12px 26px rgba(55,34,63,.08);backdrop-filter:blur(14px)}
+            .site-header .mobile-nav-enhanced.mobile-menu-open .menu a{display:flex!important;width:100%;min-height:48px;align-items:center;justify-content:flex-end!important;text-align:right!important;padding:.65rem .75rem;border-radius:12px;font-size:1rem;line-height:1.3}
+            .site-footer .footer-grid{grid-template-columns:1fr!important;gap:1.5rem}
+            .site-footer .footer-brand-column,.site-footer .footer-contact{grid-column:auto}
+            .site-footer .footer-brand-lockup{margin-inline:auto;align-items:center;text-align:center}
+            .site-footer nav,.site-footer .footer-grid>nav:first-of-type,.site-footer .footer-grid>nav:last-of-type{align-items:center!important;text-align:center!important}
+            .site-footer .footer-brand-service{max-width:32ch;font-size:.57rem;letter-spacing:.085em}
+            .site-footer .footer-brand-divider{display:flex}
+            .hero{padding-top:2rem}
+          }
+
+          @media(max-width:390px){
+            .site-header .nav{padding-inline:1rem}
+            .site-header .brand-lockup{max-width:min(100%,17rem)}
+            .site-header .brand-lockup .brand-symbol{width:44px;height:44px;flex-basis:44px}
+            .site-header .brand-lockup .brand-domain{font-size:.96rem}
+            .site-header .brand-lockup .brand-service{font-size:.54rem;letter-spacing:.065em}
+            .mobile-menu-toggle{padding-inline:.6rem}
+            .site-header .mobile-nav-enhanced.mobile-menu-open .menu{padding-inline:1rem}
+            .site-footer .footer-brand-service{max-width:30ch;font-size:.55rem;letter-spacing:.07em}
+          }
+
+          @media(prefers-reduced-motion:reduce){.site-header *{scroll-behavior:auto}}
+          '''.strip() + '\n'
+
+          site_js = r'''document.addEventListener('DOMContentLoaded',()=>{
+            document.querySelectorAll('.site-header').forEach(header=>{
+              const nav=header.querySelector('.nav');
+              const menu=header.querySelector('.menu');
+              const button=header.querySelector('.mobile-menu-toggle');
+              if(!nav||!menu||!button)return;
+
+              nav.classList.add('mobile-nav-enhanced');
+
+              const setOpen=open=>{
+                nav.classList.toggle('mobile-menu-open',open);
+                button.setAttribute('aria-expanded',String(open));
+                const label=button.querySelector('.mobile-menu-label');
+                const icon=button.querySelector('.mobile-menu-icon');
+                if(label)label.textContent=open?'Cerrar':'Menú';
+                if(icon)icon.textContent=open?'×':'☰';
+              };
+              const close=(restoreFocus=false)=>{
+                if(!nav.classList.contains('mobile-menu-open'))return;
+                setOpen(false);
+                if(restoreFocus)button.focus();
+              };
+
+              button.addEventListener('click',()=>setOpen(!nav.classList.contains('mobile-menu-open')));
+              menu.addEventListener('click',e=>{if(e.target.closest('a'))close(false)});
+              document.addEventListener('click',e=>{if(!nav.contains(e.target))close(false)});
+              document.addEventListener('keydown',e=>{if(e.key==='Escape')close(true)});
+            });
+          });
+
+          document.addEventListener('keydown',event=>{
+            if(event.key!=='Escape')return;
+            document.querySelectorAll('.image-credit[open]').forEach(panel=>{
+              const restoreFocus=panel.contains(document.activeElement);
+              panel.open=false;
+              if(restoreFocus)panel.querySelector('summary')?.focus();
+            });
+          });
+          '''.strip() + '\n'
 
           changed = []
-          for path in Path('.').rglob('*.html'):
+
+          # Static CSS and minimal JS
+          css_path = Path('assets/site-static.css')
+          if not css_path.exists() or css_path.read_text(encoding='utf-8') != static_css:
+              css_path.write_text(static_css, encoding='utf-8')
+              changed.append(str(css_path))
+
+          js_path = Path('assets/site.js')
+          if js_path.read_text(encoding='utf-8') != site_js:
+              js_path.write_text(site_js, encoding='utf-8')
+              changed.append(str(js_path))
+
+          def strip_tags(value):
+              return html.unescape(re.sub(r'<[^>]+>', '', value)).strip()
+
+          for path in HTML_FILES:
               text = path.read_text(encoding='utf-8')
-              new = text.replace('<base href="/mtr/">', '<base href="/">')
-              new = new.replace('https://miterapiaregresiva.com/mtr/', 'https://stg.miterapiaregresiva.com/')
-              new, count = re.subn(r'<footer class="site-footer">.*?</footer>', footer, new, count=1, flags=re.S)
-              if count and new != text:
+              new = text
+
+              # Keep base and static asset versions consistent.
+              new = new.replace('<base href="/mtr/">', '<base href="/">')
+              new = re.sub(r'assets/site\.js\?v=[^"\']+', 'assets/site.js?v=20260916-4', new)
+
+              if static_css_link not in new:
+                  new = new.replace('</head>', static_css_link + '</head>', 1)
+
+              # Hardcode mobile toggle and navigation id. The button stays hidden without JS.
+              new = re.sub(r'<nav class="menu"(?![^>]*\bid=)([^>]*)>', r'<nav class="menu" id="primary-navigation"\1>', new, count=1)
+              if 'class="mobile-menu-toggle"' not in new:
+                  new = new.replace('<nav class="menu" id="primary-navigation"', toggle + '<nav class="menu" id="primary-navigation"', 1)
+
+              # Header brand stays concise; footer carries the longer local descriptor.
+              new = new.replace('<span class="brand-service">Terapia regresiva presencial en Tenerife</span>', '<span class="brand-service">Terapia regresiva en Tenerife</span>')
+
+              # Replace any existing footer with fully hardcoded markup.
+              new, _ = re.subn(r'<footer class="site-footer">.*?</footer>', footer, new, count=1, flags=re.S)
+
+              # Materialize WebP paths where the corresponding file exists.
+              def webp_replace(match):
+                  original = match.group(0)
+                  rel = original.replace('assets/images/original/', 'assets/images/webp/')
+                  rel = re.sub(r'\.(?:jpe?g|png)$', '.webp', rel, flags=re.I)
+                  return rel if Path(rel).exists() else original
+              new = re.sub(r'assets/images/original/[^"\'\s>]+\.(?:jpe?g|png)', webp_replace, new, flags=re.I)
+
+              # Materialize BreadcrumbList JSON-LD instead of creating it in JavaScript.
+              if 'class="breadcrumbs"' in new and '"BreadcrumbList"' not in new:
+                  m = re.search(r'<div class="breadcrumbs">(.*?)</div>', new, flags=re.S)
+                  if m:
+                      inner = m.group(1)
+                      parts = [strip_tags(p) for p in inner.split('→') if strip_tags(p)]
+                      links = re.findall(r'<a[^>]+href="([^"]*)"[^>]*>', inner)
+                      items = []
+                      for i, name in enumerate(parts, 1):
+                          if i <= len(links):
+                              href = links[i-1]
+                              item = 'https://miterapiaregresiva.com/' + href.lstrip('/')
+                          else:
+                              rel = '/' if path.name == 'index.html' and path.parent == Path('.') else '/' + str(path.parent).replace('\\','/') + '/'
+                              item = 'https://miterapiaregresiva.com' + rel
+                          items.append({'@type':'ListItem','position':i,'name':name,'item':item})
+                      data = {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':items}
+                      block = '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False, separators=(',',':')) + '</script>'
+                      new = new.replace('</head>', block + '</head>', 1)
+
+              if new != text:
                   path.write_text(new, encoding='utf-8')
                   changed.append(str(path))
 
-          css_path = Path('assets/brand-lockup.css')
-          original_css = css_path.read_text(encoding='utf-8')
-          marker_start = '/* square-footer-brand:start */'
-          marker_end = '/* square-footer-brand:end */'
-          css_block = '/* square-footer-brand:start */\n.footer-brand-column{display:flex;justify-content:flex-start}.footer-brand-lockup{width:min(100%,330px);display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:var(--text);line-height:1.1}.footer-brand-symbol{width:clamp(118px,13vw,170px);height:auto;aspect-ratio:1;object-fit:contain;margin:0 auto .8rem}.footer-brand-domain{display:block;white-space:nowrap;font-size:clamp(1.28rem,2vw,1.75rem);letter-spacing:-.045em}.footer-brand-domain strong{font-weight:720}.footer-brand-domain .domain-tld{font-weight:300;color:#514b52}.footer-brand-tagline{display:block;margin-top:.7rem;font-size:.72rem;font-weight:400;letter-spacing:.095em;color:#3f393f}.footer-brand-divider{width:min(100%,285px);display:flex;align-items:center;gap:.7rem;margin-top:1rem;color:#514b52}.footer-brand-divider::before,.footer-brand-divider::after{content:"";height:1px;flex:1;background:currentColor;opacity:.55}.footer-brand-dot{display:block;width:7px;height:7px;border-radius:50%;background:currentColor;flex:0 0 7px}.footer-brand-service{display:block;margin-top:.8rem;white-space:nowrap;font-size:.62rem;font-weight:450;letter-spacing:.17em;color:#514b52}.footer-brand-lockup:hover .footer-brand-domain strong{color:var(--accent-strong)}.footer-legal{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--line);font-size:.84rem}.footer-legal p{margin:0}@media(max-width:900px){.footer-brand-column{grid-column:1/-1}.footer-brand-lockup{margin-inline:auto}}@media(max-width:520px){.footer-brand-domain{font-size:1.22rem}.footer-brand-tagline{font-size:.68rem;letter-spacing:.055em}.footer-brand-divider{width:min(100%,245px)}.footer-brand-service{font-size:.57rem;letter-spacing:.1em;white-space:normal}}\n/* square-footer-brand:end */'
-          css = re.sub(re.escape(marker_start) + r'.*?' + re.escape(marker_end), '', original_css, flags=re.S).rstrip() + '\n' + css_block + '\n'
-          if css != original_css:
-              css_path.write_text(css, encoding='utf-8')
-              changed.append(str(css_path))
-
-          site_js = Path('assets/site.js')
-          text = site_js.read_text(encoding='utf-8')
-          new = text.replace('https://github.com/miterapiaregresiva/stg/blob/main/LICENSE', 'https://github.com/miterapiaregresiva/miterapiaregresiva.github.io/blob/main/LICENSE')
-          if new != text:
-              site_js.write_text(new, encoding='utf-8')
-              changed.append(str(site_js))
+          # Remove obsolete footer/mobile override blocks from brand-lockup.css.
+          brand_path = Path('assets/brand-lockup.css')
+          brand = brand_path.read_text(encoding='utf-8')
+          cleaned = brand
+          for start, end in [
+              ('/* square-footer-brand:start */','/* square-footer-brand:end */'),
+              ('/* mobile-footer-columns:start */','/* mobile-footer-columns:end */')
+          ]:
+              cleaned = re.sub(re.escape(start) + r'.*?' + re.escape(end), '', cleaned, flags=re.S)
+          cleaned = re.sub(r'/\* footer-links-centered:20260914 \*/.*$', '', cleaned, flags=re.S).rstrip() + '\n'
+          if cleaned != brand:
+              brand_path.write_text(cleaned, encoding='utf-8')
+              changed.append(str(brand_path))
 
           print(f'Updated {len(changed)} files')
-          for path in changed:
-              print(path)
-      - name: Commit normalized staging site
+          for item in changed:
+              print(item)
+
+      - name: Validate materialized site
+        shell: bash
+        run: |
+          set -e
+          grep -R "whatsapp-float" assets/site.js assets/site-static.css . --include='*.html' && exit 1 || true
+          grep -R "sprint-06-mobile-nav-styles\|sprint-08-styles" assets/site.js && exit 1 || true
+          grep -R "Terapia regresiva presencial en Tenerife · Canarias" --include='*.html' . >/dev/null
+          grep -R "class=\"mobile-menu-toggle\"" --include='*.html' . >/dev/null
+          python - <<'PY'
+          from pathlib import Path
+          pages=list(Path('.').rglob('*.html'))
+          missing=[]
+          for p in pages:
+              t=p.read_text(encoding='utf-8')
+              if 'site-footer' in t and 'footer-whatsapp' not in t:
+                  missing.append(str(p))
+              if 'site-header' in t and 'mobile-menu-toggle' not in t:
+                  missing.append(str(p))
+          if missing:
+              raise SystemExit('Missing materialized UI in: ' + ', '.join(missing))
+          print(f'Validated {len(pages)} HTML files')
+          PY
+
+      - name: Commit materialized static site
         run: |
           if git diff --quiet; then
             echo "No changes needed"
@@ -57,6 +259,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Match square footer logo layout"
+          git commit -m "Materialize static UI and simplify JavaScript"
           git pull --rebase origin main
           git push
