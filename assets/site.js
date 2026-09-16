@@ -1,26 +1,82 @@
 document.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('.faq').forEach(f=>{const items=[...f.querySelectorAll('details')];items.forEach(i=>i.addEventListener('toggle',()=>{if(i.open)items.forEach(o=>{if(o!==i)o.open=false})}))});
 
-  /* Navegación móvil compacta: tres destinos principales visibles y el resto en menú. */
-  document.querySelectorAll('.site-header .menu').forEach(menu=>{
-    const links=[...menu.querySelectorAll(':scope > a')];
-    const primaryHrefs=['terapia-regresiva/','como-trabajo/','contacto/'];
-    links.forEach(a=>{if(primaryHrefs.some(h=>a.getAttribute('href')===h))a.classList.add('mobile-primary');else a.classList.add('mobile-secondary')});
+  /* Sprint 06 — navegación móvil compacta y accesible.
+     Sin JavaScript el menú permanece visible: la ocultación solo se activa tras añadir .mobile-nav-enhanced. */
+  document.querySelectorAll('.site-header').forEach((header,index)=>{
+    const nav=header.querySelector('.nav');
+    const menu=header.querySelector('.menu');
+    if(!nav||!menu||nav.querySelector('.mobile-menu-toggle'))return;
+
+    const menuId=menu.id||`mobile-navigation-${index+1}`;
+    menu.id=menuId;
+
     const button=document.createElement('button');
-    button.type='button';button.className='mobile-menu-toggle';button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Abrir menú');button.innerHTML='<span aria-hidden="true">☰</span>';
-    menu.appendChild(button);
-    const close=()=>{menu.classList.remove('mobile-menu-open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Abrir menú')};
-    button.addEventListener('click',()=>{const open=!menu.classList.contains('mobile-menu-open');menu.classList.toggle('mobile-menu-open',open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
-    document.addEventListener('click',e=>{if(!menu.contains(e.target))close()});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+    button.type='button';
+    button.className='mobile-menu-toggle';
+    button.setAttribute('aria-expanded','false');
+    button.setAttribute('aria-controls',menuId);
+    button.innerHTML='<span class="mobile-menu-label">Menú</span><span class="mobile-menu-icon" aria-hidden="true">☰</span>';
+    nav.insertBefore(button,menu);
+
+    const setOpen=open=>{
+      nav.classList.toggle('mobile-menu-open',open);
+      button.setAttribute('aria-expanded',String(open));
+      button.querySelector('.mobile-menu-label').textContent=open?'Cerrar':'Menú';
+      button.querySelector('.mobile-menu-icon').textContent=open?'×':'☰';
+    };
+    const close=(restoreFocus=false)=>{if(!nav.classList.contains('mobile-menu-open'))return;setOpen(false);if(restoreFocus)button.focus()};
+
+    button.addEventListener('click',()=>setOpen(!nav.classList.contains('mobile-menu-open')));
+    menu.addEventListener('click',e=>{if(e.target.closest('a'))close(false)});
+    document.addEventListener('click',e=>{if(!nav.contains(e.target))close(false)});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close(true)});
+
+    nav.classList.add('mobile-nav-enhanced');
   });
 
-  if(!document.getElementById('mobile-nav-styles')){const s=document.createElement('style');s.id='mobile-nav-styles';s.textContent='.mobile-menu-toggle{display:none}@media(max-width:700px){.site-header{position:sticky}.nav{padding:.55rem .75rem .45rem;gap:.35rem}.brand-lockup{width:100%;min-height:0}.brand-lockup .brand-symbol{width:54px;height:54px}.brand-lockup .brand-copy{min-width:0}.brand-lockup .brand-domain{font-size:clamp(1.05rem,5.1vw,1.35rem)}.brand-lockup .brand-tagline{font-size:.78rem;line-height:1.2}.brand-lockup .brand-service{font-size:.7rem;line-height:1.2}.menu{position:relative!important;display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(0,1.15fr) minmax(0,.9fr) 44px!important;gap:.15rem!important;padding:0!important;align-items:stretch}.menu>a{display:none!important}.menu>a.mobile-primary{display:flex!important;min-height:44px!important;font-size:.86rem!important;font-weight:600!important;line-height:1.08!important;padding:.35rem .18rem!important}.mobile-menu-toggle{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:999px;background:transparent;color:var(--text);font:inherit;cursor:pointer}.mobile-menu-toggle span{font-size:1.45rem;line-height:1}.mobile-menu-toggle:hover,.mobile-menu-toggle[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent-strong)}.menu.mobile-menu-open>a.mobile-secondary{display:flex!important;grid-column:1/-1;justify-content:flex-start!important;text-align:left!important;padding:.55rem .8rem!important;font-size:1rem!important;border-radius:14px!important;background:#fff;border:1px solid var(--line)}.menu.mobile-menu-open .mobile-menu-toggle{grid-column:4;grid-row:1}.menu.mobile-menu-open>a.mobile-primary{grid-row:1}.hero{padding-top:2rem}}';document.head.appendChild(s)}
+  if(!document.getElementById('sprint-06-mobile-nav-styles')){const s=document.createElement('style');s.id='sprint-06-mobile-nav-styles';s.textContent=`
+.mobile-menu-toggle{display:none}
+@media(max-width:700px){
+  .site-header{position:sticky;top:0}
+  .site-header .nav{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;padding:.35rem 1.25rem;min-height:64px;text-align:left}
+  .site-header .brand-lockup{margin:0;justify-content:flex-start;gap:.55rem;width:auto;max-width:min(100%,18rem);min-height:0}
+  .site-header .brand-lockup .brand-symbol{width:48px;height:48px;flex:0 0 48px}
+  .site-header .brand-lockup .brand-copy{display:block;min-width:0;text-align:left}
+  .site-header .brand-lockup .brand-domain{display:block;font-size:clamp(.98rem,4.4vw,1.2rem);line-height:1.1;overflow:hidden;text-overflow:ellipsis}
+  .site-header .brand-lockup .brand-tagline,.site-header .brand-lockup .brand-service{display:none}
+  .mobile-menu-toggle{grid-column:2;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-width:48px;min-height:48px;padding:.55rem .7rem;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--text);font:inherit;font-size:.95rem;font-weight:650;cursor:pointer}
+  .mobile-menu-toggle:hover,.mobile-menu-toggle[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent-strong)}
+  .mobile-menu-toggle:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+  .mobile-menu-icon{font-size:1.25rem;line-height:1;width:1.15rem;text-align:center}
+  .site-header .mobile-nav-enhanced .menu{display:none!important}
+  .site-header .mobile-nav-enhanced.mobile-menu-open .menu{position:absolute;top:100%;left:0;right:0;z-index:30;display:flex!important;flex-direction:column;align-items:stretch;width:100%;gap:.15rem;padding:.55rem 1.25rem .85rem;background:rgba(251,249,252,.98);border-top:1px solid rgba(107,63,120,.12);border-bottom:1px solid var(--line);box-shadow:0 12px 26px rgba(55,34,63,.08);backdrop-filter:blur(14px)}
+  .site-header .mobile-nav-enhanced.mobile-menu-open .menu a{display:flex!important;width:100%;min-height:48px;align-items:center;justify-content:flex-start;text-align:left;padding:.65rem .75rem;border-radius:12px;font-size:1rem;line-height:1.3}
+  .site-header .mobile-nav-enhanced.mobile-menu-open .menu a[aria-current="page"]{background:var(--accent-soft);color:var(--accent-strong)}
+  .wrap{width:min(100% - 2.5rem,var(--max))}
+  .site-footer .footer-grid{grid-template-columns:1fr!important;gap:1.5rem}
+  .site-footer .footer-brand-column{grid-column:auto}
+  .site-footer .footer-grid>nav,.site-footer .footer-grid>nav:first-of-type,.site-footer .footer-grid>nav:last-of-type{align-items:flex-start!important;text-align:left!important}
+  .site-footer .footer-brand-lockup{margin-inline:0;align-items:flex-start;text-align:left}
+  .site-footer .footer-brand-divider{display:none}
+  .hero{padding-top:2rem}
+}
+@media(max-width:390px){
+  .site-header .nav{padding-inline:1rem}
+  .site-header .brand-lockup .brand-symbol{width:44px;height:44px;flex-basis:44px}
+  .site-header .brand-lockup .brand-domain{font-size:.96rem}
+  .mobile-menu-toggle{padding-inline:.6rem}
+  .site-header .mobile-nav-enhanced.mobile-menu-open .menu{padding-inline:1rem}
+}
+@media(prefers-reduced-motion:reduce){.site-header *{scroll-behavior:auto}}
+`;
+    document.head.appendChild(s)
+  }
 
   const webpMap={'assets/images/books/internet-archive-brian-weiss-a-traves-del-tiempo-portada-417x670.jpg':'assets/images/webp/internet-archive-brian-weiss-a-traves-del-tiempo-portada-417x670.webp','assets/images/books/internet-archive-brian-weiss-los-mensajes-de-los-sabios-portada-440x672.jpeg':'assets/images/webp/internet-archive-brian-weiss-los-mensajes-de-los-sabios-portada-440x672.webp','assets/images/books/internet-archive-brian-weiss-los-milagros-existen-portada-412x668.jpeg':'assets/images/webp/internet-archive-brian-weiss-los-milagros-existen-portada-412x668.webp','assets/images/books/internet-archive-brian-weiss-muchas-vidas-muchos-maestros-portada-404x668.jpeg':'assets/images/webp/internet-archive-brian-weiss-muchas-vidas-muchos-maestros-portada-404x668.webp','assets/images/books/internet-archive-brian-weiss-muchos-cuerpos-una-misma-alma-portada-396x671.jpeg':'assets/images/webp/internet-archive-brian-weiss-muchos-cuerpos-una-misma-alma-portada-396x671.webp','assets/images/books/internet-archive-helen-wambach-vida-antes-de-la-vida-portada-579x834.jpeg':'assets/images/webp/internet-archive-helen-wambach-vida-antes-de-la-vida-portada-579x834.webp','assets/images/books/internet-archive-ian-stevenson-cases-of-the-reincarnation-type-portada-452x668.jpeg':'assets/images/webp/internet-archive-ian-stevenson-cases-of-the-reincarnation-type-portada-452x668.webp','assets/images/books/internet-archive-ian-stevenson-children-who-remember-previous-lives-portada-426x671.jpeg':'assets/images/webp/internet-archive-ian-stevenson-children-who-remember-previous-lives-portada-426x671.webp','assets/images/books/internet-archive-ian-stevenson-twenty-cases-suggestive-of-reincarnation-portada-438x670.jpeg':'assets/images/webp/internet-archive-ian-stevenson-twenty-cases-suggestive-of-reincarnation-portada-438x670.webp','assets/images/books/internet-archive-ian-stevenson-where-reincarnation-and-biology-intersect-portada-406x669.jpeg':'assets/images/webp/internet-archive-ian-stevenson-where-reincarnation-and-biology-intersect-portada-406x669.webp','assets/images/books/internet-archive-raymond-moody-life-after-life-edicion-francesa-portada-395x672.jpg':'assets/images/webp/internet-archive-raymond-moody-life-after-life-edicion-francesa-portada-395x672.webp','assets/images/branding/miterapiaregresiva-equipo-identidad-logo-reducido-150x150.png':'assets/images/webp/miterapiaregresiva-equipo-identidad-logo-redes-150x150.webp','assets/images/branding/miterapiaregresiva-equipo-identidad-logo-principal-1024x1024.png':'assets/images/webp/miterapiaregresiva-equipo-identidad-logo-redes-1024x1024.webp'};
   document.querySelectorAll('img').forEach(img=>{const s=img.getAttribute('src');if(!s)return;if(webpMap[s])img.src=webpMap[s];else if(s.startsWith('assets/images/original/')&&/\.(?:jpe?g|png)$/i.test(s))img.src=s.replace('assets/images/original/','assets/images/webp/').replace(/\.(?:jpe?g|png)$/i,'.webp')});
 
-  /* Convierte párrafos que son exclusivamente acciones/enlaces en botones, también cuando hay varios. */
+  /* Convierte párrafos que son exclusivamente acciones/enlaces en botones, también cuando hay varios. Sprint 08 revisará esta jerarquía. */
   document.querySelectorAll('main p').forEach(p=>{if(p.closest('.image-credit'))return;const n=[...p.childNodes].filter(x=>x.nodeType!==Node.TEXT_NODE||x.textContent.trim());const actions=n.length&&n.every(x=>(x.nodeType===Node.ELEMENT_NODE&&x.tagName==='A')||(x.nodeType===Node.TEXT_NODE&&/^[\s·|/]+$/.test(x.textContent)));if(!actions)return;n.forEach(x=>{if(x.nodeType===Node.ELEMENT_NODE)x.classList.add('button','content-link-button');else x.remove()});p.classList.add('link-actions')});
 
   const hasBC=[...document.querySelectorAll('script[type="application/ld+json"]')].some(s=>s.textContent.includes('BreadcrumbList')),bc=document.querySelector('.breadcrumbs');
