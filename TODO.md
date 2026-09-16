@@ -4,22 +4,21 @@
 
 ## Prioridad inmediata — Easy Paced Reading
 
-Implementar **antes de nuevos refinamientos secundarios** y en este orden:
+Estado actual del bloque:
 
-- [ ] **Sprint 06 — Lectura móvil y navegación tranquila.** Ver [`SPRINT-06.md`](SPRINT-06.md). **SIGUIENTE A IMPLEMENTAR.**
-- [ ] **Sprint 07 — Sistema editorial de lectura.** Ver [`SPRINT-07.md`](SPRINT-07.md).
-- [ ] **Sprint 08 — Jerarquía de acciones y reducción de ruido.** Ver [`SPRINT-08.md`](SPRINT-08.md).
-- [ ] **Sprint 09 — Refinamiento visual y accesibilidad editorial.** Ver [`SPRINT-09.md`](SPRINT-09.md).
+- [x] **Sprint 06 — Lectura móvil y navegación tranquila.** Implementado en `stg`, pendiente únicamente de revisión visual conjunta.
+- [x] **Sprint 07 — Sistema editorial de lectura.** Implementado en `stg`, pendiente únicamente de revisión visual conjunta.
+- [x] **Sprint 08 — Jerarquía de acciones y reducción de ruido.** Implementado en `stg`, pendiente únicamente de revisión visual conjunta.
+- [ ] **Sprint 09 — Refinamiento visual y accesibilidad editorial.** Ver [`SPRINT-09.md`](SPRINT-09.md). **SIGUIENTE A IMPLEMENTAR.**
 
 Principio rector del bloque: **easy paced reading**. La prioridad es una lectura fácil, pausada, clara y agradable, con baja carga cognitiva, navegación predecible, conversión sin presión y una experiencia móvil especialmente cómoda.
 
 Regla de implementación:
 
 1. aplicar cada sprint primero en `stg`;
-2. validar sus criterios de aceptación antes de comenzar el siguiente;
-3. no mezclar cambios de sprints posteriores salvo dependencia técnica inevitable;
-4. no promover automáticamente estos cambios a producción;
-5. completar una revisión conjunta móvil, escritorio, teclado, zoom y accesibilidad al cerrar Sprint 09.
+2. validar sus criterios de aceptación antes de promover cambios a producción;
+3. no mezclar cambios de producción con staging;
+4. completar una revisión conjunta móvil, escritorio, teclado, zoom y accesibilidad al cerrar Sprint 09.
 
 ## Pendiente secundario — sección de autores
 
