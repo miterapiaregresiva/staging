@@ -42,7 +42,7 @@ Resultados recibidos el 14/09/2026 para `https://stg.miterapiaregresiva.com/`:
 ### Revisiones pendientes
 
 - [ ] Repetir Lighthouse después de que el último despliegue de GitHub Pages esté publicado, preferiblemente en ventana de incógnito y sin extensiones del navegador.
-- [ ] Confirmar desde el sitio desplegado que ya se sirven las imágenes WebP y no las antiguas rutas `assets/images/original/*.jpg|png`.
+- [ ] Confirmar desde el sitio desplegado que ya se sirven las imágenes WebP y no las rutas de originales `assets/images/original/<fuente>-<autor>-<titulo>-<descripcion>-<tamano>.jpg|png`.
 - [x] Añadir `fetchpriority="high"` a la imagen LCP de la portada.
 - [ ] Preparar tamaños responsive (`srcset` / `sizes`) para las imágenes principales cuando aporte una reducción real de transferencia.
 - [ ] Revisar TTL de caché de recursos estáticos. GitHub Pages limita el control directo de cabeceras, por lo que se evaluará una solución de borde/CDN si compensa.
