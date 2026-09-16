@@ -8,7 +8,7 @@ Dependencia: implementar antes de los Sprints 07, 08 y 09.
 
 ## Objetivo
 
-Hacer que en móvil el contenido aparezca antes, reducir la presencia permanente de la interfaz y favorecer una lectura pausada, clara y predecible. No se busca rediseñar la identidad ni introducir nuevas tendencias visuales.
+Hacer que el contenido aparezca antes, reducir la presencia permanente de la interfaz y favorecer una lectura pausada, clara y predecible. No se busca rediseñar la identidad ni introducir nuevas tendencias visuales.
 
 Principio rector: **easy paced reading**. Cada cambio debe mejorar al menos uno de estos aspectos: legibilidad, carga cognitiva, orientación, ritmo de lectura, confianza, accesibilidad o comodidad móvil.
 
@@ -52,19 +52,32 @@ Implementar el menú con comportamiento accesible:
 
 Si se implementa cierre con Escape, devolver el foco al botón que abrió el menú.
 
-### 3. Reducir branding duplicado en el hero móvil
+### 3. Eliminar el branding duplicado del hero en todos los tamaños
 
-En la portada, el lockup gráfico completo del hero precede actualmente al contenido en móvil.
+La portada incorpora actualmente un segundo lockup de marca dentro del hero. Esta información ya está suficientemente representada en la cabecera mediante símbolo, dominio, tagline y servicio, por lo que repetirla en el hero añade peso visual sin mejorar orientación ni comprensión.
 
-Por debajo de 700 px:
+Eliminar el panel/lockup gráfico del hero **tanto en escritorio como en móvil**.
 
-- eliminar el gran panel/lockup redundante del hero;
-- mantener la marca en el header;
-- mostrar primero el contenido editorial: eyebrow, H1, introducción y acciones;
-- conservar el lockup lateral en escritorio si sigue funcionando visualmente;
-- no sustituirlo por otra ilustración decorativa.
+El hero debe quedar centrado en contenido editorial:
 
-Objetivo: el H1 y la explicación principal deben aparecer claramente antes en el primer recorrido vertical.
+- eyebrow `Tenerife · presencial`;
+- H1;
+- introducción principal;
+- texto explicativo cuando corresponda;
+- acciones tranquilas y jerarquizadas.
+
+No sustituir el lockup eliminado por otra ilustración, logotipo ampliado, imagen decorativa o bloque promocional.
+
+La cabecera pasa a ser el único lugar de branding prominente al inicio de la página. El hero debe utilizar el espacio recuperado para mejorar legibilidad, proporción y ritmo, no para introducir más contenido.
+
+En escritorio, revisar la composición tras pasar de dos columnas a una. Priorizar un ancho de lectura cómodo y evitar que el H1 o el texto se expandan hasta todo el ancho disponible. La decisión definitiva sobre `max-width` y escala tipográfica global corresponde al Sprint 07, pero este sprint debe dejar una composición equilibrada sin el panel de marca.
+
+Objetivos:
+
+- eliminar redundancia de identidad;
+- permitir que la propuesta principal se comprenda antes;
+- reducir carga cognitiva en el primer viewport;
+- conseguir que la portada se perciba más como una entrada editorial que como una landing comercial.
 
 ### 4. Footer móvil
 
@@ -104,13 +117,16 @@ Como orientación, priorizar 20–24 px de margen lateral en lectura móvil.
 ## Criterios de aceptación
 
 - [ ] En 360–430 px el header cerrado ocupa aproximadamente una sola línea y no dos filas de navegación permanentes.
-- [ ] El H1 de la portada aparece claramente antes que en la versión actual.
+- [ ] El panel/lockup de marca del hero ha desaparecido en escritorio y móvil.
+- [ ] La eliminación del panel no se ha compensado con otra pieza decorativa equivalente.
+- [ ] El primer viewport de la home prioriza H1, introducción y contenido frente a branding redundante.
+- [ ] La composición de escritorio continúa siendo equilibrada tras pasar el hero a una estructura sin panel lateral.
+- [ ] El H1 de la portada aparece claramente antes que en la versión actual en móvil.
 - [ ] El menú se puede abrir, recorrer y cerrar solo con teclado.
 - [ ] El estado expandido está expuesto mediante ARIA.
 - [ ] Todos los targets principales alcanzan al menos 48 px.
 - [ ] No hay scroll horizontal a 200 % de zoom.
 - [ ] El footer móvil se puede recorrer con una secuencia sencilla y legible.
-- [ ] No se ha alterado la navegación de escritorio sin necesidad.
 - [ ] No se han introducido animaciones decorativas.
 
 ## Validación
@@ -131,6 +147,8 @@ Comprobar además:
 - foco visible;
 - navegación sin JavaScript, si el patrón elegido permite una degradación razonable.
 
+En escritorio, comprobar específicamente que la eliminación del lockup del hero no produce una columna de texto excesivamente ancha ni un vacío visual artificial.
+
 ## Resultado esperado
 
-La interfaz móvil debe sentirse como una página que se lee, no como una aplicación cuyo menú permanece compitiendo con el contenido.
+La interfaz debe sentirse como una página que se lee, no como una aplicación o una landing cuya navegación y marca compiten de forma permanente con el contenido. La identidad sigue presente y reconocible en la cabecera; el hero queda liberado para explicar con calma qué ofrece la página.
