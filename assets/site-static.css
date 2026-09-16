@@ -4,6 +4,10 @@
 .actions .editorial-link{display:inline-flex;align-items:center;min-height:48px;padding:.55rem .1rem}
 .button{min-height:48px;padding:.75rem 1.15rem}
 
+/* Home hero: single centered editorial column on desktop. */
+.home-hero .hero-split{display:block}
+.home-hero .hero-copy{width:min(100%,780px);margin-inline:auto}
+
 .site-footer .footer-grid{grid-template-columns:minmax(260px,1.3fr) repeat(3,minmax(0,1fr));gap:2rem;align-items:start}
 .site-footer .footer-brand-column{display:flex;justify-content:center;min-width:0}
 .site-footer .footer-brand-lockup{width:min(100%,360px);margin-inline:auto;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:var(--text);line-height:1.1}
@@ -54,6 +58,7 @@
   .site-footer .footer-brand-service{max-width:32ch;font-size:.57rem;letter-spacing:.085em}
   .site-footer .footer-brand-divider{display:flex}
   .hero{padding-top:2rem}
+  .home-hero .hero-copy{width:100%;margin-inline:0}
 }
 
 @media(max-width:390px){
