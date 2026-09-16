@@ -31,53 +31,6 @@
   min-height:44px;
 }
 
-/* Navegación editorial al final de artículos: continuidad de lectura, no CTA. */
-.related-reading{
-  margin-top:clamp(3.75rem,7vw,5.5rem);
-  padding-top:2rem;
-  border-top:1px solid var(--line);
-}
-.related-reading h2{
-  margin:.35rem 0 1.25rem;
-}
-.related-reading-list{
-  display:grid;
-  gap:.75rem;
-}
-.related-reading-link{
-  display:block;
-  padding:1rem 0;
-  border-bottom:1px solid var(--line);
-  color:var(--text);
-  text-decoration:none;
-}
-.related-reading-link:first-child{
-  border-top:1px solid var(--line);
-}
-.related-reading-link:hover .related-reading-title,
-.related-reading-link:focus-visible .related-reading-title{
-  text-decoration:underline;
-  text-decoration-thickness:.08em;
-  text-underline-offset:.22em;
-}
-.related-reading-title{
-  display:block;
-  color:var(--accent-strong);
-  font-weight:650;
-  line-height:1.35;
-}
-.related-reading-description{
-  display:block;
-  margin-top:.3rem;
-  color:var(--muted);
-  font-size:.96rem;
-  line-height:1.55;
-}
-.related-reading-more{
-  margin-top:1.2rem!important;
-  font-size:.96rem;
-}
-
 /* FAQ: aire suficiente sin convertir cada pregunta en una card pesada. */
 .faq details{
   margin:1rem 0;
@@ -95,6 +48,87 @@
   line-height:1.55;
 }
 
+/* Navegación editorial al final de artículos. */
+.related-reading{
+  margin-top:clamp(3.5rem,7vw,5rem);
+  padding-top:2rem;
+  border-top:1px solid var(--line);
+}
+.related-reading h2{
+  margin:0 0 1.25rem;
+  font-size:clamp(1.5rem,2.4vw,2rem);
+}
+.related-reading-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:1rem;
+}
+.related-reading-list a{
+  display:block;
+  padding:1rem 0;
+  border-bottom:1px solid var(--line);
+  text-decoration:none;
+}
+.related-reading-list strong{
+  display:block;
+  color:var(--accent-strong);
+  text-decoration:underline;
+  text-decoration-thickness:.08em;
+  text-underline-offset:.22em;
+}
+.related-reading-list span{
+  display:block;
+  margin-top:.25rem;
+  color:var(--muted);
+  font-size:.96rem;
+  line-height:1.55;
+}
+.related-reading-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem 1rem;
+  margin-top:1.25rem;
+}
+.related-reading-links a{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  font-weight:550;
+}
+
+/* Footer: el lockup vuelve a funcionar como una composición centrada. */
+.site-footer .footer-brand-column{
+  justify-content:center!important;
+}
+.site-footer .footer-brand-lockup{
+  margin-inline:auto!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+.site-footer .footer-brand-symbol{
+  margin-inline:auto!important;
+}
+.site-footer .footer-brand-domain,
+.site-footer .footer-brand-tagline,
+.site-footer .footer-brand-service{
+  text-align:center!important;
+}
+.site-footer .footer-brand-service{
+  white-space:normal;
+  max-width:32ch;
+  margin-inline:auto;
+  font-size:0;
+}
+.site-footer .footer-brand-service::after{
+  content:"Terapia regresiva presencial en Tenerife · Canarias";
+  font-size:.62rem;
+  font-weight:450;
+  letter-spacing:.15em;
+  line-height:1.45;
+}
+
 @media(max-width:700px){
   /* Pequeño respiro visual para imágenes dentro de prosa sin provocar scroll horizontal. */
   .prose figure,
@@ -105,8 +139,24 @@
   .site-footer nav a{
     min-height:48px;
   }
-  .related-reading-link{
-    padding:1.05rem 0;
+  /* Supera la alineación heredada del Sprint 06 sin afectar a la cabecera. */
+  .site-footer.site-footer .footer-grid>nav,
+  .site-footer.site-footer .footer-grid>nav:first-of-type,
+  .site-footer.site-footer .footer-grid>nav:last-of-type{
+    align-items:center!important;
+    text-align:center!important;
+  }
+  .site-footer.site-footer .footer-brand-lockup{
+    margin-inline:auto!important;
+    align-items:center!important;
+    text-align:center!important;
+  }
+  .site-footer .footer-brand-divider{
+    display:flex!important;
+  }
+  .site-footer .footer-brand-service::after{
+    font-size:.57rem;
+    letter-spacing:.1em;
   }
 }
 
