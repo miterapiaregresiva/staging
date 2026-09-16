@@ -2,9 +2,9 @@
 
 Fecha: 2026-09-16.
 
-Estado: **SIGUIENTE A IMPLEMENTAR**.
+Estado: **IMPLEMENTADO EN STG — PENDIENTE VALIDACIÓN VISUAL FINAL**.
 
-Dependencia: implementar antes de los Sprints 07, 08 y 09.
+Dependencia: validar este sprint antes de comenzar Sprint 07.
 
 ## Objetivo
 
@@ -12,22 +12,21 @@ Hacer que el contenido aparezca antes, reducir la presencia permanente de la int
 
 Principio rector: **easy paced reading**. Cada cambio debe mejorar al menos uno de estos aspectos: legibilidad, carga cognitiva, orientación, ritmo de lectura, confianza, accesibilidad o comodidad móvil.
 
-## Alcance
+## Implementación realizada
 
 ### 1. Header móvil compacto
 
-Situación actual: por debajo de 700 px el menú principal se muestra como una cuadrícula de seis enlaces en tres columnas y dos filas, mientras el header permanece sticky.
-
-Cambiar el patrón móvil a una cabecera cerrada de una sola línea, aproximadamente 60–68 px de alto:
+Se ha sustituido el patrón anterior que mantenía varios destinos visibles por una cabecera móvil cerrada de una sola línea:
 
 - marca/símbolo y nombre a la izquierda;
 - control `Menú` a la derecha;
-- conservar navegación completa al desplegar;
-- conservar el header sticky solo si no resta espacio de lectura de forma significativa;
-- no ocultar opciones del menú principal;
-- no añadir iconografía decorativa innecesaria.
+- navegación completa al desplegar;
+- header sticky;
+- altura objetivo aproximada de 64 px;
+- tagline y línea de servicio ocultos únicamente en móvil para evitar una cabecera alta;
+- los seis destinos originales se mantienen y conservan su orden.
 
-El menú móvil debe contener, en el mismo orden actual:
+Menú:
 
 1. Terapia regresiva
 2. Cómo trabajo
@@ -38,116 +37,103 @@ El menú móvil debe contener, en el mismo orden actual:
 
 ### 2. Accesibilidad del menú
 
-Implementar el menú con comportamiento accesible:
+Implementado en `assets/site.js`:
 
 - botón real `<button>`;
 - `aria-expanded` sincronizado con el estado;
-- `aria-controls` apuntando al contenedor del menú;
+- `aria-controls` apuntando al `nav` correspondiente;
+- texto visible `Menú` / `Cerrar`;
 - foco visible;
-- cierre predecible;
-- navegación completa por teclado;
-- no bloquear el zoom;
-- objetivos táctiles de al menos 48 × 48 px;
-- no depender exclusivamente del color para indicar el estado activo.
+- objetivos táctiles mínimos de 48 × 48 px;
+- cierre al seleccionar un enlace;
+- cierre al pulsar fuera del menú;
+- cierre con Escape y devolución de foco al botón;
+- estado activo de página conservado mediante `aria-current` y fondo, no solo mediante color;
+- degradación razonable sin JavaScript: el menú HTML original permanece visible porque la ocultación solo se activa tras añadir `.mobile-nav-enhanced`.
 
-Si se implementa cierre con Escape, devolver el foco al botón que abrió el menú.
+### 3. Branding duplicado del hero eliminado
 
-### 3. Eliminar el branding duplicado del hero en todos los tamaños
+Decisión aprobada durante el sprint: la cabecera ya contiene presencia de marca suficiente.
 
-La portada incorpora actualmente un segundo lockup de marca dentro del hero. Esta información ya está suficientemente representada en la cabecera mediante símbolo, dominio, tagline y servicio, por lo que repetirla en el hero añade peso visual sin mejorar orientación ni comprensión.
+Se ha eliminado visualmente el panel/lockup gráfico del hero **tanto en escritorio como en móvil** mediante `assets/home-hero-brand.css`.
 
-Eliminar el panel/lockup gráfico del hero **tanto en escritorio como en móvil**.
-
-El hero debe quedar centrado en contenido editorial:
+El hero queda centrado en:
 
 - eyebrow `Tenerife · presencial`;
 - H1;
 - introducción principal;
-- texto explicativo cuando corresponda;
-- acciones tranquilas y jerarquizadas.
+- texto explicativo;
+- acciones.
 
-No sustituir el lockup eliminado por otra ilustración, logotipo ampliado, imagen decorativa o bloque promocional.
+No se ha sustituido el lockup por ninguna ilustración, imagen decorativa o bloque promocional.
 
-La cabecera pasa a ser el único lugar de branding prominente al inicio de la página. El hero debe utilizar el espacio recuperado para mejorar legibilidad, proporción y ritmo, no para introducir más contenido.
+La estructura de dos columnas pasa a una composición editorial de una sola columna y el texto queda limitado por `var(--measure)` para evitar expansión excesiva en escritorio.
 
-En escritorio, revisar la composición tras pasar de dos columnas a una. Priorizar un ancho de lectura cómodo y evitar que el H1 o el texto se expandan hasta todo el ancho disponible. La decisión definitiva sobre `max-width` y escala tipográfica global corresponde al Sprint 07, pero este sprint debe dejar una composición equilibrada sin el panel de marca.
-
-Objetivos:
-
-- eliminar redundancia de identidad;
-- permitir que la propuesta principal se comprenda antes;
-- reducir carga cognitiva en el primer viewport;
-- conseguir que la portada se perciba más como una entrada editorial que como una landing comercial.
+> Limpieza técnica posterior recomendada: retirar físicamente del HTML de portada el markup del antiguo `.hero-brand-panel` y su imagen una vez se haga la siguiente edición estructural de `index.html`. Actualmente está neutralizado con `display:none` y no participa en la composición visual.
 
 ### 4. Footer móvil
 
-Convertir el footer móvil a una sola columna cuando mejore la lectura:
+Por debajo de 700 px:
 
-```css
-@media (max-width: 700px) {
-  .site-footer .footer-grid {
-    grid-template-columns: 1fr;
-  }
-}
-```
-
-Mantener agrupaciones semánticas de navegación y legal. No ahorrar altura a costa de comprimir enlaces.
+- footer a una sola columna;
+- navegación alineada a la izquierda;
+- se elimina la compresión artificial de dos columnas;
+- se conservan agrupaciones semánticas y enlaces.
 
 ### 5. Márgenes y targets móviles
 
-Revisar especialmente 360, 390, 430 y 768 px:
+Implementado:
 
-- márgenes laterales cómodos;
-- evitar texto pegado a los bordes;
-- evitar saltos inesperados de título;
-- evitar botones o enlaces demasiado próximos;
-- imágenes sin desbordamientos horizontales;
-- no introducir scroll horizontal.
+- margen general de lectura móvil de aproximadamente 20 px mediante `width: min(100% - 2.5rem, var(--max))`;
+- ajuste específico por debajo de 390 px para la cabecera;
+- targets del botón de menú y enlaces desplegados ≥48 px;
+- menú desplegable contenido dentro del viewport horizontal.
 
-Como orientación, priorizar 20–24 px de margen lateral en lectura móvil.
+## Fuera de alcance y preservado
 
-## No hacer en este sprint
-
-- No cambiar todavía la escala tipográfica global: Sprint 07.
-- No modificar todavía la jerarquía de CTA ni WhatsApp: Sprint 08.
-- No hacer refinamientos generales de color, cards o imágenes: Sprint 09.
-- No modificar textos editoriales salvo ajustes mínimos necesarios para accesibilidad del control de navegación.
-- No tocar producción.
+- Escala tipográfica global: Sprint 07.
+- Jerarquía de CTA y WhatsApp: Sprint 08.
+- Refinamiento general de colores, cards e imágenes: Sprint 09.
+- Textos editoriales sin cambios.
+- Producción sin cambios.
 
 ## Criterios de aceptación
 
-- [ ] En 360–430 px el header cerrado ocupa aproximadamente una sola línea y no dos filas de navegación permanentes.
-- [ ] El panel/lockup de marca del hero ha desaparecido en escritorio y móvil.
-- [ ] La eliminación del panel no se ha compensado con otra pieza decorativa equivalente.
-- [ ] El primer viewport de la home prioriza H1, introducción y contenido frente a branding redundante.
-- [ ] La composición de escritorio continúa siendo equilibrada tras pasar el hero a una estructura sin panel lateral.
-- [ ] El H1 de la portada aparece claramente antes que en la versión actual en móvil.
-- [ ] El menú se puede abrir, recorrer y cerrar solo con teclado.
-- [ ] El estado expandido está expuesto mediante ARIA.
-- [ ] Todos los targets principales alcanzan al menos 48 px.
-- [ ] No hay scroll horizontal a 200 % de zoom.
-- [ ] El footer móvil se puede recorrer con una secuencia sencilla y legible.
-- [ ] No se han introducido animaciones decorativas.
+### Verificados en código
 
-## Validación
+- [x] El header móvil implementa una única fila cerrada con marca + Menú.
+- [x] La navegación completa permanece disponible al desplegar.
+- [x] El menú usa botón real, `aria-expanded` y `aria-controls`.
+- [x] Escape cierra el menú y devuelve el foco al control.
+- [x] Targets del menú alcanzan al menos 48 px.
+- [x] El panel/lockup de marca del hero no participa en el layout de escritorio ni móvil.
+- [x] No se ha añadido una pieza decorativa sustitutiva.
+- [x] Hero configurado en una sola columna con ancho editorial limitado.
+- [x] Footer móvil configurado en una sola columna.
+- [x] No se han introducido nuevas animaciones decorativas.
+- [x] Los cambios se han realizado únicamente en `miterapiaregresiva/stg`.
 
-Probar como mínimo:
+### Pendientes de validación visual en navegador
 
-- 360 × 800;
-- 390 × 844;
-- 430 × 932;
-- 768 × 1024;
-- escritorio ≥ 1280 px.
+- [ ] Revisar 360 × 800.
+- [ ] Revisar 390 × 844.
+- [ ] Revisar 430 × 932.
+- [ ] Revisar 768 × 1024.
+- [ ] Revisar escritorio ≥1280 px.
+- [ ] Confirmar ausencia de scroll horizontal a zoom 200 %.
+- [ ] Confirmar que la altura percibida del header cerrado está en el rango previsto.
+- [ ] Confirmar equilibrio visual del hero de escritorio tras retirar el panel lateral.
+- [ ] Confirmar foco y recorrido completo mediante teclado en navegador real.
 
-Comprobar además:
+## Archivos modificados
 
-- teclado;
-- zoom de navegador al 200 %;
-- `prefers-reduced-motion`;
-- foco visible;
-- navegación sin JavaScript, si el patrón elegido permite una degradación razonable.
+- `assets/site.js`
+- `assets/home-hero-brand.css`
+- `SPRINT-06.md`
 
-En escritorio, comprobar específicamente que la eliminación del lockup del hero no produce una columna de texto excesivamente ancha ni un vacío visual artificial.
+## Validación siguiente
+
+Antes de iniciar Sprint 07, realizar una revisión visual de staging en móvil y escritorio, incluyendo teclado y zoom 200 %. Si no aparecen regresiones, marcar Sprint 06 como cerrado y mover `TODO.md` a Sprint 07 como siguiente a implementar.
 
 ## Resultado esperado
 
