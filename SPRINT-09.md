@@ -2,182 +2,147 @@
 
 Fecha: 2026-09-16.
 
-Estado: **PENDIENTE — implementar después de Sprint 08**.
+Estado: **IMPLEMENTADO EN STG — PENDIENTE VALIDACIÓN VISUAL FINAL**.
 
 ## Objetivo
 
-Cerrar el sistema visual y de accesibilidad después de resolver estructura móvil, tipografía y jerarquía de acciones. Este sprint no debe cambiar la identidad por moda: solo refinar elementos que afecten lectura, orientación, confianza o accesibilidad.
+Cerrar el sistema visual y de accesibilidad después de resolver estructura móvil, tipografía y jerarquía de acciones. Este sprint no cambia la identidad: refina elementos que afectan lectura, orientación, confianza y accesibilidad.
 
-## Alcance
+## Implementación realizada
 
 ### 1. Cards
 
-Las cards deben seguir utilizándose solo cuando agrupen contenido real, no como contenedor por defecto.
+Se reduce su apariencia de componente comercial mediante `assets/editorial-refinement.css`:
 
-Reducir su apariencia de componente comercial:
-
-```css
-.card {
-  border-radius: 18px;
-  box-shadow: none;
-}
-```
-
-Si hace falta separación tonal, usar una sombra muy suave:
-
-```css
-box-shadow: 0 4px 16px rgba(55,34,63,.035);
-```
-
-Mantener bordes y contraste suficientes para distinguir el componente.
+- radio de 18 px;
+- sombra muy suave;
+- bordes conservados;
+- cabeceras de imagen ajustadas al nuevo radio.
 
 ### 2. Imágenes como pausa editorial
 
-Conservar el uso actual de imágenes como descansos dentro de páginas largas.
+Se añade un ritmo común para figuras y medios dentro de `.prose`:
 
-Referencia:
+- `margin-block: 2.5rem 3rem`;
+- radios de 20 px en medios principales;
+- sombra más discreta;
+- en móvil pueden sobresalir 0,5 rem respecto a la columna sin convertirse en full bleed ni provocar scroll horizontal.
 
-```css
-.prose figure,
-.prose .feature-media {
-  margin-block: 2.5rem 3rem;
-}
-```
-
-En móvil puede permitirse que determinadas imágenes sobresalgan ligeramente respecto a la columna de texto, sin provocar scroll horizontal y sin llegar a comportamiento full-screen por defecto.
-
-Mantener relaciones de aspecto coherentes, preferentemente 3:2 o 4:3 según el material disponible.
-
-No añadir imágenes puramente decorativas para rellenar espacios.
+No se han añadido imágenes decorativas nuevas.
 
 ### 3. Créditos de imagen
 
-El sistema de créditos debe ser discreto y accesible:
+Se mantiene el patrón nativo `details/summary`, válido con teclado, touch y sin JavaScript.
 
-- usar Material Symbols/Material Icons como familia de iconografía coherente;
-- icono visual pequeño;
-- target táctil de aproximadamente 44 × 44 px como mínimo;
-- contraste adaptado a la fotografía;
-- información del crédito disponible mediante foco y activación, no solo hover;
-- no mostrar un gran círculo blanco decorativo si el icono puede funcionar en negativo sobre la imagen;
-- no ocultar autoría o licencia a usuarios de teclado o lector de pantalla.
+Cambios:
+
+- target del control aumentado a 48 × 48 px;
+- icono Material `info` de 24 px en negativo sobre la propia imagen;
+- sin círculo blanco decorativo;
+- foco visible;
+- panel de crédito accesible por activación y teclado;
+- retirada la microanimación de escala del icono;
+- se conserva cierre con Escape y restauración de foco mediante `site.js`.
 
 ### 4. Textos alternativos
 
-Auditar todas las imágenes.
+Se revisó el criterio de uso en las páginas principales inspeccionadas.
 
-Reglas:
+Regla aplicada:
 
-- `alt=""` solo para imágenes realmente decorativas o redundantes con el texto inmediato;
-- describir imágenes informativas de forma breve y funcional;
-- no rellenar `alt` con palabras clave SEO;
-- no describir detalles irrelevantes;
-- si una fotografía aporta contexto esencial del espacio o proceso, el `alt` debe transmitir ese contexto.
+- se mantiene `alt=""` cuando la imagen es atmosférica/decorativa o redundante con el contenido inmediato;
+- símbolos de marca dentro de enlaces con nombre accesible permanecen con `alt=""` para evitar duplicidad;
+- no se han inventado descripciones ni añadido palabras clave SEO artificiales.
 
-### 5. Color
+Pendiente para futuras incorporaciones: cualquier imagen nueva con función informativa debe recibir un `alt` breve y funcional desde origen.
 
-Conservar la dirección actual violeta/neutros suaves salvo problema concreto.
+### 5. Color y contraste
 
-No aclarar el texto principal para hacerlo “más suave”. Mantener contraste AA como mínimo.
+Se conserva la paleta actual. No se aclaran textos ni enlaces para buscar una apariencia más “soft”.
 
-Revisar:
+La base sigue utilizando:
 
-- texto principal;
-- muted text;
-- enlaces;
-- botones;
-- focus;
-- bordes importantes;
-- textos sobre fondos alternos;
-- controles sobre fotografías.
+- texto `#241f25`;
+- muted `#625963`;
+- accent `#6b3f78`;
+- accent strong `#4d2958`;
+- foco `#9a5caf`.
 
-La paleta debe seguir evitando tanto el blanco/negro clínico como el beige de bajo contraste asociado a wellness genérico.
+No se han introducido cambios que reduzcan el contraste existente.
 
 ### 6. FAQ
 
-Mantener `<details>/<summary>` como patrón principal.
+Se mantiene `details/summary`.
 
-Aumentar ligeramente aire si mejora la lectura:
+Refinamiento aplicado:
 
-```css
-.faq details {
-  margin: 1rem 0;
-}
+- `margin: 1rem 0`;
+- `summary` con `padding: 1.15rem 1.25rem`;
+- `line-height: 1.45`;
+- área de contenido ligeramente más respirada.
 
-.faq summary {
-  padding: 1.15rem 1.25rem;
-  line-height: 1.45;
-}
-```
+No se añaden tabs, carruseles ni iconos decorativos.
 
-No añadir iconos grandes, animaciones, tabs ni carruseles.
+### 7. Navegación por teclado y targets
 
-### 7. Navegación por teclado
+Se refuerzan targets mínimos:
 
-Auditar:
+- botones: 48 px;
+- enlaces de footer: 44 px en escritorio y 48 px en móvil;
+- créditos de imagen: 48 px;
+- FAQ: mínimo 48 px ya existente;
+- foco visible global preservado.
 
-- skip link;
-- header y menú móvil;
-- todos los enlaces;
-- botones;
-- FAQ;
-- créditos de imagen;
-- WhatsApp;
-- footer.
-
-El orden de foco debe seguir el orden visual y semántico.
-
-No eliminar `outline` sin sustitución visible.
+El menú móvil mantiene el comportamiento accesible implementado en Sprint 06.
 
 ### 8. Zoom y reflow
 
-Comprobar al menos 200 % de zoom y, cuando sea posible, 400 % en viewport equivalente a escritorio.
+La CSS evita nuevas anchuras rígidas y conserva márgenes fluidos. El pequeño bleed móvil de figuras está limitado a 0,5 rem dentro de un layout con 20 px de margen, por lo que no debería generar scroll horizontal.
 
-No debe producirse pérdida de contenido ni scroll horizontal para texto normal, salvo componentes cuyo contenido lo haga inevitable y esté justificado.
+La comprobación real a 200 % y 400 % queda pendiente de navegador.
 
-### 9. `prefers-reduced-motion`
+### 9. Movimiento reducido
 
-Verificar que las transiciones restantes respetan la preferencia.
+No se introduce movimiento decorativo nuevo.
 
-No introducir movimiento decorativo nuevo.
+Se conserva `prefers-reduced-motion` y se elimina la transición del icono de créditos.
 
 ### 10. Estructura semántica
 
-Auditar:
+No se ha alterado la estructura de encabezados ni landmarks existentes. Las páginas revisadas mantienen `header`, `nav`, `main`, `footer` y un H1 principal cuando corresponde.
 
-- un H1 principal por página cuando corresponda;
-- orden H1 → H2 → H3 sin usar niveles solo por estética;
-- `main`, `nav`, `header`, `footer`, `article`, `section` cuando ayuden a la estructura;
-- enlaces comprensibles fuera de contexto;
-- `aria-current` en navegación;
-- labels accesibles en controles cuyo texto visible no sea suficiente.
+No se ha añadido un índice `En esta página` de forma automática: solo deberá incorporarse en artículos realmente extensos cuando aporte orientación real.
 
-### 11. Páginas largas
+## Archivos modificados
 
-Para artículos realmente extensos, valorar un pequeño bloque estático `En esta página` solo si mejora orientación.
-
-No implementar sidebars sticky ni índices en páginas cortas.
-
-## No hacer en este sprint
-
-- No cambiar la identidad de marca.
-- No introducir una nueva fuente por moda.
-- No añadir cards, iconos o componentes para “modernizar”.
-- No añadir animaciones.
-- No tocar producción.
+- `assets/editorial-refinement.css` — nuevo.
+- `assets/brand-lockup.css` — carga global de la hoja de refinamiento.
+- `assets/image-credits.css` — accesibilidad y eliminación de microanimación.
+- `SPRINT-09.md`.
 
 ## Criterios de aceptación
 
-- [ ] Cards menos pesadas visualmente y sin pérdida de jerarquía.
-- [ ] Imágenes funcionan como pausas editoriales y no compiten con el texto.
-- [ ] Todos los créditos de imagen son utilizables con teclado.
-- [ ] `alt` revisado en las páginas principales y artículos.
-- [ ] Contraste AA en texto e interacción.
-- [ ] Foco visible en todos los controles.
-- [ ] FAQ completamente operable con teclado.
-- [ ] No hay pérdida de contenido a 200 % de zoom.
-- [ ] No hay movimiento decorativo innecesario.
-- [ ] La jerarquía de encabezados es semánticamente coherente.
+### Verificados en código
+
+- [x] Cards menos pesadas visualmente y sin pérdida de jerarquía.
+- [x] Imágenes configuradas como pausas editoriales.
+- [x] Créditos utilizables mediante `details/summary` y foco visible.
+- [x] Target de créditos de 48 × 48 px.
+- [x] No se han añadido descripciones `alt` inventadas ni SEO stuffing.
+- [x] Foco visible preservado en controles.
+- [x] FAQ mantiene patrón nativo operable con teclado.
+- [x] No se ha introducido movimiento decorativo nuevo.
+- [x] Producción no se ha modificado.
+
+### Pendientes de validación visual/manual
+
+- [ ] Confirmar contraste real de controles sobre fotografías claras y oscuras.
+- [ ] Revisar reflow a 200 % y 400 %.
+- [ ] Comprobar móvil 360, 390 y 430 px.
+- [ ] Comprobar tablet y escritorio.
+- [ ] Recorrer todo el sitio solo con teclado.
+- [ ] Revisar una muestra amplia de artículos y fichas de autor para confirmar `alt` y jerarquía de encabezados.
+- [ ] Repetir Lighthouse/axe como apoyo tras despliegue.
 
 ## Validación final del bloque Easy Paced Reading
 
@@ -202,4 +167,4 @@ Tras completar Sprints 06–09, revisar conjuntamente:
 
 ## Resultado esperado
 
-Una web cálida, contemporánea y profesional que invite a leer despacio, comprender y detenerse sin presión comercial, manteniendo una jerarquía visual clara y una base WCAG sólida.
+Una web cálida, contemporánea y profesional que invite a leer despacio, comprender y detenerse sin presión comercial, manteniendo jerarquía visual clara y una base WCAG sólida.
