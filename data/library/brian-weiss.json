@@ -1,9 +1,10 @@
 {
   "schema_version": "1.0",
   "generated_at": "2026-09-17",
+  "last_checked": null,
   "refresh_target": "daily",
   "author": {"name":"Brian Weiss","slug":"brian-weiss"},
-  "availability_note": "Los recuentos son el resumen agregado de RED BICA. El desglose por isla, biblioteca y sucursal se incorporará al refresco diario cuando se complete el rastreo de ejemplares.",
+  "availability_note": "Disponibilidad actualizada una vez al día desde RED BICA. Recomendamos llamar a la biblioteca antes de desplazarse.",
   "works": [
     {"slug":"muchas-vidas-muchos-maestros","title":"Muchas vidas, muchos maestros","languages":["es"],"bica_records":30,"copies":89,"available":83,"isbn_count":13,"islands":{},"archive":[{"id":"manylivesmanymasters_201907","title":"Many Lives Many Masters OCR re_edited copy","type":"Text","url":"https://archive.org/details/manylivesmanymasters_201907","match":"candidate_same_work"}]},
     {"slug":"lazos-de-amor","title":"Lazos de amor","languages":["es"],"bica_records":23,"copies":86,"available":81,"isbn_count":11,"islands":{},"detail_url":"/libros/lazos-de-amor/","archive":[{"id":"lazosdeamor0000bria","title":"Lazos de Amor","type":"Text","url":"https://archive.org/details/lazosdeamor0000bria","match":"direct"}]},
