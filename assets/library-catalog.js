@@ -13,6 +13,7 @@
   const status = root.querySelector('[data-catalog-status]');
 
   const islandNames = {TF:'Tenerife',GC:'Gran Canaria',LZ:'Lanzarote',FV:'Fuerteventura',LP:'La Palma',LG:'La Gomera',EH:'El Hierro'};
+  const weissStandalone = new Set(['muchas-vidas-muchos-maestros','lazos-de-amor','a-traves-del-tiempo','los-mensajes-de-los-sabios','muchos-cuerpos-una-misma-alma','eliminar-el-estres','meditacion','espejos-del-tiempo','los-milagros-existen']);
   let works = [];
   let lastChecked = null;
   let availabilityNote = '';
@@ -28,19 +29,18 @@
     if (!value) return '';
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return value;
-    return new Intl.DateTimeFormat('es-ES', {
-      timeZone: 'Atlantic/Canary',
-      dateStyle: 'medium',
-      timeStyle: 'short'
-    }).format(date);
+    return new Intl.DateTimeFormat('es-ES', {timeZone:'Atlantic/Canary',dateStyle:'medium',timeStyle:'short'}).format(date);
   }
 
   function updateStatus() {
     if (!status) return;
     const checked = formatChecked(lastChecked);
-    status.textContent = checked
-      ? `${availabilityNote} Última comprobación: ${checked} (hora canaria).`
-      : availabilityNote;
+    status.textContent = checked ? `${availabilityNote} Última comprobación: ${checked} (hora canaria).` : availabilityNote;
+  }
+
+  function detailUrl(work) {
+    if (work.author === 'Brian Weiss' && weissStandalone.has(work.slug)) return `/autores/brian-weiss/libros/${work.slug}/`;
+    return work.detail_url || '';
   }
 
   function render() {
@@ -66,7 +66,8 @@
     });
 
     tbody.innerHTML = visible.map(work => {
-      const title = work.detail_url ? `<a href="${esc(work.detail_url)}">${esc(work.title)}</a>` : esc(work.title);
+      const url = detailUrl(work);
+      const title = url ? `<a href="${esc(url)}">${esc(work.title)}</a>` : esc(work.title);
       const digital = (work.archive || []).length ? `<span class="catalog-yes">Sí</span>` : '<span class="catalog-muted">—</span>';
       const langs = (work.languages || []).map(x => x.toUpperCase()).join(', ') || '—';
       const islandData = isl ? work.islands?.[isl] : null;
@@ -87,7 +88,6 @@
       availabilityNote = data.availability_note || '';
       fillSelect(author, [...new Set(works.map(w => w.author).filter(Boolean))].sort().map(v => ({value:v,label:v})), 'Todos los autores');
       fillSelect(language, [...new Set(works.flatMap(w => w.languages || []))].sort().map(v => ({value:v,label:v.toUpperCase()})), 'Todos los idiomas');
-
       const islandCodes = [...new Set(works.flatMap(w => Object.keys(w.islands || {})))].filter(v => islandNames[v]).sort();
       if (islandCodes.length) {
         fillSelect(island, islandCodes.map(v => ({value:v,label:islandNames[v] || v})), 'Todas las islas');
@@ -97,13 +97,10 @@
         island.disabled = true;
         island.title = 'Se activará tras la primera actualización diaria del desglose de RED BICA.';
       }
-
       updateStatus();
       render();
     })
-    .catch(() => {
-      if (status) status.textContent = 'No se ha podido cargar el catálogo en este momento.';
-    });
+    .catch(() => { if (status) status.textContent = 'No se ha podido cargar el catálogo en este momento.'; });
 
   [search, author, language, island, availability].forEach(el => el?.addEventListener(el === search ? 'input' : 'change', render));
 })();
