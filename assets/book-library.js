@@ -33,6 +33,26 @@
       : '<p class="branch-contact-pending">Contacto y horario pendientes de verificar.</p>';
   }
 
+  function municipalityName(libraryName) {
+    const raw = String(libraryName || '').trim();
+    if (!raw) return 'Otros centros';
+    const dot = raw.indexOf('.');
+    if (dot > 0 && dot < 70) return raw.slice(0, dot).trim();
+    return raw;
+  }
+
+  function renderBranch(libraryId, library, branchId, branch) {
+    const availableLabel = branch.available === 1 ? '1 disponible' : `${branch.available || 0} disponibles`;
+    const copyLabel = branch.copies === 1 ? '1 ejemplar' : `${branch.copies || 0} ejemplares`;
+    return `<article class="branch-availability">
+      <div class="branch-availability-head">
+        <div><strong>${esc(branch.name || `Sucursal ${branchId}`)}</strong><span class="catalog-sub">${esc(library.name || libraryId)}</span></div>
+        <span class="branch-availability-count">${availableLabel} · ${copyLabel}</span>
+      </div>
+      ${contactMarkup(branch.contact)}
+    </article>`;
+  }
+
   function renderAvailability(data) {
     const target = root.querySelector('[data-island-status]');
     if (!target) return;
@@ -48,25 +68,32 @@
       .sort(([a], [b]) => islandOrder.indexOf(a) - islandOrder.indexOf(b));
 
     target.innerHTML = islands.map(([code, island]) => {
-      const libraries = Object.entries(island.libraries || {}).map(([libraryId, library]) => {
-        const branches = Object.entries(library.branches || {}).map(([branchId, branch]) => {
-          const availableLabel = branch.available === 1 ? '1 disponible' : `${branch.available || 0} disponibles`;
-          const copyLabel = branch.copies === 1 ? '1 ejemplar' : `${branch.copies || 0} ejemplares`;
-          return `<article class="branch-availability">
-            <div class="branch-availability-head">
-              <div><strong>${esc(branch.name || `Sucursal ${branchId}`)}</strong><span class="catalog-sub">${esc(library.name || libraryId)}</span></div>
-              <span class="branch-availability-count">${availableLabel} · ${copyLabel}</span>
-            </div>
-            ${contactMarkup(branch.contact)}
-          </article>`;
-        }).join('');
-        return branches;
-      }).join('');
+      const municipalities = new Map();
+      Object.entries(island.libraries || {}).forEach(([libraryId, library]) => {
+        const municipality = municipalityName(library.name);
+        if (!municipalities.has(municipality)) municipalities.set(municipality, {copies:0, available:0, libraries:[]});
+        const group = municipalities.get(municipality);
+        group.copies += Number(library.copies || 0);
+        group.available += Number(library.available || 0);
+        group.libraries.push([libraryId, library]);
+      });
 
-      return `<section class="island-availability" data-island="${esc(code)}">
-        <h4>${esc(island.name || code)} <span>${island.available || 0} disponibles de ${island.copies || 0}</span></h4>
-        <div class="branch-availability-list">${libraries}</div>
-      </section>`;
+      const municipalityMarkup = [...municipalities.entries()]
+        .sort(([a],[b]) => a.localeCompare(b, 'es'))
+        .map(([municipality, group]) => {
+          const branches = group.libraries.map(([libraryId, library]) =>
+            Object.entries(library.branches || {}).map(([branchId, branch]) => renderBranch(libraryId, library, branchId, branch)).join('')
+          ).join('');
+          return `<details class="municipality-availability">
+            <summary><span>${esc(municipality)}</span><span>${group.available} disponibles de ${group.copies}</span></summary>
+            <div class="branch-availability-list">${branches}</div>
+          </details>`;
+        }).join('');
+
+      return `<details class="island-availability" data-island="${esc(code)}">
+        <summary><span>${esc(island.name || code)}</span><span>${island.available || 0} disponibles de ${island.copies || 0}</span></summary>
+        <div class="municipality-list">${municipalityMarkup}</div>
+      </details>`;
     }).join('');
 
     const updated = root.querySelector('[data-updated]');
@@ -90,7 +117,7 @@
 
       const tbody = root.querySelector('[data-editions-body]');
       if (tbody) {
-        tbody.innerHTML = (data.editions || []).map(ed => `<tr><td><a href="${esc(ed.permalink)}" target="_blank" rel="noopener noreferrer">${esc(ed.bica_id)}</a></td><td>${esc(ed.publication)}</td><td>${esc(ed.isbn || '—')}</td><td>${esc(ed.copies ?? '—')}</td><td><strong>${esc(ed.available ?? '—')}</strong></td></tr>`).join('');
+        tbody.innerHTML = (data.editions || []).map(ed => `<tr><td><a href="${esc(ed.permalink)}" target="_blank" rel="noopener noreferrer">${esc(ed.bica_id)}</a></td><td>${esc(ed.publication)}</td><td>${esc(ed.isbn || '—')}</td><td>${esc(ed.copies ?? '—')}</td><td><strong>${esc(ed.available ?? '—')}</strong></td><td><a class="bica-reserve-link" href="${esc(ed.permalink)}" target="_blank" rel="noopener noreferrer">Ver y reservar en RED BICA</a></td></tr>`).join('');
       }
 
       if (availabilitySource && workSlug) {
