@@ -7,9 +7,6 @@
   const workSlug = root.getAttribute('data-work-slug');
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-  // Cruce validado con el selector geográfico de RED BICA. El texto libre de
-  // algunas cabeceras de holdings puede quedar asociado al bloque anterior, por
-  // lo que el municipio se obtiene del ID de red y no de ese texto.
   const NETWORK_MUNICIPALITY = {
     EH03:'El Pinar',EH00:'Frontera',EH01:'Valverde',
     FV03:'Antigua',FV04:'Betancuria',FV01:'La Oliva',FV02:'Puerto del Rosario',FV00:'Puerto del Rosario',FV05:'Pájara',FV07:'Tuineje',FV06:'Tuineje',
@@ -40,6 +37,24 @@
     return `<span class="availability-pill availability-${state}" aria-label="${a} disponibles de ${c}">${a}/${c}</span>`;
   }
 
+  function normalizeBookData(raw) {
+    if (!Array.isArray(raw?.works)) return raw;
+    const work = raw.works.find(item => item.slug === workSlug);
+    if (!work) throw new Error(`Obra no encontrada: ${workSlug}`);
+    return {
+      generated_at: raw.generated_at,
+      last_checked: work.last_checked || raw.last_checked,
+      summary: {
+        bica_records: work.bica_records,
+        copies: work.copies,
+        available: work.available,
+        isbn_count: work.isbn_count
+      },
+      archive: work.archive || [],
+      editions: work.editions || []
+    };
+  }
+
   function contactMarkup(contact) {
     if (!contact) return '<p class="branch-contact-pending">Contacto y horario pendientes de verificar.</p>';
     const bits = [];
@@ -59,11 +74,25 @@
     return library?.municipality || NETWORK_MUNICIPALITY[libraryId] || 'Otros centros';
   }
 
-  function libraryDisplayName(branchId, branch) {
-    const raw = String(branch?.name || '').trim();
-    if (!raw) return `Biblioteca ${branchId}`;
-    if (/\b(biblioteca|centro bibliotecario|instituto|universidad|archivo)\b/i.test(raw)) return raw;
-    return `Biblioteca de ${raw}`;
+  function libraryDisplay(libraryId, library, branchId, branch) {
+    const municipality = municipalityFor(libraryId, library);
+    const branchName = String(branch?.name || '').trim();
+    const networkName = String(library?.name || '').trim();
+
+    if (/\b(biblioteca|centro bibliotecario|instituto|universidad|archivo)\b/i.test(branchName)) {
+      return {name: branchName, meta: municipality};
+    }
+
+    // El parser diario puede recibir una cabecera de red desplazada; por eso no
+    // tratamos ese texto como nombre de sucursal. Mostramos una denominación
+    // funcional y el punto de servicio por separado hasta tener directorio oficial.
+    const generic = networkName && /biblioteca pública municipal/i.test(networkName)
+      ? `Biblioteca Pública Municipal de ${municipality}`
+      : `Biblioteca pública de ${municipality}`;
+    return {
+      name: generic,
+      meta: branchName ? `Sede: ${branchName}` : `Punto BICA ${branchId}`
+    };
   }
 
   function buildBranchRecordMap(data) {
@@ -79,10 +108,7 @@
           if (seen.has(key)) return;
           seen.add(key);
           if (!map.has(key)) map.set(key, []);
-          map.get(key).push({
-            bica_id: record.bica_id,
-            permalink: record.permalink
-          });
+          map.get(key).push({bica_id: record.bica_id, permalink: record.permalink});
         });
       });
     return map;
@@ -95,15 +121,14 @@
       const record = records[0];
       return `<p class="branch-bica-link"><a class="bica-reserve-link" href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer">Consultar y reservar en RED BICA</a></p>`;
     }
-    return `<div class="branch-bica-link"><span class="catalog-sub">Registros de esta biblioteca en RED BICA</span>${records.map(record => `<a class="bica-reserve-link" href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer">Ficha ${esc(record.bica_id)}</a>`).join(' · ')}</div>`;
+    return `<div class="branch-bica-link"><span class="catalog-sub">Ediciones disponibles en este punto</span>${records.map(record => `<a class="bica-reserve-link" href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer">Ficha BICA ${esc(record.bica_id)}</a>`).join(' · ')}</div>`;
   }
 
   function renderBranch(branchRecordMap, libraryId, library, branchId, branch) {
-    const municipality = municipalityFor(libraryId, library);
-    const displayName = libraryDisplayName(branchId, branch);
+    const label = libraryDisplay(libraryId, library, branchId, branch);
     return `<article class="branch-availability">
       <div class="branch-availability-head">
-        <div><strong>${esc(displayName)}</strong><span class="catalog-sub">${esc(municipality)}</span></div>
+        <div><strong>${esc(label.name)}</strong><span class="catalog-sub">${esc(label.meta)}</span></div>
         ${availabilityMarkup(branch.available, branch.copies)}
       </div>
       ${branchBicaLinks(branchRecordMap, libraryId, branchId)}
@@ -116,7 +141,7 @@
     if (!target) return;
     const work = data?.works?.[workSlug];
     if (!work || !Object.keys(work.islands || {}).length) {
-      target.innerHTML = '<p>El desglose por isla se activará tras la primera actualización diaria de RED BICA.</p>';
+      target.innerHTML = '<p>No hay desglose geográfico disponible para esta obra.</p>';
       return;
     }
 
@@ -162,7 +187,8 @@
 
   fetch(source, {credentials:'same-origin'})
     .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-    .then(data => {
+    .then(raw => {
+      const data = normalizeBookData(raw);
       root.querySelectorAll('[data-value]').forEach(el => {
         const key = el.getAttribute('data-value');
         if (key in (data.summary || {})) el.textContent = data.summary[key];
@@ -172,7 +198,7 @@
 
       const resources = root.querySelector('[data-archive-resources]');
       if (resources) {
-        resources.innerHTML = (data.archive || []).map(item => `<li><strong>${esc(item.title)}</strong><br><span class="catalog-sub">Internet Archive · ${esc(item.type)}</span><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">Consultar recurso</a></li>`).join('') || '<li>No hay recurso digital enlazado.</li>';
+        resources.innerHTML = (data.archive || []).map(item => `<li><strong>${esc(item.title)}</strong><br><span class="catalog-sub">Internet Archive · ${esc(item.type)}</span><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">Consultar recurso</a></li>`).join('') || '<li>No hemos verificado todavía un recurso gratuito de lectura online para esta obra.</li>';
       }
 
       const tbody = root.querySelector('[data-editions-body]');
