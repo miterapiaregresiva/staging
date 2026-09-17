@@ -36,6 +36,8 @@
 .book-editions-inline li{padding:.32rem .52rem;border:1px solid rgba(55,35,61,.12);border-radius:999px;background:#fff}
 .book-editions-inline strong{color:inherit}
 .book-summary{max-width:var(--measure);font-size:1.02rem;line-height:1.7}
+.book-story{max-width:none;font-size:1.02rem;line-height:1.75}
+.book-story p{max-width:none}
 .book-language{display:flex;align-items:center;gap:.5rem;margin:.9rem 0 0;color:var(--muted);font-size:.9rem}
 .book-language .tag{margin:0}
 .ttl-buy-card{display:flex;align-items:center;gap:1rem;max-width:680px;padding:1rem 1.1rem;border:1px solid rgba(55,35,61,.14);border-radius:14px;background:#fff;text-decoration:none;color:inherit}
