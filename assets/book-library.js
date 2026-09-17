@@ -7,9 +7,9 @@
   const workSlug = root.getAttribute('data-work-slug');
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-  // Cruce validado con el selector geográfico de RED BICA. No derivar el
-  // municipio del texto libre de la cabecera de cada bloque de ejemplares:
-  // ese texto puede quedar asociado a otro bloque en el HTML de OpacDiscovery.
+  // Cruce validado con el selector geográfico de RED BICA. El texto libre de
+  // algunas cabeceras de holdings puede quedar asociado al bloque anterior, por
+  // lo que el municipio se obtiene del ID de red y no de ese texto.
   const NETWORK_MUNICIPALITY = {
     EH03:'El Pinar',EH00:'Frontera',EH01:'Valverde',
     FV03:'Antigua',FV04:'Betancuria',FV01:'La Oliva',FV02:'Puerto del Rosario',FV00:'Puerto del Rosario',FV05:'Pájara',FV07:'Tuineje',FV06:'Tuineje',
@@ -59,13 +59,54 @@
     return library?.municipality || NETWORK_MUNICIPALITY[libraryId] || 'Otros centros';
   }
 
-  function renderBranch(libraryId, library, branchId, branch) {
+  function libraryDisplayName(branchId, branch) {
+    const raw = String(branch?.name || '').trim();
+    if (!raw) return `Biblioteca ${branchId}`;
+    if (/\b(biblioteca|centro bibliotecario|instituto|universidad|archivo)\b/i.test(raw)) return raw;
+    return `Biblioteca de ${raw}`;
+  }
+
+  function buildBranchRecordMap(data) {
+    const map = new Map();
+    (data?.records || [])
+      .filter(record => record.work_slug === workSlug)
+      .forEach(record => {
+        const seen = new Set();
+        (record.copies || []).forEach(copy => {
+          const libraryId = copy.library_id || 'UNKNOWN';
+          const branchId = copy.branch_id || 'UNKNOWN';
+          const key = `${libraryId}:${branchId}`;
+          if (seen.has(key)) return;
+          seen.add(key);
+          if (!map.has(key)) map.set(key, []);
+          map.get(key).push({
+            bica_id: record.bica_id,
+            permalink: record.permalink
+          });
+        });
+      });
+    return map;
+  }
+
+  function branchBicaLinks(branchRecordMap, libraryId, branchId) {
+    const records = branchRecordMap.get(`${libraryId}:${branchId}`) || [];
+    if (!records.length) return '';
+    if (records.length === 1) {
+      const record = records[0];
+      return `<p class="branch-bica-link"><a class="bica-reserve-link" href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer">Consultar y reservar en RED BICA</a></p>`;
+    }
+    return `<div class="branch-bica-link"><span class="catalog-sub">Registros de esta biblioteca en RED BICA</span>${records.map(record => `<a class="bica-reserve-link" href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer">Ficha ${esc(record.bica_id)}</a>`).join(' · ')}</div>`;
+  }
+
+  function renderBranch(branchRecordMap, libraryId, library, branchId, branch) {
     const municipality = municipalityFor(libraryId, library);
+    const displayName = libraryDisplayName(branchId, branch);
     return `<article class="branch-availability">
       <div class="branch-availability-head">
-        <div><strong>${esc(branch.name || `Sucursal ${branchId}`)}</strong><span class="catalog-sub">${esc(municipality)}</span></div>
+        <div><strong>${esc(displayName)}</strong><span class="catalog-sub">${esc(municipality)}</span></div>
         ${availabilityMarkup(branch.available, branch.copies)}
       </div>
+      ${branchBicaLinks(branchRecordMap, libraryId, branchId)}
       ${contactMarkup(branch.contact)}
     </article>`;
   }
@@ -79,6 +120,7 @@
       return;
     }
 
+    const branchRecordMap = buildBranchRecordMap(data);
     const islandOrder = ['TF','GC','LZ','FV','LP','LG','EH'];
     const islands = Object.entries(work.islands || {})
       .filter(([code]) => code !== 'UNKNOWN')
@@ -95,13 +137,14 @@
         group.libraries.push([libraryId, library]);
       });
 
+      const autoOpenMunicipality = municipalities.size === 1;
       const municipalityMarkup = [...municipalities.entries()]
         .sort(([a],[b]) => a.localeCompare(b, 'es'))
         .map(([municipality, group]) => {
           const branches = group.libraries.map(([libraryId, library]) =>
-            Object.entries(library.branches || {}).map(([branchId, branch]) => renderBranch(libraryId, library, branchId, branch)).join('')
+            Object.entries(library.branches || {}).map(([branchId, branch]) => renderBranch(branchRecordMap, libraryId, library, branchId, branch)).join('')
           ).join('');
-          return `<details class="municipality-availability">
+          return `<details class="municipality-availability"${autoOpenMunicipality ? ' open' : ''}>
             <summary><span>${esc(municipality)}</span>${availabilityMarkup(group.available, group.copies)}</summary>
             <div class="branch-availability-list">${branches}</div>
           </details>`;
