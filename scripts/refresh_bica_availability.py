@@ -13,7 +13,6 @@ import random
 import re
 import sys
 import time
-from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -23,6 +22,7 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[1]
 SEED_PATH = ROOT / "data/bica/brian-weiss-records.json"
+CONTACTS_PATH = ROOT / "data/bica/library-contacts.json"
 CATALOG_PATH = ROOT / "data/library/brian-weiss.json"
 AVAILABILITY_PATH = ROOT / "data/availability/brian-weiss.json"
 LAZOS_PATH = ROOT / "data/books/lazos-de-amor.json"
@@ -38,6 +38,7 @@ ISLANDS = {
     "LG": "La Gomera",
     "EH": "El Hierro",
 }
+CONTACT_FIELDS = ("address", "phone", "email", "opening_hours", "source_url", "last_verified")
 
 
 def permalink(bica_id: str) -> str:
@@ -137,7 +138,12 @@ def island_from_library_id(library_id: str | None) -> tuple[str | None, str | No
     return (prefix, ISLANDS.get(prefix)) if prefix in ISLANDS else (None, None)
 
 
-def parse_record(html: str, bica_id: str, work_slug: str, url: str) -> dict:
+def contact_for(directory: dict, branch_id: str | None) -> dict:
+    source = directory.get("branches", {}).get(str(branch_id), {}) if branch_id else {}
+    return {field: source.get(field) for field in CONTACT_FIELDS}
+
+
+def parse_record(html: str, bica_id: str, work_slug: str, url: str, directory: dict) -> dict:
     soup = BeautifulSoup(html, "html.parser")
     copies: list[dict] = []
     locations = soup.select(".copy-location")
@@ -190,14 +196,7 @@ def parse_record(html: str, bica_id: str, work_slug: str, url: str) -> dict:
                         "type": text(row.select_one(".typeDescription .txt")),
                         "media": text(row.select_one(".mediaDescription .txt")),
                         "situation": labelled_value(row, "Situación ejemplar"),
-                        # Directorio de contacto: se completa con fuentes fiables aparte.
-                        "contact": {
-                            "address": None,
-                            "phone": None,
-                            "email": None,
-                            "opening_hours": None,
-                            "last_verified": None,
-                        },
+                        "contact": contact_for(directory, row_branch_id),
                     }
                 )
 
@@ -325,6 +324,7 @@ def write_json(path: Path, value: dict) -> None:
 
 def main() -> int:
     seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
+    directory = json.loads(CONTACTS_PATH.read_text(encoding="utf-8")) if CONTACTS_PATH.exists() else {"branches": {}}
     tasks = [
         (slug, str(bica_id))
         for slug, ids in seed.get("works", {}).items()
@@ -339,7 +339,7 @@ def main() -> int:
         print(f"[{index:03d}/{len(tasks):03d}] BICA {bica_id}")
         try:
             html = fetch_html(url)
-            records.append(parse_record(html, bica_id, work_slug, url))
+            records.append(parse_record(html, bica_id, work_slug, url, directory))
         except Exception as exc:  # keep crawling to report every transient failure
             failures.append(f"{bica_id}: {exc}")
         if index != len(tasks):
