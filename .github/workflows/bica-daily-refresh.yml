@@ -1,6 +1,11 @@
 name: RED BICA daily availability
 
 on:
+  push:
+    paths:
+      - 'scripts/refresh_bica_availability.py'
+      - 'data/bica/brian-weiss-records.json'
+      - '.github/workflows/bica-daily-refresh.yml'
   schedule:
     # 05:15 UTC = 05:15/06:15 en Canarias según horario de invierno/verano.
     - cron: '15 5 * * *'
