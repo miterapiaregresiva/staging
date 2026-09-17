@@ -6,7 +6,7 @@ Estado: **EN VALIDACIÓN — SIN NUEVO REDISEÑO**.
 
 ## Objetivo
 
-Cerrar staging como candidato a producción después de los Sprints 06–09 y de la materialización posterior de la interfaz estática. Este sprint no introduce nuevas decisiones visuales salvo correcciones de regresiones objetivas.
+Cerrar staging como candidato a producción después de los Sprints 06–09 y de la materialización posterior de la interfaz estática. Este sprint no introduce nuevas decisiones visuales salvo correcciones de regresiones objetivas y el cierre editorial necesario para que autores/biblioteca lleguen a producción con una arquitectura coherente.
 
 Principio rector: **estabilizar antes de seguir ampliando**.
 
@@ -24,6 +24,34 @@ Los siguientes ajustes forman parte de este sprint de facto y deben validarse co
 - restauración del patrón editorial de lecturas relacionadas;
 - reducción de dependencia de construcción dinámica de interfaz.
 
+## Cierre editorial de autores y obras
+
+Antes del release se ha simplificado la arquitectura de la biblioteca:
+
+- [x] La unidad pública principal es la **ficha de autor**.
+- [x] Las obras seleccionadas se muestran como tarjetas visuales dentro de cada autor.
+- [x] Se utilizan portadas locales ya disponibles y con procedencia identificada cuando existen.
+- [x] Cuando no existe una portada verificada se utiliza un placeholder explícito; no se inventan carátulas ni se incorporan imágenes de procedencia dudosa.
+- [x] Se han retirado los enlaces internos hacia `/autores/.../libros/.../`.
+- [x] Se han retirado del sitemap todas las URLs individuales de libros.
+- [x] Se han eliminado del branch de staging los HTML de las antiguas páginas e índices `/libros/`; su historial permanece recuperable en Git.
+- [x] Brian Weiss muestra portadas locales disponibles en sus obras seleccionadas.
+- [x] Michael Newton, Roger J. Woolger, Morris Netherton, Edith Fiore, Hans TenDam, Winafred Blake Lucas y Joel L. Whitton muestran sus obras en la propia ficha sin páginas individuales.
+- [ ] Sustituir placeholders de autores por retratos reutilizables verificados cuando se localicen.
+- [ ] Aprovechar en los índices el retrato local ya disponible de Ian Stevenson.
+- [ ] Incorporar localmente el retrato reutilizable ya identificado de Raymond A. Moody, evitando hotlink cuando sea posible.
+
+### Regla para futuras páginas de libros
+
+No se volverá a crear una página individual de una obra solo por existir en la bibliografía. Una futura ficha de libro deberá aportar, como mínimo:
+
+1. resumen propio y útil de la obra;
+2. datos bibliográficos contrastados;
+3. explicación de su relación con el autor y con el contexto de la biblioteca;
+4. fuentes de consulta;
+5. portada con procedencia/licencia documentada o una alternativa gráfica legítima;
+6. suficiente contenido original para justificar una URL independiente.
+
 ## Comprobaciones de código realizadas al abrir el sprint
 
 - [x] `assets/site.js` ya no construye header, footer, WhatsApp ni enlaces editoriales: solo gestiona menú móvil y cierre accesible de créditos de imagen.
@@ -33,6 +61,7 @@ Los siguientes ajustes forman parte de este sprint de facto y deben validarse co
 - [x] `robots.txt` existe y apunta al sitemap de producción.
 - [x] `sitemap.xml` existe y contiene URLs canónicas de `https://miterapiaregresiva.com/`.
 - [x] La portada ya incorpora `srcset`/`sizes` en imágenes principales visibles en cards.
+- [x] Una búsqueda de código no devuelve referencias internas a `libros/` tras retirar las fichas individuales.
 
 ## P0 — Validación funcional y visual
 
@@ -55,8 +84,9 @@ Validar sin introducir cambios de diseño salvo defecto reproducible.
 - [ ] `/articulos/`.
 - [ ] un artículo largo.
 - [ ] `/biblioteca-de-terapia-regresiva/`.
-- [ ] una ficha de autor.
-- [ ] una ficha de libro.
+- [ ] `/autores/`.
+- [ ] una ficha de autor con retrato real y varias portadas.
+- [ ] una ficha de autor con placeholders de retrato/obra.
 - [ ] `/contacto/`.
 - [ ] `404.html`.
 
@@ -107,7 +137,7 @@ Antes de promocionar a producción:
 - nuevas fuentes, colores o layouts;
 - nuevas páginas de contenido salvo corrección necesaria;
 - calendario editorial de Instagram;
-- ampliación de la biblioteca;
+- nuevas páginas individuales de libros;
 - nuevas optimizaciones SEO de contenido.
 
 ## Criterio de cierre
