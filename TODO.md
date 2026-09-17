@@ -104,6 +104,55 @@ No crear una URL independiente solo porque una obra aparezca en la bibliografía
 - portada con procedencia documentada o alternativa gráfica legítima;
 - suficiente contenido original para justificar una página propia.
 
+### Backlog SEO/editorial — cómo leer y localizar libros de terapia regresiva en Canarias
+
+Objetivo: convertir la biblioteca en un punto útil de acceso a las obras, sin transformarla en un repositorio de copias ni en un listado de enlaces sin contexto. Aprovechar además este contenido para cubrir búsquedas informativas y locales relacionadas con terapia regresiva, regresión e hipnosis regresiva en Canarias y Tenerife.
+
+#### Enlaces de lectura y disponibilidad por obra
+
+- [ ] Añadir en cada obra seleccionada una sección o bloque de **Dónde leer / consultar** cuando exista información verificable.
+- [ ] Buscar primero fuentes legales de lectura o préstamo online: Internet Archive cuando la edición sea consultable legítimamente, Open Library, Google Books cuando ofrezca vista parcial o completa, HathiTrust u otras bibliotecas digitales pertinentes.
+- [ ] Evitar enlazar copias no autorizadas o repositorios de procedencia dudosa.
+- [ ] Buscar cada título y sus variantes en español/inglés en el catálogo de la **Red de Bibliotecas Públicas de Canarias / BICA** y enlazar la ficha de catálogo cuando exista.
+- [ ] Comprobar disponibilidad en bibliotecas de Tenerife y, cuando sea útil, de otras islas; distinguir disponibilidad actual de mera existencia en catálogo.
+- [ ] Indicar de forma clara el tipo de acceso: `Leer online`, `Vista parcial`, `Préstamo`, `Consultar catálogo`, `No encontrado`.
+- [ ] Registrar ISBN, edición o título original cuando sea necesario para evitar confundir traducciones o ediciones distintas.
+- [ ] Mantener los enlaces externos como complemento de la ficha del autor, no como sustituto de contenido propio.
+
+#### Nueva guía/página SEO local
+
+- [ ] Investigar y plantear una página propia del tipo **“Dónde leer libros sobre terapia regresiva y regresiones en Canarias”** o **“Libros de terapia regresiva en Canarias: bibliotecas y lectura online”**.
+- [ ] La página debe resolver una intención real: cómo encontrar estos libros desde Canarias, qué títulos introductorios existen, qué autores aparecen en la biblioteca del sitio y cómo consultar su disponibilidad legal.
+- [ ] Enlazar internamente a las fichas de autores y, desde ellas, volver a la guía de lectura cuando tenga sentido.
+- [ ] Incluir un apartado específico sobre búsqueda en la red pública de bibliotecas de Canarias y posibles servicios de préstamo interbibliotecario si se verifican.
+- [ ] No forzar keywords ni presentar la disponibilidad de un libro como recomendación terapéutica.
+- [ ] Diferenciar claramente literatura sobre terapia regresiva, hipnosis/regresión, investigación de recuerdos espontáneos y experiencias cercanas a la muerte.
+- [ ] Valorar FAQ propias para long-tail: `¿Hay libros de terapia regresiva en bibliotecas de Canarias?`, `¿Dónde leer a Brian Weiss en Canarias?`, `¿Dónde encontrar libros de Michael Newton?`, `¿Se pueden leer libros de regresión online legalmente?`.
+
+#### Línea base de Google Search Console — 17/09/2026
+
+Datos aportados para orientar el backlog; conservarlos como referencia y volver a comparar después de publicar contenidos específicos:
+
+| Query | Clicks | Impressions |
+|---|---:|---:|
+| terapia regresiva | 0 | 32 |
+| terapia de regresion | 0 | 9 |
+| regresiva | 0 | 8 |
+| terapia regresiva tenerife | 0 | 7 |
+| que es la hipnosis regresiva | 0 | 7 |
+| hipnosis regresiva que es | 0 | 7 |
+| terapia regresiva canarias | 0 | 5 |
+| terapia regresion canarias | 0 | 4 |
+| terapia de regresion en canarias | 0 | 4 |
+| terapia regresion tenerife | 0 | 4 |
+
+#### Oportunidades de contenido derivadas de esa línea base
+
+- [ ] Reforzar contenidos informativos que respondan de forma directa a `qué es la hipnosis regresiva` / `hipnosis regresiva qué es`, evitando crear páginas duplicadas respecto a terapia regresiva vs. regresión.
+- [ ] Crear contenido local útil para `terapia regresiva Canarias`, `terapia de regresión en Canarias` y variantes, sin páginas doorway por isla o municipio.
+- [ ] Usar la guía de libros/bibliotecas para ampliar cobertura semántica alrededor de `terapia regresiva Canarias` mediante contenido genuinamente local y verificable.
+- [ ] Revisar Search Console tras indexación y comparar impresiones, clics, CTR y consultas nuevas respecto a esta línea base.
+
 ## Backlog posterior a producción — Instagram
 
 Objetivo: reutilizar el contenido del sitio para construir una cuenta coherente sin convertir Instagram en una fuente editorial separada de la web.
