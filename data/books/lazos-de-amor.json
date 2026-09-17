@@ -1,33 +1,277 @@
 {
-  "schema_version":"1.0",
-  "generated_at":"2026-09-17",
-  "refresh_target":"daily",
-  "work":{"title":"Lazos de amor","slug":"lazos-de-amor","author":"Brian Weiss","author_url":"/autores/brian-weiss/","languages":["es"]},
-  "summary":{"bica_records":23,"copies":86,"available":81,"isbn_count":11,"islands":{}},
-  "archive":[{"id":"lazosdeamor0000bria","title":"Lazos de Amor","type":"Text","url":"https://archive.org/details/lazosdeamor0000bria","match":"direct"}],
-  "editions":[
-    {"bica_id":"1360504","title":"Lazos de amor","isbn":"9788416076604","publication":"Barcelona : Vergara, 2020.","copies":2,"available":1,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMTM2MDUwNA"},
-    {"bica_id":"1342795","title":"Lazos de amor","isbn":"9788496581081","publication":"Barcelona : B de Bolsillo, 2023.","copies":1,"available":1,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMTM0Mjc5NQ"},
-    {"bica_id":"240938","title":"Lazos de amor","isbn":"8440660847","publication":"Barcelona : Ediciones B, 2001.","copies":7,"available":6,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTM4"},
-    {"bica_id":"240939","title":"Lazos de amor","isbn":"8440660847","publication":"Barcelona : Ediciones B, 1997.","copies":3,"available":3,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTM5"},
-    {"bica_id":"240940","title":"Lazos de amor","isbn":"8440660847","publication":"Barcelona : Ediciones B, 1998.","copies":1,"available":0,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQw"},
-    {"bica_id":"240941","title":"Lazos de amor","isbn":"8440660847","publication":"Barcelona : Ediciones B, 2002.","copies":4,"available":3,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQx"},
-    {"bica_id":"240942","title":"Lazos de amor","isbn":"8466307133","publication":"Madrid : Suma de Letras, [2002]","copies":2,"available":2,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQy"},
-    {"bica_id":"240943","title":"Lazos de amor","isbn":"8495501295","publication":"Barcelona : Suma de Letras, 2000.","copies":6,"available":6,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQz"},
-    {"bica_id":"240944","title":"Lazos de amor","isbn":"846661642X","publication":"Barcelona : Ediciones B, 2004.","copies":7,"available":6,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQ0"},
-    {"bica_id":"363069","title":"Lazos de amor","isbn":"9788496581081","publication":"Barcelona : Ediciones B para el sello Zeta Bolsillo, 2009.","copies":4,"available":4,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMzYzMDY5"},
-    {"bica_id":"398210","title":"Lazos de amor","isbn":"8440670745","publication":"Barcelona : Ediciones B, 1997.","copies":4,"available":4,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMzk4MjEw"},
-    {"bica_id":"398211","title":"Lazos de amor","isbn":"8466309284","publication":"Madrid : Suma de Letras, [2002]","copies":2,"available":2,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMzk4MjEx"},
-    {"bica_id":"603059","title":"Lazos de amor","isbn":"9788496581081","publication":"Barcelona : Zeta Bolsillo, 2010.","copies":4,"available":4,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjAzMDU5"},
-    {"bica_id":"541933","title":"Lazos de amor","isbn":"8495501295","publication":"Barcelona : Suma de Letras, 2000.","copies":6,"available":6,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNTQxOTMz"},
-    {"bica_id":"541934","title":"Lazos de amor","isbn":"8447346994","publication":"Barcelona : RBA, D.L. 2006.","copies":9,"available":9,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNTQxOTM0"},
-    {"bica_id":"541935","title":"Lazos de amor","isbn":"849658108X","publication":"Barcelona : Ediciones B para el sello Zeta Bolsillo, 2006.","copies":5,"available":5,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNTQxOTM1"},
-    {"bica_id":"541937","title":"Lazos de amor","isbn":"9788496581081","publication":"Barcelona : Ediciones B, 2007.","copies":3,"available":3,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNTQxOTM3"},
-    {"bica_id":"639269","title":"Lazos de amor : El hombre que se ha atrevido a devolvernos nuestras vidas pasadas","isbn":"8495501295","publication":"Madrid : Edic. B, 2002.","copies":5,"available":5,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjM5MjY5"},
-    {"bica_id":"639270","title":"Lazos de amor. : El hombre que se ha atrevido a devolvernos nuestras vidas pasadas.","isbn":"8440660847","publication":"Barcelona : Ediciones B. Grupo Z., 2005.","copies":1,"available":1,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjM5Mjcw"},
-    {"bica_id":"639273","title":"Lazos de amor","isbn":"8495501295","publication":"[Barcelona] : Ediciones B, 2003.","copies":1,"available":1,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjM5Mjcz"},
-    {"bica_id":"689383","title":"Lazos de amor","isbn":"8440670745","publication":"Barcelona : Ediciones B, 1998.","copies":2,"available":2,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjg5Mzgz"},
-    {"bica_id":"689528","title":"Lazos de amor","isbn":"8440680368","publication":"Barcelona : Ediciones B, 1999.","copies":5,"available":5,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjg5NTI4"},
-    {"bica_id":"889208","title":"Lazos de amor","isbn":"8440660847","publication":"Barcelona : Ediciones B, 1996.","copies":2,"available":2,"permalink":"https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvODg5MjA4"}
-  ]
+  "schema_version": "1.0",
+  "generated_at": "2026-09-17",
+  "refresh_target": "daily",
+  "work": {
+    "title": "Lazos de amor",
+    "slug": "lazos-de-amor",
+    "author": "Brian Weiss",
+    "author_url": "/autores/brian-weiss/",
+    "languages": [
+      "es"
+    ]
+  },
+  "summary": {
+    "bica_records": 23,
+    "copies": 86,
+    "available": 81,
+    "isbn_count": 11,
+    "islands": {
+      "GC": {
+        "name": "Gran Canaria",
+        "copies": 27,
+        "available": 24
+      },
+      "LZ": {
+        "name": "Lanzarote",
+        "copies": 14,
+        "available": 13
+      },
+      "FV": {
+        "name": "Fuerteventura",
+        "copies": 8,
+        "available": 8
+      },
+      "TF": {
+        "name": "Tenerife",
+        "copies": 30,
+        "available": 29
+      },
+      "LP": {
+        "name": "La Palma",
+        "copies": 5,
+        "available": 5
+      },
+      "LG": {
+        "name": "La Gomera",
+        "copies": 1,
+        "available": 1
+      },
+      "EH": {
+        "name": "El Hierro",
+        "copies": 1,
+        "available": 1
+      }
+    }
+  },
+  "archive": [
+    {
+      "id": "lazosdeamor0000bria",
+      "title": "Lazos de Amor",
+      "type": "Text",
+      "url": "https://archive.org/details/lazosdeamor0000bria",
+      "match": "direct"
+    }
+  ],
+  "editions": [
+    {
+      "bica_id": "1360504",
+      "title": "Lazos de amor",
+      "isbn": "9788416076604",
+      "publication": "Barcelona : Vergara, 2020.",
+      "copies": 2,
+      "available": 1,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMTM2MDUwNA"
+    },
+    {
+      "bica_id": "1342795",
+      "title": "Lazos de amor",
+      "isbn": "9788496581081",
+      "publication": "Barcelona : B de Bolsillo, 2023.",
+      "copies": 1,
+      "available": 1,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMTM0Mjc5NQ"
+    },
+    {
+      "bica_id": "240938",
+      "title": "Lazos de amor",
+      "isbn": "8440660847",
+      "publication": "Barcelona : Ediciones B, 2001.",
+      "copies": 7,
+      "available": 6,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTM4"
+    },
+    {
+      "bica_id": "240939",
+      "title": "Lazos de amor",
+      "isbn": "8440660847",
+      "publication": "Barcelona : Ediciones B, 1997.",
+      "copies": 3,
+      "available": 3,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTM5"
+    },
+    {
+      "bica_id": "240940",
+      "title": "Lazos de amor",
+      "isbn": "8440660847",
+      "publication": "Barcelona : Ediciones B, 1998.",
+      "copies": 1,
+      "available": 0,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQw"
+    },
+    {
+      "bica_id": "240941",
+      "title": "Lazos de amor",
+      "isbn": "8440660847",
+      "publication": "Barcelona : Ediciones B, 2002.",
+      "copies": 4,
+      "available": 3,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQx"
+    },
+    {
+      "bica_id": "240942",
+      "title": "Lazos de amor",
+      "isbn": "8466307133",
+      "publication": "Madrid : Suma de Letras, [2002]",
+      "copies": 2,
+      "available": 2,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQy"
+    },
+    {
+      "bica_id": "240943",
+      "title": "Lazos de amor",
+      "isbn": "8495501295",
+      "publication": "Barcelona : Suma de Letras, 2000.",
+      "copies": 6,
+      "available": 6,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQz"
+    },
+    {
+      "bica_id": "240944",
+      "title": "Lazos de amor",
+      "isbn": "846661642X",
+      "publication": "Barcelona : Ediciones B, 2004.",
+      "copies": 7,
+      "available": 6,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMjQwOTQ0"
+    },
+    {
+      "bica_id": "363069",
+      "title": "Lazos de amor",
+      "isbn": "9788496581081",
+      "publication": "Barcelona : Ediciones B para el sello Zeta Bolsillo, 2009.",
+      "copies": 4,
+      "available": 4,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMzYzMDY5"
+    },
+    {
+      "bica_id": "398210",
+      "title": "Lazos de amor",
+      "isbn": "8440670745",
+      "publication": "Barcelona : Ediciones B, 1997.",
+      "copies": 4,
+      "available": 4,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMzk4MjEw"
+    },
+    {
+      "bica_id": "398211",
+      "title": "Lazos de amor",
+      "isbn": "8466309284",
+      "publication": "Madrid : Suma de Letras, [2002]",
+      "copies": 2,
+      "available": 2,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvMzk4MjEx"
+    },
+    {
+      "bica_id": "603059",
+      "title": "Lazos de amor",
+      "isbn": "9788496581081",
+      "publication": "Barcelona : Zeta Bolsillo, 2010.",
+      "copies": 4,
+      "available": 4,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjAzMDU5"
+    },
+    {
+      "bica_id": "541933",
+      "title": "Lazos de amor",
+      "isbn": "8495501295",
+      "publication": "Barcelona : Suma de Letras, 2000.",
+      "copies": 6,
+      "available": 6,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNTQxOTMz"
+    },
+    {
+      "bica_id": "541934",
+      "title": "Lazos de amor",
+      "isbn": "8447346994",
+      "publication": "Barcelona : RBA, D.L. 2006.",
+      "copies": 9,
+      "available": 9,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNTQxOTM0"
+    },
+    {
+      "bica_id": "541935",
+      "title": "Lazos de amor",
+      "isbn": "849658108X",
+      "publication": "Barcelona : Ediciones B para el sello Zeta Bolsillo, 2006.",
+      "copies": 5,
+      "available": 5,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNTQxOTM1"
+    },
+    {
+      "bica_id": "541937",
+      "title": "Lazos de amor",
+      "isbn": "9788496581081",
+      "publication": "Barcelona : Ediciones B, 2007.",
+      "copies": 3,
+      "available": 3,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNTQxOTM3"
+    },
+    {
+      "bica_id": "639269",
+      "title": "Lazos de amor : El hombre que se ha atrevido a devolvernos nuestras vidas pasadas",
+      "isbn": "8495501295",
+      "publication": "Madrid : Edic. B, 2002.",
+      "copies": 5,
+      "available": 5,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjM5MjY5"
+    },
+    {
+      "bica_id": "639270",
+      "title": "Lazos de amor. : El hombre que se ha atrevido a devolvernos nuestras vidas pasadas.",
+      "isbn": "8440660847",
+      "publication": "Barcelona : Ediciones B. Grupo Z., 2005.",
+      "copies": 1,
+      "available": 1,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjM5Mjcw"
+    },
+    {
+      "bica_id": "639273",
+      "title": "Lazos de amor",
+      "isbn": "8495501295",
+      "publication": "[Barcelona] : Ediciones B, 2003.",
+      "copies": 1,
+      "available": 1,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjM5Mjcz"
+    },
+    {
+      "bica_id": "689383",
+      "title": "Lazos de amor",
+      "isbn": "8440670745",
+      "publication": "Barcelona : Ediciones B, 1998.",
+      "copies": 2,
+      "available": 2,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjg5Mzgz"
+    },
+    {
+      "bica_id": "689528",
+      "title": "Lazos de amor",
+      "isbn": "8440680368",
+      "publication": "Barcelona : Ediciones B, 1999.",
+      "copies": 5,
+      "available": 5,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvNjg5NTI4"
+    },
+    {
+      "bica_id": "889208",
+      "title": "Lazos de amor",
+      "isbn": "8440660847",
+      "publication": "Barcelona : Ediciones B, 1996.",
+      "copies": 2,
+      "available": 2,
+      "permalink": "https://red-bica.bibliotecadecanarias.org/OpacDiscovery/public/catalog/detail/b2FpOmJpYmxpb2dyYXBoaWM6ZXMuYmFyYXR6LmJpY2EvODg5MjA4"
+    }
+  ],
+  "last_checked": "2026-09-17T15:52:15Z",
+  "availability_source": "/data/availability/brian-weiss.json"
 }

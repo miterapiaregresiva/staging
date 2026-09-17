@@ -1,24 +1,481 @@
 {
   "schema_version": "1.0",
   "generated_at": "2026-09-17",
-  "last_checked": null,
+  "last_checked": "2026-09-17T15:52:15Z",
   "refresh_target": "daily",
-  "author": {"name":"Brian Weiss","slug":"brian-weiss"},
+  "author": {
+    "name": "Brian Weiss",
+    "slug": "brian-weiss"
+  },
   "availability_note": "Disponibilidad actualizada una vez al día desde RED BICA. Recomendamos llamar a la biblioteca antes de desplazarse.",
   "works": [
-    {"slug":"muchas-vidas-muchos-maestros","title":"Muchas vidas, muchos maestros","languages":["es"],"bica_records":30,"copies":89,"available":83,"isbn_count":13,"islands":{},"archive":[{"id":"manylivesmanymasters_201907","title":"Many Lives Many Masters OCR re_edited copy","type":"Text","url":"https://archive.org/details/manylivesmanymasters_201907","match":"candidate_same_work"}]},
-    {"slug":"lazos-de-amor","title":"Lazos de amor","languages":["es"],"bica_records":23,"copies":86,"available":81,"isbn_count":11,"islands":{},"detail_url":"/libros/lazos-de-amor/","archive":[{"id":"lazosdeamor0000bria","title":"Lazos de Amor","type":"Text","url":"https://archive.org/details/lazosdeamor0000bria","match":"direct"}]},
-    {"slug":"a-traves-del-tiempo","title":"A través del tiempo","languages":["es"],"bica_records":16,"copies":42,"available":40,"isbn_count":11,"islands":{},"archive":[{"id":"travesdeltiempo0000bria","title":"A Traves del Tiempo","type":"Text","url":"https://archive.org/details/travesdeltiempo0000bria","match":"direct"}]},
-    {"slug":"los-mensajes-de-los-sabios","title":"Los mensajes de los sabios","languages":["es"],"bica_records":17,"copies":56,"available":55,"isbn_count":8,"islands":{},"archive":[]},
-    {"slug":"muchos-cuerpos-una-misma-alma","title":"Muchos cuerpos, una misma alma","languages":["es"],"bica_records":6,"copies":30,"available":29,"isbn_count":5,"islands":{},"archive":[]},
-    {"slug":"eliminar-el-estres","title":"Eliminar el estrés","languages":["es"],"bica_records":5,"copies":16,"available":16,"isbn_count":4,"islands":{},"archive":[{"id":"eliminar-el-estres-brian-l-weiss","title":"Eliminar El Estrés Brian L Weiss","type":"Text","url":"https://archive.org/details/eliminar-el-estres-brian-l-weiss","match":"direct"}]},
-    {"slug":"meditacion","title":"Meditación","languages":["es"],"bica_records":4,"copies":18,"available":17,"isbn_count":3,"islands":{},"archive":[]},
-    {"slug":"espejos-del-tiempo","title":"Espejos del tiempo","languages":["es"],"bica_records":5,"copies":23,"available":22,"isbn_count":3,"islands":{},"archive":[]},
-    {"slug":"los-milagros-existen","title":"Los milagros existen","languages":["es"],"bica_records":2,"copies":2,"available":2,"isbn_count":2,"islands":{},"archive":[{"id":"losmilagrosexist0000bria","title":"LOS MILAGROS EXISTEN","type":"Text","url":"https://archive.org/details/losmilagrosexist0000bria","match":"direct"},{"id":"miracleshappentr0000amye","title":"Miracles Happen: The Transformational Healing Power of Past-Life Memories","type":"Text","url":"https://archive.org/details/miracleshappentr0000amye","match":"candidate_same_work"}]},
-    {"slug":"solo-el-amor-es-real","title":"Sólo el amor es real","languages":["es"],"bica_records":1,"copies":3,"available":3,"isbn_count":1,"islands":{},"archive":[]},
-    {"slug":"muchas-vidas-y-muchos-maestros-lazos-de-amor","title":"Muchas vidas y muchos maestros ; Lazos de amor","languages":["es"],"bica_records":1,"copies":1,"available":1,"isbn_count":1,"islands":{},"archive":[]}
+    {
+      "slug": "muchas-vidas-muchos-maestros",
+      "title": "Muchas vidas, muchos maestros",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 30,
+      "copies": 89,
+      "available": 83,
+      "isbn_count": 13,
+      "islands": {
+        "FV": {
+          "name": "Fuerteventura",
+          "copies": 4,
+          "available": 4
+        },
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 33,
+          "available": 29
+        },
+        "TF": {
+          "name": "Tenerife",
+          "copies": 31,
+          "available": 30
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 14,
+          "available": 14
+        },
+        "LP": {
+          "name": "La Palma",
+          "copies": 3,
+          "available": 3
+        },
+        "EH": {
+          "name": "El Hierro",
+          "copies": 1,
+          "available": 1
+        },
+        "LG": {
+          "name": "La Gomera",
+          "copies": 3,
+          "available": 2
+        }
+      },
+      "archive": [
+        {
+          "id": "manylivesmanymasters_201907",
+          "title": "Many Lives Many Masters OCR re_edited copy",
+          "type": "Text",
+          "url": "https://archive.org/details/manylivesmanymasters_201907",
+          "match": "candidate_same_work"
+        }
+      ],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "lazos-de-amor",
+      "title": "Lazos de amor",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 23,
+      "copies": 86,
+      "available": 81,
+      "isbn_count": 11,
+      "islands": {
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 27,
+          "available": 24
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 14,
+          "available": 13
+        },
+        "FV": {
+          "name": "Fuerteventura",
+          "copies": 8,
+          "available": 8
+        },
+        "TF": {
+          "name": "Tenerife",
+          "copies": 30,
+          "available": 29
+        },
+        "LP": {
+          "name": "La Palma",
+          "copies": 5,
+          "available": 5
+        },
+        "LG": {
+          "name": "La Gomera",
+          "copies": 1,
+          "available": 1
+        },
+        "EH": {
+          "name": "El Hierro",
+          "copies": 1,
+          "available": 1
+        }
+      },
+      "detail_url": "/libros/lazos-de-amor/",
+      "archive": [
+        {
+          "id": "lazosdeamor0000bria",
+          "title": "Lazos de Amor",
+          "type": "Text",
+          "url": "https://archive.org/details/lazosdeamor0000bria",
+          "match": "direct"
+        }
+      ],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "a-traves-del-tiempo",
+      "title": "A través del tiempo",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 16,
+      "copies": 42,
+      "available": 40,
+      "isbn_count": 11,
+      "islands": {
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 10,
+          "available": 8
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 12,
+          "available": 12
+        },
+        "LP": {
+          "name": "La Palma",
+          "copies": 2,
+          "available": 2
+        },
+        "TF": {
+          "name": "Tenerife",
+          "copies": 14,
+          "available": 14
+        },
+        "FV": {
+          "name": "Fuerteventura",
+          "copies": 4,
+          "available": 4
+        }
+      },
+      "archive": [
+        {
+          "id": "travesdeltiempo0000bria",
+          "title": "A Traves del Tiempo",
+          "type": "Text",
+          "url": "https://archive.org/details/travesdeltiempo0000bria",
+          "match": "direct"
+        }
+      ],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "los-mensajes-de-los-sabios",
+      "title": "Los mensajes de los sabios",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 17,
+      "copies": 44,
+      "available": 43,
+      "isbn_count": 8,
+      "islands": {
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 15,
+          "available": 15
+        },
+        "TF": {
+          "name": "Tenerife",
+          "copies": 15,
+          "available": 14
+        },
+        "FV": {
+          "name": "Fuerteventura",
+          "copies": 9,
+          "available": 9
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 3,
+          "available": 3
+        },
+        "LP": {
+          "name": "La Palma",
+          "copies": 2,
+          "available": 2
+        }
+      },
+      "archive": [],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "muchos-cuerpos-una-misma-alma",
+      "title": "Muchos cuerpos, una misma alma",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 6,
+      "copies": 30,
+      "available": 29,
+      "isbn_count": 5,
+      "islands": {
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 9,
+          "available": 9
+        },
+        "LG": {
+          "name": "La Gomera",
+          "copies": 1,
+          "available": 1
+        },
+        "TF": {
+          "name": "Tenerife",
+          "copies": 10,
+          "available": 9
+        },
+        "FV": {
+          "name": "Fuerteventura",
+          "copies": 3,
+          "available": 3
+        },
+        "LP": {
+          "name": "La Palma",
+          "copies": 1,
+          "available": 1
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 6,
+          "available": 6
+        }
+      },
+      "archive": [],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "eliminar-el-estres",
+      "title": "Eliminar el estrés",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 5,
+      "copies": 16,
+      "available": 16,
+      "isbn_count": 4,
+      "islands": {
+        "TF": {
+          "name": "Tenerife",
+          "copies": 5,
+          "available": 5
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 3,
+          "available": 3
+        },
+        "FV": {
+          "name": "Fuerteventura",
+          "copies": 1,
+          "available": 1
+        },
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 7,
+          "available": 7
+        }
+      },
+      "archive": [
+        {
+          "id": "eliminar-el-estres-brian-l-weiss",
+          "title": "Eliminar El Estrés Brian L Weiss",
+          "type": "Text",
+          "url": "https://archive.org/details/eliminar-el-estres-brian-l-weiss",
+          "match": "direct"
+        }
+      ],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "meditacion",
+      "title": "Meditación",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 4,
+      "copies": 18,
+      "available": 17,
+      "isbn_count": 3,
+      "islands": {
+        "LP": {
+          "name": "La Palma",
+          "copies": 2,
+          "available": 2
+        },
+        "TF": {
+          "name": "Tenerife",
+          "copies": 4,
+          "available": 3
+        },
+        "FV": {
+          "name": "Fuerteventura",
+          "copies": 2,
+          "available": 2
+        },
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 5,
+          "available": 5
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 5,
+          "available": 5
+        }
+      },
+      "archive": [],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "espejos-del-tiempo",
+      "title": "Espejos del tiempo",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 5,
+      "copies": 19,
+      "available": 18,
+      "isbn_count": 3,
+      "islands": {
+        "TF": {
+          "name": "Tenerife",
+          "copies": 3,
+          "available": 3
+        },
+        "FV": {
+          "name": "Fuerteventura",
+          "copies": 3,
+          "available": 3
+        },
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 9,
+          "available": 8
+        },
+        "LP": {
+          "name": "La Palma",
+          "copies": 1,
+          "available": 1
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 3,
+          "available": 3
+        }
+      },
+      "archive": [],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "los-milagros-existen",
+      "title": "Los milagros existen",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 2,
+      "copies": 2,
+      "available": 2,
+      "isbn_count": 2,
+      "islands": {
+        "TF": {
+          "name": "Tenerife",
+          "copies": 1,
+          "available": 1
+        },
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 1,
+          "available": 1
+        }
+      },
+      "archive": [
+        {
+          "id": "losmilagrosexist0000bria",
+          "title": "LOS MILAGROS EXISTEN",
+          "type": "Text",
+          "url": "https://archive.org/details/losmilagrosexist0000bria",
+          "match": "direct"
+        },
+        {
+          "id": "miracleshappentr0000amye",
+          "title": "Miracles Happen: The Transformational Healing Power of Past-Life Memories",
+          "type": "Text",
+          "url": "https://archive.org/details/miracleshappentr0000amye",
+          "match": "candidate_same_work"
+        }
+      ],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "solo-el-amor-es-real",
+      "title": "Sólo el amor es real",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 1,
+      "copies": 3,
+      "available": 3,
+      "isbn_count": 1,
+      "islands": {
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 1,
+          "available": 1
+        },
+        "LZ": {
+          "name": "Lanzarote",
+          "copies": 2,
+          "available": 2
+        }
+      },
+      "archive": [],
+      "last_checked": "2026-09-17T15:52:15Z"
+    },
+    {
+      "slug": "muchas-vidas-y-muchos-maestros-lazos-de-amor",
+      "title": "Muchas vidas y muchos maestros ; Lazos de amor",
+      "languages": [
+        "es"
+      ],
+      "bica_records": 1,
+      "copies": 1,
+      "available": 1,
+      "isbn_count": 1,
+      "islands": {
+        "GC": {
+          "name": "Gran Canaria",
+          "copies": 1,
+          "available": 1
+        }
+      },
+      "archive": [],
+      "last_checked": "2026-09-17T15:52:15Z"
+    }
   ],
   "author_resources": [
-    {"id":"BrianWeiss-Regressio","title":"Audio Meditacio Weiss","type":"Audio","url":"https://archive.org/details/BrianWeiss-Regressio","source":"Internet Archive","work_match":null}
+    {
+      "id": "BrianWeiss-Regressio",
+      "title": "Audio Meditacio Weiss",
+      "type": "Audio",
+      "url": "https://archive.org/details/BrianWeiss-Regressio",
+      "source": "Internet Archive",
+      "work_match": null
+    }
   ]
 }
