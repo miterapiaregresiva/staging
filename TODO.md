@@ -4,7 +4,7 @@
 
 ## Estado actual
 
-Los Sprints 06–09 de **Easy Paced Reading** están implementados en staging. Tras ellos se realizó una segunda tanda de cambios transversales para materializar la interfaz estática en HTML, simplificar JavaScript y cerrar hero/footer/WhatsApp. Ese bloque se documenta ahora como **Sprint 10 — Estabilización y release candidate**.
+Los Sprints 06–09 de **Easy Paced Reading** están implementados en staging. Tras ellos se realizó una segunda tanda de cambios transversales para materializar la interfaz estática en HTML, simplificar JavaScript, cerrar hero/footer/WhatsApp y normalizar la biblioteca de autores. Ese bloque se documenta como **Sprint 10 — Estabilización y release candidate**.
 
 - [x] Sprint 06 — Lectura móvil y navegación tranquila.
 - [x] Sprint 07 — Sistema editorial de lectura.
@@ -29,7 +29,7 @@ No abrir nuevos cambios de diseño hasta cerrar esta validación.
 - [ ] Revisar reflow/zoom a 200 % y, cuando sea posible, 400 %.
 - [ ] Revisar contraste de controles sobre fotografías claras y oscuras.
 - [ ] Confirmar que WhatsApp no tapa contenido, controles o créditos.
-- [ ] Revisar una muestra representativa de home, páginas de servicio, artículos, biblioteca, autores, libros, contacto y 404.
+- [ ] Revisar una muestra representativa de home, páginas de servicio, artículos, biblioteca, índice de autores, fichas de autor con obras, contacto y 404.
 
 ### Regresiones del hardcoding
 
@@ -57,7 +57,7 @@ No abrir nuevos cambios de diseño hasta cerrar esta validación.
 - [x] `<base href="/">` ya está aplicado en staging.
 - [x] La portada mantiene `noindex,nofollow`, correcto para staging.
 - [x] `robots.txt` existe y referencia `https://miterapiaregresiva.com/sitemap.xml`.
-- [x] `sitemap.xml` existe con URLs de producción.
+- [x] `sitemap.xml` existe con URLs de producción y no incluye fichas individuales de libros.
 - [x] La portada incorpora imágenes WebP con `srcset`/`sizes` en cards principales.
 - [x] La imagen LCP de portada tiene `fetchpriority="high"` cuando corresponde según la implementación previa.
 - [x] Los avisos de JavaScript/tareas largas originados por extensiones del navegador no se consideran problemas propios del sitio.
@@ -76,20 +76,33 @@ No abrir nuevos cambios de diseño hasta cerrar esta validación.
 
 ## Pendiente secundario — autores y biblioteca
 
-El sistema de fichas de autor está normalizado y debe mantenerse como recurso secundario, sin competir con las páginas de servicio.
+La **ficha de autor** es la unidad editorial principal. Las obras se muestran dentro de esa ficha; por ahora no habrá páginas individuales de libros.
 
 - [x] `/autores/` comparte lenguaje visual con las fichas individuales.
-- [x] Helen Wambach normalizada.
-- [x] Ian Stevenson normalizado.
-- [x] Raymond A. Moody normalizado.
-- [x] Roger J. Woolger normalizado.
-- [x] Morris Netherton normalizado.
-- [x] Edith Fiore normalizada.
-- [x] Hans TenDam normalizado.
-- [x] Estructura común: hero, datos rápidos, contexto en biblioteca, bibliografía, fuentes y acceso a libros.
-- [x] Placeholder coherente cuando no existe retrato con licencia verificada.
-- [ ] Incorporar localmente el retrato reutilizable ya identificado de Raymond A. Moody.
-- [ ] Revisar si existen retratos reutilizables para otras fichas sin depender de hotlinks externos.
+- [x] Retratos del directorio normalizados a una proporción 4:5.
+- [x] Obras normalizadas a una proporción de portada 2:3, sin recortes panorámicos.
+- [x] Las obras aparecen dentro de la ficha de su autor.
+- [x] Las páginas individuales `/autores/.../libros/.../` no forman parte del árbol público actual.
+- [x] Las URLs de libros individuales se han retirado del sitemap.
+- [x] La biblioteca principal explica la arquitectura autor → obras.
+- [x] Ian Stevenson utiliza ya el retrato local de dominio público en el directorio y en la portada de biblioteca.
+- [x] Brian Weiss, Michael Newton, Ian Stevenson y Raymond A. Moody tienen retrato disponible en el directorio.
+- [x] Brian Weiss, Helen Wambach, Ian Stevenson y Raymond A. Moody tienen al menos una portada de obra disponible localmente.
+- [x] Placeholder coherente cuando no existe retrato o portada con procedencia verificada.
+- [ ] Incorporar localmente los retratos reutilizables de Brian Weiss y Raymond A. Moody para eliminar hotlinks externos.
+- [ ] Localizar retratos reutilizables y con procedencia documentada para Helen Wambach, Roger J. Woolger, Morris Netherton, Edith Fiore, Hans TenDam, Winafred Blake Lucas, Joel L. Whitton, Jim B. Tucker y Erlendur Haraldsson.
+- [ ] Completar portadas de obras cuando encontremos una fuente verificable y jurídicamente razonable; no bloquear producción por una portada ausente.
+
+### Fase futura — páginas individuales de libros
+
+No crear una URL independiente solo porque una obra aparezca en la bibliografía. Una futura ficha de libro deberá aportar:
+
+- resumen propio y útil;
+- datos bibliográficos contrastados;
+- relación con el autor y con el contexto de la biblioteca;
+- fuentes de consulta;
+- portada con procedencia documentada o alternativa gráfica legítima;
+- suficiente contenido original para justificar una página propia.
 
 ## Backlog posterior a producción — Instagram
 
@@ -124,9 +137,9 @@ Cadencia inicial propuesta: **2 publicaciones por semana**.
 | 23 | Morris Netherton | `/autores/morris-netherton/` | Autor de la semana | Pendiente |
 | 24 | Edith Fiore | `/autores/edith-fiore/` | Autor de la semana | Pendiente |
 | 25 | Hans TenDam | `/autores/hans-tendam/` | Autor de la semana | Pendiente |
-| 26 | `Journey of Souls / El viaje de las almas` | `/autores/michael-newton/libros/el-viaje-de-las-almas/` | Libro / recurso | Pendiente |
-| 27 | `Destiny of Souls / Destino de las almas` | `/autores/michael-newton/libros/destino-de-las-almas/` | Libro / recurso | Pendiente |
-| 28 | `Life Between Lives` | `/autores/michael-newton/libros/life-between-lives/` | Libro / recurso | Pendiente |
+| 26 | `Journey of Souls / El viaje de las almas` | `/autores/michael-newton/` | Libro / recurso | Pendiente |
+| 27 | `Destiny of Souls / Destino de las almas` | `/autores/michael-newton/` | Libro / recurso | Pendiente |
+| 28 | `Life Between Lives` | `/autores/michael-newton/` | Libro / recurso | Pendiente |
 | 29 | `Twenty Cases Suggestive of Reincarnation` | `/autores/ian-stevenson/` | Libro / investigación | Pendiente |
 | 30 | `Life After Life / Vida después de la vida` | `/autores/raymond-a-moody/` | Libro / ECM | Pendiente |
 
