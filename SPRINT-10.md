@@ -30,16 +30,20 @@ Antes del release se ha simplificado la arquitectura de la biblioteca:
 
 - [x] La unidad pública principal es la **ficha de autor**.
 - [x] Las obras seleccionadas se muestran como tarjetas visuales dentro de cada autor.
+- [x] Los retratos del directorio comparten una proporción 4:5.
+- [x] Las obras comparten una proporción de portada 2:3 y se muestran completas con `object-fit: contain`.
 - [x] Se utilizan portadas locales ya disponibles y con procedencia identificada cuando existen.
 - [x] Cuando no existe una portada verificada se utiliza un placeholder explícito; no se inventan carátulas ni se incorporan imágenes de procedencia dudosa.
 - [x] Se han retirado los enlaces internos hacia `/autores/.../libros/.../`.
 - [x] Se han retirado del sitemap todas las URLs individuales de libros.
-- [x] Se han eliminado del branch de staging los HTML de las antiguas páginas e índices `/libros/`; su historial permanece recuperable en Git.
-- [x] Brian Weiss muestra portadas locales disponibles en sus obras seleccionadas.
-- [x] Michael Newton, Roger J. Woolger, Morris Netherton, Edith Fiore, Hans TenDam, Winafred Blake Lucas y Joel L. Whitton muestran sus obras en la propia ficha sin páginas individuales.
-- [ ] Sustituir placeholders de autores por retratos reutilizables verificados cuando se localicen.
-- [ ] Aprovechar en los índices el retrato local ya disponible de Ian Stevenson.
-- [ ] Incorporar localmente el retrato reutilizable ya identificado de Raymond A. Moody, evitando hotlink cuando sea posible.
+- [x] No existen actualmente archivos ni carpetas públicas `/autores/.../libros/` en el árbol de staging.
+- [x] El índice `/autores/` y la portada de biblioteca explican el patrón autor → obras.
+- [x] Ian Stevenson utiliza el retrato local de dominio público tanto en `/autores/` como en la portada de biblioteca.
+- [x] Brian Weiss, Michael Newton, Ian Stevenson y Raymond A. Moody disponen de retrato verificado en los índices.
+- [x] Brian Weiss, Helen Wambach, Ian Stevenson y Raymond A. Moody disponen de al menos una portada local de obra.
+- [ ] Incorporar localmente los retratos reutilizables de Brian Weiss y Raymond A. Moody para evitar hotlinks externos.
+- [ ] Sustituir placeholders de otros autores por retratos reutilizables solo cuando exista procedencia/licencia suficientemente documentada.
+- [ ] Completar portadas de obras cuando exista una fuente verificable; la ausencia de una portada no bloquea el release.
 
 ### Regla para futuras páginas de libros
 
@@ -61,7 +65,7 @@ No se volverá a crear una página individual de una obra solo por existir en la
 - [x] `robots.txt` existe y apunta al sitemap de producción.
 - [x] `sitemap.xml` existe y contiene URLs canónicas de `https://miterapiaregresiva.com/`.
 - [x] La portada ya incorpora `srcset`/`sizes` en imágenes principales visibles en cards.
-- [x] Una búsqueda de código no devuelve referencias internas a `libros/` tras retirar las fichas individuales.
+- [x] El sitemap no contiene URLs individuales de libros.
 
 ## P0 — Validación funcional y visual
 
