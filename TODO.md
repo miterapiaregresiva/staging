@@ -104,6 +104,12 @@ No crear una URL independiente solo porque una obra aparezca en la bibliografía
 - portada con procedencia documentada o alternativa gráfica legítima;
 - suficiente contenido original para justificar una página propia.
 
+#### Idea futura — compraventa de segunda mano entre particulares
+
+- [ ] Valorar un bloque en las fichas de libro del tipo **“¿Vendes una copia? Ponte en contacto”** para conectar a personas que quieran ofrecer ejemplares de segunda mano.
+- [ ] No plantearlo inicialmente como marketplace ni sistema de anuncios: empezar como vía de contacto sencilla y validar si existe demanda real.
+- [ ] Si funciona, estudiar una sección propia de **libros de segunda mano entre particulares**, con criterios claros de moderación, privacidad, caducidad de anuncios y condiciones de uso.
+
 ### Backlog SEO/editorial — cómo leer y localizar libros de terapia regresiva en Canarias
 
 Objetivo: convertir la biblioteca en un punto útil de acceso a las obras, sin transformarla en un repositorio de copias ni en un listado de enlaces sin contexto. Aprovechar además este contenido para cubrir búsquedas informativas y locales relacionadas con terapia regresiva, regresión e hipnosis regresiva en Canarias y Tenerife.
