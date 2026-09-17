@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "source": "RED BICA / OpacDiscovery",
+  "source_mode": "public GET only",
+  "last_checked": null,
+  "refresh_target": "daily",
+  "notice": "Disponibilidad actualizada una vez al día. Recomendamos llamar a la biblioteca antes de desplazarse.",
+  "records_checked": 0,
+  "works": {},
+  "records": []
+}
