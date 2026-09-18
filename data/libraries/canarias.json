@@ -10,7 +10,16 @@
       "name": "Biblioteca Pública Municipal de Los Cristianos",
       "municipality": "Arona",
       "island": "Tenerife",
-      "directory_url": "https://bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-los-cristianos"
+      "address": "Centro Cultural de Los Cristianos, Plaza del Pescador, 1, 38650 Los Cristianos, Arona",
+      "phone": "922 757 006 (ext. 3336)",
+      "email": "sfernandez@arona.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–20:30",
+        "Sábado y domingo: cerrado",
+        "Sala de estudio: fines de semana y festivos, 9:00–19:30"
+      ],
+      "directory_url": "https://bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-los-cristianos",
+      "last_verified": "2026-09-18"
     }
   }
 }
