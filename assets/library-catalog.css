@@ -160,3 +160,12 @@
   .author-books .card h3{font-size:.96rem;line-height:1.3;margin:0 0 .25rem}
   .author-books .card p{font-size:.78rem;line-height:1.4;margin:.15rem 0;color:var(--muted)}
 }
+
+
+/* Desktop related books: shrink the card itself with the cover. */
+@media(min-width:701px){
+  .author-books .grid{align-items:start}
+  .author-books .card{align-self:start;height:auto;min-height:0}
+  .author-books .book-cover{aspect-ratio:auto;min-height:0;height:auto}
+  .author-books .book-cover img{display:block;width:auto;max-width:100%;height:190px;object-fit:contain;margin-inline:auto}
+}
