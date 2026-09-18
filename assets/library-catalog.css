@@ -149,3 +149,14 @@
   .author-books .card p{display:none}
   .author-books>p:last-child{margin-top:1rem;font-size:.9rem}
 }
+
+
+/* Desktop related books: secondary editorial navigation, not competing feature cards. */
+@media(min-width:701px){
+  .author-books .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+  .author-books .card{padding:.75rem;border-color:rgba(55,35,61,.07);border-radius:14px;background:transparent}
+  .author-books .book-cover{margin:-.75rem -.75rem .65rem;padding:.55rem;border-radius:13px 13px 0 0;background:rgba(107,63,120,.025)}
+  .author-books .book-cover img{max-height:190px}
+  .author-books .card h3{font-size:.96rem;line-height:1.3;margin:0 0 .25rem}
+  .author-books .card p{font-size:.78rem;line-height:1.4;margin:.15rem 0;color:var(--muted)}
+}
