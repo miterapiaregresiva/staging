@@ -63,7 +63,7 @@
   font-family:Georgia,"Times New Roman",serif;
   font-size:1rem;
   line-height:1.65;
-  font-style:italic
+  font-style:normal
 }
 
 /* Portrait and visible provenance */
@@ -420,4 +420,53 @@
   }
   .author-profile .author-books .card h3{font-size:1.12rem}
   .author-profile .author-books .card p{font-size:.9rem}
+}
+
+
+/* Emotional continuity with the main site: calm, agency and clear context. */
+.author-reading-room{
+  max-width:68ch;
+  margin:clamp(2.4rem,5vw,4rem) 0;
+  padding:clamp(1.5rem,3vw,2.1rem) 0;
+  border-top:1px solid rgba(121,84,66,.18);
+  border-bottom:1px solid rgba(121,84,66,.18);
+  color:#433a37
+}
+.author-reading-kicker{
+  margin:0 0 .45rem;
+  color:#7a5746;
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase
+}
+.author-reading-room h2{
+  max-width:19ch;
+  margin:0 0 .9rem;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.75rem,3vw,2.35rem);
+  font-weight:400;
+  line-height:1.18;
+  text-wrap:balance
+}
+.author-reading-room>p:last-child{
+  max-width:62ch;
+  margin:0;
+  color:#514744;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.06rem;
+  line-height:1.8
+}
+.author-profile .author-warm-note{
+  max-width:50ch;
+  color:#5f4f49;
+  font-style:normal;
+  line-height:1.7
+}
+@media(max-width:700px){
+  .author-reading-room{
+    margin:2rem 0;
+    padding:1.4rem 0
+  }
+  .author-reading-room>p:last-child{font-size:1.02rem;line-height:1.76}
 }
