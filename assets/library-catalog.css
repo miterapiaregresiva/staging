@@ -169,3 +169,14 @@
   .author-books .book-cover{aspect-ratio:auto;min-height:0;height:auto}
   .author-books .book-cover img{display:block;width:auto;max-width:100%;height:190px;object-fit:contain;margin-inline:auto}
 }
+
+
+/* Official library directory: progressive disclosure */
+.branch-directory-details{margin-top:.65rem;border-top:1px solid rgba(55,35,61,.08);padding-top:.55rem}
+.branch-directory-details>summary{cursor:pointer;color:var(--accent);font-size:.86rem;font-weight:650;list-style:none}
+.branch-directory-details>summary::-webkit-details-marker{display:none}
+.branch-directory-details>summary::after{content:'＋';float:right;font-weight:500}
+.branch-directory-details[open]>summary::after{content:'−'}
+.branch-directory-body{padding:.65rem 0 .1rem;font-size:.86rem;color:var(--muted)}
+.branch-directory-body .branch-contact{margin:0 0 .45rem}
+.branch-directory-body p{margin:.35rem 0 0}
