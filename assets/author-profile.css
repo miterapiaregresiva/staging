@@ -318,3 +318,140 @@
   .author-profile .author-books .book-cover{aspect-ratio:4/5}
   .author-profile .author-books .book-cover img{max-height:290px}
 }
+
+
+/* Warmer author profile treatment */
+.author-profile .author-hero{
+  position:relative;
+  padding:clamp(2.4rem,5vw,4.6rem) clamp(1.2rem,3vw,2.2rem);
+  margin-top:1rem;
+  border:1px solid rgba(114,84,68,.10);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(214,188,158,.18), transparent 34%),
+    linear-gradient(180deg,#fffdf9 0%,#fbf7f2 100%);
+}
+.author-profile .author-hero::after{
+  content:'';
+  position:absolute;
+  left:clamp(1.2rem,3vw,2.2rem);
+  right:clamp(1.2rem,3vw,2.2rem);
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(130,92,73,.18),transparent)
+}
+.author-profile .author-hero .eyebrow{
+  color:#8a5f4c;
+  text-transform:none;
+  letter-spacing:.045em;
+  font-size:.83rem;
+  font-weight:650
+}
+.author-profile .author-hero h1{
+  color:#2d2626
+}
+.author-profile .author-hero .lead{
+  color:#514748
+}
+.author-warm-note{
+  max-width:47ch;
+  margin:1.25rem 0 0;
+  padding-left:1rem;
+  border-left:3px solid rgba(154,108,81,.34);
+  color:#6a5750;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:.98rem;
+  line-height:1.62;
+  font-style:italic
+}
+
+.author-profile .author-visual{
+  transform:rotate(.35deg);
+  background:#fffaf4;
+  border-color:rgba(123,91,73,.15);
+  box-shadow:0 16px 34px rgba(78,54,44,.10)
+}
+.author-profile .author-visual>img{
+  filter:saturate(.92) contrast(.98)
+}
+
+.author-profile .author-facts{
+  border-top-color:rgba(119,86,69,.13)
+}
+.author-profile .author-fact{
+  color:#5e514b
+}
+.author-profile .author-fact strong{
+  color:#8a7166
+}
+
+.author-local-nav a{
+  color:#76503f;
+  border-bottom-color:rgba(118,80,63,.22)
+}
+.author-local-nav a:hover{
+  border-bottom-color:#76503f
+}
+
+.author-profile .author-context .prose{
+  color:#463e3c
+}
+.author-profile .author-context .prose p:first-child::first-letter{
+  float:left;
+  margin:.06em .08em 0 0;
+  color:#8f6652;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:3.1rem;
+  line-height:.82
+}
+
+.author-profile .author-books{
+  background:linear-gradient(180deg,rgba(248,242,235,.52),rgba(255,255,255,0));
+  border-radius:24px;
+  padding-left:clamp(.8rem,2vw,1.4rem);
+  padding-right:clamp(.8rem,2vw,1.4rem)
+}
+.author-profile .author-books-intro{
+  color:#6b5c56
+}
+.author-profile .author-books .book-cover{
+  background:
+    linear-gradient(180deg,rgba(252,248,243,.98),rgba(244,236,227,.82));
+}
+.author-profile .author-books .book-cover::after{
+  background:rgba(128,91,69,.18)
+}
+.author-profile .author-books .book-cover img{
+  box-shadow:0 10px 20px rgba(65,45,35,.14)
+}
+.author-profile .author-books .card h3 a{
+  color:#362e2d
+}
+.author-profile .author-book-action a{
+  color:#7d523e;
+  border-bottom-color:rgba(125,82,62,.28)
+}
+.author-profile .author-book-action a:hover{
+  border-bottom-color:#7d523e
+}
+
+.author-profile #fuentes{
+  margin-top:.5rem
+}
+.author-profile .author-sources li{
+  color:#5f5652
+}
+
+@media(max-width:700px){
+  .author-profile .author-hero{
+    margin-inline:-.35rem;
+    padding:2rem 1rem 2.2rem;
+    border-radius:22px
+  }
+  .author-profile .author-visual{
+    transform:none
+  }
+  .author-warm-note{
+    font-size:.94rem
+  }
+}
