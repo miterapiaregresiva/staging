@@ -19,9 +19,9 @@
 @media print{.image-credit{position:static;width:auto;height:auto}.image-credit>summary{display:none}.image-credit::details-content{content-visibility:visible;display:block}.image-credit-panel{position:static;width:auto;max-width:none;max-height:none;overflow:visible;padding:.4rem 0;border:0;background:transparent;box-shadow:none;color:var(--text)}.image-credit-panel a{color:var(--accent-strong)}}
 
 /* Book library credits: keep the info trigger visible and the popover inside narrow cards. */
-.author-books .book-cover .image-credit{z-index:8}
-.author-books .book-cover .image-credit>summary{color:var(--accent-strong)}
-.author-books .book-cover .image-credit>summary span{mix-blend-mode:normal;filter:drop-shadow(0 1px 1px rgb(255 255 255/.85))}
+.author-books .book-cover .image-credit{z-index:12;pointer-events:auto}
+.author-books .book-cover .image-credit>summary{color:var(--accent-strong)!important;opacity:1}
+.author-books .book-cover .image-credit>summary span{mix-blend-mode:normal;filter:drop-shadow(0 1px 1px rgb(255 255 255/.95)) drop-shadow(0 0 2px rgb(255 255 255/.85))}
 .author-books .book-cover .image-credit-panel{right:0;width:min(14rem,calc(100vw - 2rem));max-width:14rem;max-height:12rem;padding:.55rem .65rem;font-size:.78rem;line-height:1.35;border-radius:10px}
 .author-books .book-cover .image-credit-panel p{margin:.3rem 0}
 @media(max-width:700px){.author-books .book-cover .image-credit-panel{width:min(13rem,calc(100vw - 3rem));max-width:13rem}}
