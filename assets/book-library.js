@@ -5,6 +5,8 @@
   const source = root.getAttribute('data-source');
   const availabilitySource = root.getAttribute('data-availability-source');
   const workSlug = root.getAttribute('data-work-slug');
+  const libraryDirectorySource = root.getAttribute('data-library-directory') || '/data/libraries/canarias.json';
+  let libraryDirectory = {};
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
   const NETWORK_MUNICIPALITY = {
@@ -75,6 +77,8 @@
   }
 
   function libraryDisplay(libraryId, library, branchId, branch) {
+    const directory = libraryDirectory[`${libraryId}:${branchId}`];
+    if (directory) return {name: directory.name, meta: directory.municipality || municipalityFor(libraryId, library), directory};
     const municipality = municipalityFor(libraryId, library);
     const branchName = String(branch?.name || '').trim();
     const networkName = String(library?.name || '').trim();
@@ -132,7 +136,7 @@
         ${availabilityMarkup(branch.available, branch.copies)}
       </div>
       ${branchBicaLinks(branchRecordMap, libraryId, branchId)}
-      ${contactMarkup(branch.contact)}
+      ${label.directory ? `<details class="branch-directory-details"><summary>Información de la biblioteca</summary><div class="branch-directory-body">${contactMarkup(label.directory)}<p><a href="${esc(label.directory.directory_url)}" target="_blank" rel="noopener noreferrer">Ver ficha oficial de la biblioteca</a></p></div></details>` : contactMarkup(branch.contact)}
     </article>`;
   }
 
@@ -185,7 +189,7 @@
     if (updated) updated.textContent = formatChecked(data.last_checked);
   }
 
-  fetch(source, {credentials:'same-origin'})
+  fetch(libraryDirectorySource, {credentials:'same-origin'}).then(r => r.ok ? r.json() : {libraries:{}}).then(directoryData => { libraryDirectory = directoryData.libraries || {}; }).catch(() => {}).then(() => fetch(source, {credentials:'same-origin'}))
     .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
     .then(raw => {
       const data = normalizeBookData(raw);
