@@ -93,9 +93,10 @@ Contenido ideal: **2 o 3 párrafos a ancho completo**.
 
 Criterios:
 
-- resumir el contenido y el enfoque del libro;
-- diferenciar claramente relato, interpretación del autor y hechos verificables;
-- atribuir a la persona autora afirmaciones sobre regresión, reencarnación, vidas pasadas, guías espirituales u otras cuestiones no establecidas científicamente;
+- resumir únicamente el contenido, la estructura y los temas que aparecen en la obra;
+- usar un tono descriptivo y neutral;
+- no añadir valoraciones, juicios, refutaciones, defensas ni conclusiones propias sobre la obra;
+- cuando el libro atribuya una experiencia, idea o explicación a una persona concreta, describir esa atribución sin convertirla en una afirmación editorial del sitio;
 - no convertir el texto en publicidad editorial;
 - evitar repetir literalmente la descripción breve de la cabecera.
 
@@ -137,6 +138,8 @@ Reglas para Internet Archive:
 
 Cada enlace debe indicar claramente que abre un ejemplar concreto en Internet Archive.
 
+Mostrar el logotipo de Internet Archive como identificación visual del servicio, sin sustituir el texto accesible de la sección.
+
 Si solo existe un ejemplar en otro idioma, indicarlo de forma explícita. Ejemplo: `Mirrors of Time` disponible en inglés cuando no haya copia en español en la selección.
 
 ### 7. Préstamo gratuito en Canarias
@@ -162,7 +165,8 @@ Reglas:
 - no afirmar que un enlace reserva directamente si solo abre la ficha;
 - recomendar comprobar disponibilidad antes de desplazarse;
 - mantener la fecha de actualización;
-- no inventar teléfonos, horarios, direcciones ni contactos.
+- no inventar teléfonos, horarios, direcciones ni contactos;
+- mostrar el logotipo de RED BICA como identificación visual del catálogo.
 
 ### 8. Compra
 
@@ -177,6 +181,8 @@ Mantener el mismo esquema:
 1. **TodosTusLibros** — ejemplar nuevo / librerías españolas;
 2. **IberLibro** — segunda mano;
 3. **OSDAD** — inventario solidario en Gran Canaria.
+
+Las tarjetas de IberLibro y OSDAD deben mostrar sus logotipos junto al nombre y la explicación del servicio.
 
 No afirmar que una tienda o inventario dispone actualmente del título salvo verificación expresa.
 
@@ -198,6 +204,8 @@ Cada tarjeta debe incluir:
 2. nombre del libro enlazado a su ficha interna;
 3. título original;
 4. crédito de portada mediante icono de información.
+
+El icono de información debe quedar fuera de cualquier enlace que envuelva la tarjeta o la portada. No anidar `<details>/<summary>` dentro de un `<a>`: el título puede enlazar a la ficha y el control de crédito debe permanecer como elemento interactivo independiente.
 
 Nunca enlazar desde estas tarjetas directamente a Internet Archive.
 
