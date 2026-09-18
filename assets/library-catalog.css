@@ -137,3 +137,15 @@
 .book-availability-summary strong{display:inline;font-size:1rem;font-weight:700;line-height:1.4;color:var(--text)}
 .book-availability-summary span{font-size:.86rem;line-height:1.4;color:var(--muted)}
 @media(max-width:700px){.book-availability-summary{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1rem}.book-availability-summary>div{display:block}.book-availability-summary strong{margin-right:.25rem}}
+
+
+/* Mobile book recommendations: compact browse strip instead of full feature cards. */
+@media(max-width:700px){
+  .author-books .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+  .author-books .card{padding:.65rem;border-radius:14px;background:transparent;border-color:rgba(55,35,61,.08)}
+  .author-books .book-cover{margin:-.65rem -.65rem .55rem;padding:.45rem;aspect-ratio:3/4;border-radius:13px 13px 0 0;background:rgba(107,63,120,.035)}
+  .author-books .book-cover img{max-height:145px}
+  .author-books .card h3{font-size:.9rem;line-height:1.25;margin:0}
+  .author-books .card p{display:none}
+  .author-books>p:last-child{margin-top:1rem;font-size:.9rem}
+}
