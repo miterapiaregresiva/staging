@@ -44,6 +44,7 @@ La biblioteca se mantiene deliberadamente como recurso secundario de apoyo, no c
 ## Seguimiento
 
 - [`TODO.md`](TODO.md): pendientes editoriales, técnicos, Instagram y preparación de producción. **Solo staging.**
+- [`FICHA-LIBRO.md`](FICHA-LIBRO.md): estructura editorial canónica para todas las fichas de libros.
 - [`SPRINT-01.md`](SPRINT-01.md): arquitectura inicial.
 - [`SPRINT-02.md`](SPRINT-02.md): migración visual y de contenidos.
 - [`SPRINT-04.md`](SPRINT-04.md): UX, SEO técnico y rendimiento.
