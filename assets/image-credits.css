@@ -46,3 +46,34 @@
     z-index:1000;
   }
 }
+
+
+/* Related-book credit panel: viewport overlay must not inherit the 48px details box clipping. */
+@media(max-width:700px){
+  .author-books .book-cover .image-credit[open]{
+    position:fixed;
+    inset:0;
+    width:auto;
+    height:auto;
+    overflow:visible;
+    z-index:999;
+    pointer-events:none;
+  }
+  .author-books .book-cover .image-credit[open]>summary{
+    position:fixed;
+    pointer-events:auto;
+  }
+  .author-books .book-cover .image-credit[open] .image-credit-panel{
+    display:block;
+    position:fixed;
+    left:1rem;
+    right:1rem;
+    bottom:1rem;
+    width:auto;
+    max-width:none;
+    max-height:50vh;
+    overflow:auto;
+    pointer-events:auto;
+    z-index:1001;
+  }
+}
