@@ -48,25 +48,41 @@
       "title": "Muchas vidas, muchos maestros",
       "slug": "muchas-vidas-muchos-maestros",
       "original_title": "Many Lives, Many Masters",
-      "cover": "https://www.penguinlibros.com/es/2638748-thickbox_default/muchas-vidas-muchos-maestros.webp"
+      "cover": "https://www.penguinlibros.com/es/2638748-thickbox_default/muchas-vidas-muchos-maestros.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/libros-de-espiritualidad/16413-ebook-muchas-vidas-muchos-maestros-9788466645843"
+      }
     },
     {
       "title": "Los mensajes de los sabios",
       "slug": "los-mensajes-de-los-sabios",
       "original_title": "Messages from the Masters",
-      "cover": "https://www.penguinlibros.com/es/1981454-thickbox_default/los-mensajes-de-los-sabios.webp"
+      "cover": "https://www.penguinlibros.com/es/1981454-thickbox_default/los-mensajes-de-los-sabios.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/libros-de-filosofia/8367-libro-los-mensajes-de-los-sabios-9788490708323"
+      }
     },
     {
       "title": "Muchos cuerpos, una misma alma",
       "slug": "muchos-cuerpos-una-misma-alma",
       "original_title": "Same Soul, Many Bodies",
-      "cover": "https://www.penguinlibros.com/es/2381856-thickbox_default/muchos-cuerpos-una-misma-alma.webp"
+      "cover": "https://www.penguinlibros.com/es/2381856-thickbox_default/muchos-cuerpos-una-misma-alma.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/2381856-thickbox_default/muchos-cuerpos-una-misma-alma.webp"
+      }
     },
     {
       "title": "Eliminar el estrés",
       "slug": "eliminar-el-estres",
       "original_title": "Eliminating Stress, Finding Inner Peace",
-      "cover": "https://www.penguinlibros.com/es/1483509-thickbox_default/eliminar-el-estres.webp"
+      "cover": "https://www.penguinlibros.com/es/1483509-thickbox_default/eliminar-el-estres.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/1483509-thickbox_default/eliminar-el-estres.webp"
+      }
     }
   ],
   "related_regression_books": [
@@ -74,25 +90,41 @@
       "title": "Meditación",
       "slug": "meditacion",
       "original_title": "Meditation",
-      "cover": "https://www.penguinlibros.com/es/2251738-thickbox_default/meditacion.webp"
+      "cover": "https://www.penguinlibros.com/es/2251738-thickbox_default/meditacion.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/2251738-thickbox_default/meditacion.webp"
+      }
     },
     {
       "title": "Espejos del tiempo",
       "slug": "espejos-del-tiempo",
       "original_title": "Mirrors of Time",
-      "cover": "https://www.penguinlibros.com/es/1484236-thickbox_default/espejos-del-tiempo.webp"
+      "cover": "https://www.penguinlibros.com/es/1484236-thickbox_default/espejos-del-tiempo.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/1484236-thickbox_default/espejos-del-tiempo.webp"
+      }
     },
     {
       "title": "Los milagros existen",
       "slug": "los-milagros-existen",
       "original_title": "Miracles Happen",
-      "cover": "https://www.penguinlibros.com/es/2322306-thickbox_default/los-milagros-existen.webp"
+      "cover": "https://www.penguinlibros.com/es/2322306-thickbox_default/los-milagros-existen.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/ciencia-y-tecnologia/8366-libro-los-milagros-existen-9788490708316"
+      }
     },
     {
       "title": "Lazos de amor",
       "slug": "lazos-de-amor",
       "original_title": "Only Love Is Real",
-      "cover": "https://www.penguinlibros.com/es/1999383-thickbox_default/lazos-de-amor.webp"
+      "cover": "https://www.penguinlibros.com/es/1999383-thickbox_default/lazos-de-amor.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/1999383-thickbox_default/lazos-de-amor.webp"
+      }
     }
   ]
 }
