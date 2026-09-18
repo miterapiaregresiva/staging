@@ -1,326 +1,166 @@
-# Estructura editorial de una ficha de libro
+# Ficha de libro — estándar v1
 
-Documento de referencia para mantener coherencia entre todas las fichas de la biblioteca de **Mi Terapia Regresiva**.
+Plantilla canónica para todas las fichas de la biblioteca de **Mi Terapia Regresiva**. La ficha piloto aprobada es **Brian Weiss · Lazos de amor**.
 
-## URL canónica
+## URL y navegación
 
-Patrón:
+URL canónica:
 
 ```text
 /autores/{autor-slug}/libros/{libro-slug}/
 ```
 
-La página del autor y cualquier bloque de libros relacionados deben enlazar siempre a esta ficha interna. Los enlaces a Internet Archive, RED BICA o tiendas solo aparecen dentro de la ficha del libro.
+No usar `<base href="/">`. En páginas servidas desde el subdominio, los recursos internos del sitio se expresan desde raíz (`/assets/...`, `/autores/...`) y las anclas de la propia ficha como `#leer-online` y `#bibliotecas-canarias`.
 
----
-
-## Orden obligatorio de la ficha
-
-### 1. Breadcrumbs
-
-Orden:
+Breadcrumb obligatorio:
 
 ```text
 Inicio → Biblioteca → Autores → Autor → Libro
 ```
 
-### 2. Cabecera del libro
+## Estructura obligatoria
 
-Debe contener, en este orden:
+### 1. Header del sitio
+Usar el header vigente, con botón de menú móvil y navegación principal completa. Una ficha de libro pertenece funcionalmente a Biblioteca; evitar marcar “Autores” como página actual solo por estar bajo esa ruta.
 
-1. eyebrow: `Libro de Nombre del autor`;
-2. H1 con el título de la edición en español;
-3. descripción breve, de una o dos frases;
+### 2. Hero
+Orden:
+1. eyebrow: `Libro de Autor`;
+2. H1;
+3. descripción breve específica (1–2 frases);
 4. título original;
-5. idioma(s);
-6. ISBN localizados;
-7. portada canónica.
+5. CTA `Leer online` → `#leer-online`;
+6. CTA `Solicitar en préstamo` → `#bibliotecas-canarias`;
+7. `<details class="book-edition-details">` con idioma(s), ediciones e ISBN;
+8. portada canónica y crédito.
 
-Ejemplo:
+Los ISBN y demás datos bibliográficos de segundo nivel **no se muestran desplegados en la primera vista**.
 
-```html
-<div class="eyebrow">Libro de Brian Weiss</div>
-<h1>Lazos de amor</h1>
-<p class="lead">Descripción breve y específica de la obra.</p>
-<p class="book-original-title">
-  <strong>Título original:</strong> <em>Only Love Is Real</em>.
-</p>
-<div class="book-language">
-  <strong>Idiomas:</strong> <span class="tag">ES</span>
-</div>
-<ul class="book-editions-inline" aria-label="ISBN localizados">
-  ...
-</ul>
-```
+En móvil: portada → título/contenido → acciones. La portada no debe dominar la pantalla.
 
-Si existe coautoría, debe figurar en la cabecera, metadatos y JSON-LD. No atribuir una obra exclusivamente al autor principal si la edición acredita a más autores.
+### 3. Sobre el libro
+H2: `Sobre {Título}`. Dos o tres párrafos a ancho completo. Tono descriptivo y neutral; contenido, estructura y temas de la obra, sin valoración editorial ni publicidad.
 
-### 3. Portada
+### 4. Disponibilidad
+H2: `Disponibilidad de {Título} en las bibliotecas de Canarias`.
 
-Usar una única portada canónica por obra en todo el sitio.
-
-Prioridad de archivo:
-
-1. `cover.webp`;
-2. `cover.png`;
-3. `cover.jpg` / `cover.jpeg`;
-4. dummy común con el texto **Portada**.
-
-Estructura objetivo:
-
-```text
-assets/images/books/
-  _shared/
-    cover.webp
-  {autor-slug}/
-    {libro-slug}/
-      cover.webp
-```
-
-La imagen debe mostrarse completa, con `object-fit: contain`, sin recortes que eliminen título, autor o elementos esenciales de la cubierta.
-
-El crédito se abre mediante el icono de información. La procedencia se documenta también en `/licencias-de-recursos/`.
-
-### 4. Sobre {LIBRO}
-
-H2:
-
-```text
-Sobre Título del libro
-```
-
-Contenido ideal: **2 o 3 párrafos a ancho completo**.
-
-Criterios:
-
-- resumir únicamente el contenido, la estructura y los temas que aparecen en la obra;
-- usar un tono descriptivo y neutral;
-- no añadir valoraciones, juicios, refutaciones, defensas ni conclusiones propias sobre la obra;
-- cuando el libro atribuya una experiencia, idea o explicación a una persona concreta, describir esa atribución sin convertirla en una afirmación editorial del sitio;
-- no convertir el texto en publicidad editorial;
-- evitar repetir literalmente la descripción breve de la cabecera.
-
-### 5. Disponibilidad
-
-H2:
-
-```text
-Disponibilidad de Título en las bibliotecas de Canarias
-```
-
-Mostrar:
-
+Mostrar como **metadatos discretos, no tarjetas KPI**:
 - registros BICA;
-- ejemplares localizados;
-- ejemplares disponibles;
-- ISBN localizados;
-- fecha de última comprobación.
+- ejemplares;
+- disponibles;
+- ISBN;
+- última comprobación.
 
-Estos valores proceden de los datos de disponibilidad y no deben hardcodearse cuando exista una fuente dinámica.
+Mantener los selectores dinámicos:
+`data-book-library`, `data-value="bica_records"`, `data-value="copies"`, `data-value="available"`, `data-value="isbn_count"`, `data-updated`, `data-book-status`, `data-island-status`.
 
-### 6. Leer online
+No hardcodear valores si existe fuente dinámica.
 
-H2:
+### 5. Leer online
+Sección con `id="leer-online"`. El CTA del hero **hace scroll a esta sección**, nunca abre directamente una copia concreta.
 
+Internet Archive:
+- solo ejemplares concretos previamente seleccionados;
+- explicar préstamo/disponibilidad;
+- no búsquedas genéricas;
+- fichas compactas;
+- idioma visible;
+- no asumir que una copia concreta estará disponible.
+
+### 6. Préstamo gratuito en Canarias
+Sección con `id="bibliotecas-canarias"`. El CTA del hero hace scroll aquí.
+
+RED BICA se organiza:
 ```text
-Leer Título online gratis
+Isla → Municipio → Biblioteca → Registro RED BICA
 ```
 
-Reglas para Internet Archive:
+Usar permalink estable. No afirmar que la ficha reserva directamente. Recomendar comprobar disponibilidad.
 
-- enlazar únicamente **ejemplares concretos** previamente seleccionados;
-- no añadir enlaces a búsquedas de Internet Archive;
-- no inferir nuevas ediciones automáticamente;
-- identificar el idioma de cada ejemplar;
-- explicar que Internet Archive funciona como biblioteca digital;
-- algunos ejemplares requieren cuenta gratuita y préstamo temporal;
-- una copia puede no estar disponible si está prestada a otra persona.
+### 7. Compra
+Tres opciones con **idéntico peso visual**:
+1. TodosTusLibros — nuevo/librerías españolas;
+2. IberLibro — segunda mano;
+3. OSDAD — inventario solidario en Gran Canaria.
 
-Cada enlace debe indicar claramente que abre un ejemplar concreto en Internet Archive.
+No afirmar stock sin verificación.
 
-Mostrar el logotipo de Internet Archive como identificación visual del servicio, sin sustituir el texto accesible de la sección.
+### 8. Otros libros del autor
+Navegación editorial secundaria, nunca contenido protagonista.
 
-Los ejemplares de Internet Archive deben mostrarse como **fichas compactas**, no como filas a ancho completo:
+Cada referencia:
+- portada;
+- título enlazado a ficha interna;
+- título original cuando proceda;
+- crédito independiente mediante icono de información.
 
-- ancho aproximado de tarjeta: 180–220 px en escritorio;
-- distribución en rejilla y alineación al inicio;
-- cada ficha identifica un ejemplar concreto, su idioma y el enlace de lectura/préstamo;
-- en móvil pueden pasar a una sola columna, manteniendo un ancho contenido y sin ocupar innecesariamente toda la página.
+No envolver `<details>/<summary>` dentro de `<a>`.
 
-Si solo existe un ejemplar en otro idioma, indicarlo de forma explícita. Ejemplo: `Mirrors of Time` disponible en inglés cuando no haya copia en español en la selección.
+**Desktop:** tarjetas compactas, alineadas al inicio, sin estirar alturas; 4 columnas cuando haya espacio; portada aprox. 190 px; fondo/borde mínimos.
 
-### 7. Préstamo gratuito en Canarias
+**Móvil:** 2 columnas; portada aprox. 145 px; ocultar metadatos secundarios si generan ruido. La ficha termina con su contenido: no conservar la altura de una tarjeta grande.
 
-H2:
+### 9. Otros libros sobre terapia regresiva
+Mismo tratamiento visual secundario. Solo fichas internas publicadas y, cuando el catálogo lo permita, diversidad de autores para no duplicar “Otros libros del autor”.
 
-```text
-Dónde conseguir un préstamo gratuito de Título de Autor en Canarias
-```
+### 10. Créditos de imágenes
+El icono permanece sobre la imagen, pero el texto debe ser legible.
 
-Estructura del acordeón:
+En portadas pequeñas/móvil, el panel de crédito **puede salir del frame de la portada y de la tarjeta**; no debe quedar recortado por un contenedor de 48×48 px. El panel funciona como overlay sobre el viewport, con scroll si es necesario.
 
-```text
-Isla
-  └─ Municipio
-       └─ Biblioteca / sucursal
-            └─ Registro(s) RED BICA
-```
-
-Reglas:
-
-- utilizar el permalink estable de la ficha bibliográfica de RED BICA;
-- no afirmar que un enlace reserva directamente si solo abre la ficha;
-- recomendar comprobar disponibilidad antes de desplazarse;
-- mantener la fecha de actualización;
-- no inventar teléfonos, horarios, direcciones ni contactos;
-- mostrar el logotipo de RED BICA como identificación visual del catálogo.
-
-### 8. Compra
-
-H2:
-
-```text
-Si prefieres comprar Título de Autor
-```
-
-Mantener el mismo esquema:
-
-1. **TodosTusLibros** — ejemplar nuevo / librerías españolas;
-2. **IberLibro** — segunda mano;
-3. **OSDAD** — inventario solidario en Gran Canaria.
-
-Las tarjetas de IberLibro y OSDAD deben mostrar sus logotipos junto al nombre y la explicación del servicio.
-
-No afirmar que una tienda o inventario dispone actualmente del título salvo verificación expresa.
-
-No añadir Wallapop u otros buscadores que no formen parte del esquema editorial acordado.
-
-### 9. Otros libros del autor
-
-H2:
-
-```text
-Otros libros de Autor
-```
-
-Usar fichas visuales de libro, no listas de enlaces simples.
-
-Cada tarjeta debe incluir:
-
-1. portada;
-2. nombre del libro enlazado a su ficha interna;
-3. título original;
-4. crédito de portada mediante icono de información.
-
-El icono de información debe quedar fuera de cualquier enlace que envuelva la tarjeta o la portada. No anidar `<details>/<summary>` dentro de un `<a>`: el título puede enlazar a la ficha y el control de crédito debe permanecer como elemento interactivo independiente.
-
-Nunca enlazar desde estas tarjetas directamente a Internet Archive.
-
-### 10. Otros libros sobre terapia regresiva
-
-H2:
-
-```text
-Otros libros sobre terapia regresiva
-```
-
-Mostrar una selección de libros que ya tengan ficha interna publicada.
-
-Preferir diversidad de autores cuando existan suficientes fichas. No crear enlaces rotos ni fichas ficticias.
+Sobre fondo oscuro, texto, `strong`, `span` y enlaces deben conservar contraste alto.
 
 ### 11. Más sobre terapia de regresión
-
-Mantener enlaces internos al sitio, por ejemplo:
-
-- Qué es la terapia regresiva;
-- Preguntas frecuentes;
-- Artículos;
-- Cómo trabajo.
-
-Esta sección conecta la biblioteca con el contenido principal del sitio sin convertir la ficha en una página comercial.
+Enlaces internos a Terapia regresiva, Preguntas frecuentes, Artículos y Cómo trabajo.
 
 ### 12. Footer
+Footer completo y vigente: marca, tagline, servicio/localización, navegación, recursos/legal, Instagram, WhatsApp, licencia y crédito de desarrollo.
 
-Todas las fichas deben usar el footer completo y vigente del sitio:
+## Datos y generación
 
-- marca;
-- tagline;
-- servicio y localización;
-- navegación principal;
-- recursos y legal;
-- Instagram;
-- WhatsApp;
-- licencia del código;
-- crédito de desarrollo.
+La estructura HTML no debe duplicar decisiones editoriales libro a libro. Separar:
 
----
+- **plantilla**: estructura, clases, accesibilidad y orden;
+- **datos editoriales**: título, original, autoría, descripción, portada/crédito, texto “Sobre”, idiomas, ISBN, IA, compra y relaciones;
+- **datos dinámicos**: disponibilidad BICA y fecha de comprobación.
 
-## Metadatos y datos estructurados
+Objetivo: generar `/autores/{autor}/libros/{libro}/index.html` a partir de datos estructurados, manteniendo `book-library.js` para disponibilidad dinámica.
 
-Cada ficha debe incluir:
+Antes de migrar toda la biblioteca, validar el sistema con una segunda ficha de Brian Weiss.
 
-- `<title>` específico;
-- meta description específica;
-- `Book` JSON-LD;
-- autor o autores correctos;
-- título original mediante `alternateName`;
+## Metadatos
+
+Cada ficha incluye:
+- title y meta description específicos;
+- Book JSON-LD;
+- autoría/coautoría correcta;
+- `alternateName`;
 - ISBN principal;
-- imagen de portada;
-- `BreadcrumbList`.
-
-En staging se mantiene:
-
-```html
-<meta name="robots" content="noindex,nofollow">
-```
-
-No usar `meta keywords`.
-
----
-
-## Regla de coherencia
-
-Cuando cambie cualquiera de estos elementos:
-
 - portada;
-- título;
-- título original;
-- autoría;
-- procedencia de imagen;
-- URL de ficha;
+- BreadcrumbList.
 
-el cambio debe propagarse a:
+En staging: `<meta name="robots" content="noindex,nofollow">`. No usar meta keywords.
 
-1. ficha individual;
-2. página del autor;
-3. índice de libros del autor;
-4. bloques de libros relacionados;
-5. JSON-LD;
-6. página de licencias, cuando corresponda.
+## Coherencia
 
-Una obra debe tener **una sola identidad visual y editorial** dentro del sitio.
+Cambios de portada, título, original, autoría, crédito o URL deben propagarse a ficha, autor, índice del autor, relacionados, JSON-LD y licencias cuando corresponda.
 
----
+## Checklist
 
-## Checklist antes de publicar una ficha
-
-- [ ] URL canónica correcta.
-- [ ] H1 y título original correctos.
-- [ ] Autoría y coautoría correctas.
-- [ ] Descripción breve específica.
-- [ ] Idioma(s) indicados.
-- [ ] ISBN revisados.
-- [ ] Portada canónica y sin recortes.
-- [ ] Crédito de portada visible y procedencia registrada.
-- [ ] «Sobre el libro» con 2–3 párrafos.
-- [ ] Disponibilidad RED BICA funcionando.
-- [ ] Internet Archive solo con ejemplares concretos.
-- [ ] Sin enlaces de búsqueda de Internet Archive.
-- [ ] Préstamo en Canarias agrupado por isla → municipio → biblioteca.
-- [ ] Compra con el esquema común.
-- [ ] Otros libros del autor enlazan a fichas internas.
-- [ ] Otros libros sobre terapia regresiva enlazan a fichas existentes.
-- [ ] Enlaces internos del sitio presentes.
+- [ ] Sin `<base href="/">`.
+- [ ] Breadcrumb Inicio → Biblioteca → Autores → Autor → Libro.
+- [ ] Header vigente.
+- [ ] Hero ligero; ISBN dentro de “Datos de esta obra”.
+- [ ] CTA Leer online hace scroll al selector IA.
+- [ ] CTA préstamo hace scroll a BICA.
+- [ ] Portada completa, canónica y acreditada.
+- [ ] Sobre el libro: 2–3 párrafos.
+- [ ] Disponibilidad dinámica y visualmente discreta.
+- [ ] IA: solo copias concretas.
+- [ ] BICA: isla → municipio → biblioteca.
+- [ ] Compra: tres opciones homogéneas.
+- [ ] Relacionados compactos en desktop y móvil.
+- [ ] Créditos legibles y no recortados.
 - [ ] Footer completo.
-- [ ] JSON-LD coherente con lo visible.
-- [ ] Revisión visual en móvil y escritorio.
+- [ ] JSON-LD coherente.
+- [ ] Revisión móvil/escritorio.
