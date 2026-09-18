@@ -20,6 +20,561 @@
       "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/el-hierro/biblioteca-publica-municipal-de-valverde",
       "last_verified": "2026-09-18"
     },
+    "GC00:100": {
+      "bica_library_id": "GC00",
+      "bica_branch_id": "100",
+      "name": "Biblioteca Pública del Estado en Las Palmas de Gran Canaria",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Avenida Muelle de Las Palmas, s/n, 35003 Las Palmas de Gran Canaria",
+      "phone": "928 211 540",
+      "email": "bpelpa.bibliotecas@gobiernodecanarias.org",
+      "opening_hours": [
+        "Lunes a viernes: 8:30–21:00",
+        "Sábado: 10:00–14:00 y 17:00–20:00",
+        "Domingo: 10:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/las-palmas",
+      "source_label": "Biblioteca de Canarias",
+      "last_verified": "2026-09-18"
+    },
+    "GC01:101": {
+      "bica_library_id": "GC01",
+      "bica_branch_id": "101",
+      "name": "Biblioteca Pública Municipal Alexis Ravelo",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Avenida 8 de Marzo, s/n, Espacio Cultural Jesús Arencibia, 35018 Las Palmas de Gran Canaria",
+      "phone": "928 436 487",
+      "email": "biblioteca.ar@promocionlaspalmas.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:30 y 16:30–20:30",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 9:30–13:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-alexis-ravelo",
+      "last_verified": "2026-09-18"
+    },
+    "GC01:102": {
+      "bica_library_id": "GC01",
+      "bica_branch_id": "102",
+      "name": "Biblioteca Pública Municipal Josefina de la Torre",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Paseo de las Canteras, s/n, Plaza Agatha Christie, 35010 Las Palmas de Gran Canaria",
+      "phone": "928 276 371",
+      "email": "bibliotecajdt@promocionlaspalmas.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:30 y 16:30–20:30",
+        "Sábado y domingo: cerrado",
+        "Julio y agosto: lunes a viernes, 9:30–13:30 y 16:30–20:30; sábado, 11:30–20:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-josefina-de-la-torre",
+      "last_verified": "2026-09-18"
+    },
+    "GC01:103": {
+      "bica_library_id": "GC01",
+      "bica_branch_id": "103",
+      "name": "Biblioteca Pública Municipal Pepe Dámaso",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Plaza de Nuestra Señora de la Luz, 35009 Las Palmas de Gran Canaria",
+      "phone": "928 466 478",
+      "email": "bibliotecapd@promocionlaspalmas.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:30 y 16:30–20:30",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 9:30–13:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-pepe-damaso",
+      "last_verified": "2026-09-18"
+    },
+    "GC01:107": {
+      "bica_library_id": "GC01",
+      "bica_branch_id": "107",
+      "name": "Biblioteca Pública Municipal Dolores Campos-Herrero",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Calle Zaragoza (esquina Sor Simona), 35012 Las Palmas de Gran Canaria",
+      "phone": "928 206 514",
+      "email": "bibliotecadch@promocionlaspalmas.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:30 y 16:30–20:30",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-dolores-campos-herrero",
+      "last_verified": "2026-09-18"
+    },
+    "GC01:108": {
+      "bica_library_id": "GC01",
+      "bica_branch_id": "108",
+      "name": "Biblioteca Pública Municipal Jane Millares Sall",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Calle Gelu Barbu Bailarín, 19, 35220 Las Palmas de Gran Canaria",
+      "phone": "928 716 071",
+      "email": "bibliotecajm@promocionlaspalmas.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:30 y 16:30–20:30",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 9:30–13:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-jane-millares-sall",
+      "last_verified": "2026-09-18"
+    },
+    "GC01:110": {
+      "bica_library_id": "GC01",
+      "bica_branch_id": "110",
+      "name": "Biblioteca Pública Municipal San Juan",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Calle Batería de San Juan, 1, 35015 Las Palmas de Gran Canaria",
+      "phone": "928 311 795",
+      "email": "bibliotecasanjuan@promocionlaspalmas.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:30 y 16:30–20:30",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 9:30–13:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-san-juan",
+      "last_verified": "2026-09-18"
+    },
+    "GC01:115": {
+      "bica_library_id": "GC01",
+      "bica_branch_id": "115",
+      "name": "Biblioteca Pública Municipal La Isleta",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Calle La Naval, 229 A-Bajo, 35009 Las Palmas de Gran Canaria",
+      "phone": "928 448 503",
+      "email": "bibliotecaisleta@promocionlaspalmas.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:30 y 16:30–20:30",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 9:30–13:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-la-isleta",
+      "last_verified": "2026-09-18"
+    },
+    "GC02:173": {
+      "bica_library_id": "GC02",
+      "bica_branch_id": "173",
+      "name": "Biblioteca Pública Municipal de Valsequillo \"Benito Pérez Galdós\"",
+      "municipality": "Valsequillo de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Plaza de San Miguel, 8, 35217 Valsequillo de Gran Canaria",
+      "phone": "928 570 028",
+      "email": "biblioteca@valsequillogc.net",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–20:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 8:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-valsequillo-benito-perez-galdos",
+      "last_verified": "2026-09-18"
+    },
+    "GC03:118": {
+      "bica_library_id": "GC03",
+      "bica_branch_id": "118",
+      "name": "Biblioteca Pública Municipal de Arguineguín",
+      "municipality": "Mogán",
+      "island": "Gran Canaria",
+      "address": "Complejo Deportivo David Jiménez Silva, Avenida Alcalde Paco González, s/n, 35120 Arguineguín, Mogán",
+      "phone": "928 158 800",
+      "email": "biblioteca@mogansc.es",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–21:00",
+        "Sábado: 9:00–14:00",
+        "Domingo: cerrado",
+        "Del 1 de julio al 15 de agosto: lunes a viernes, 9:00–13:30 y 16:00–20:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-arguineguin",
+      "last_verified": "2026-09-18"
+    },
+    "GC04:119": {
+      "bica_library_id": "GC04",
+      "bica_branch_id": "119",
+      "name": "Biblioteca Pública Municipal de San Juan \"Montiano Placeres\"",
+      "municipality": "Telde",
+      "island": "Gran Canaria",
+      "address": "Calle Licenciado Calderín, 22, 35200 Telde",
+      "phone": "928 696 981",
+      "email": "bibliotecasdetelde@gmail.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–23:00",
+        "Sábado: 10:00–13:00",
+        "Domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-san-juan-montiano-placeres",
+      "last_verified": "2026-09-18"
+    },
+    "GC04:141": {
+      "bica_library_id": "GC04",
+      "bica_branch_id": "141",
+      "name": "Biblioteca Pública Saulo Torón (Arnao)",
+      "municipality": "Telde",
+      "island": "Gran Canaria",
+      "address": "Avenida del Cabildo, s/n, Parque Arnao, 35200 Telde",
+      "phone": "828 014 706",
+      "email": "bibliotecasdetelde@gmail.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–20:00",
+        "Sábado: 10:00–14:00"
+      ],
+      "directory_url": "https://www.telde.es/areas/ocio-cultura-y-juventud/bibliotecas/saulo-toron-arnao/",
+      "source_label": "Ayuntamiento de Telde",
+      "last_verified": "2026-09-18"
+    },
+    "GC04:153": {
+      "bica_library_id": "GC04",
+      "bica_branch_id": "153",
+      "name": "Biblioteca Pública Municipal \"María Morales\"",
+      "municipality": "Telde",
+      "island": "Gran Canaria",
+      "address": "Calle Ángel Guimerá, 2, 35220 Telde",
+      "phone": "928 683 396",
+      "email": "rremilio@eresmas.com",
+      "opening_hours": [
+        "Lunes a viernes: 15:00–21:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 16:00–20:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-maria-morales",
+      "last_verified": "2026-09-18"
+    },
+    "GC05:121": {
+      "bica_library_id": "GC05",
+      "bica_branch_id": "121",
+      "name": "Biblioteca Pública Municipal de Vega de San Mateo",
+      "municipality": "Vega de San Mateo",
+      "island": "Gran Canaria",
+      "address": "Calle del Agua, s/n, 35320 Vega de San Mateo",
+      "phone": "928 661 892",
+      "email": "biblioteca@vegadesanmateo.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–13:00 y 16:00–20:00",
+        "Periodos vacacionales: lunes a viernes, 9:00–13:00"
+      ],
+      "directory_url": "https://vegadesanmateo.es/instalacion/biblioteca-municipal",
+      "source_label": "Ayuntamiento de Vega de San Mateo",
+      "last_verified": "2026-09-18"
+    },
+    "GC06:122": {
+      "bica_library_id": "GC06",
+      "bica_branch_id": "122",
+      "name": "Biblioteca Pública Municipal de Moya",
+      "municipality": "Moya",
+      "island": "Gran Canaria",
+      "address": "Calle Juan Delgado, 5, 2ª planta, 35420 Moya",
+      "phone": "928 611 255 (ext. 220)",
+      "email": "biblioteca@villademoya.es",
+      "directory_url": "https://directoriobibliotecas.mcu.es/",
+      "source_label": "Directorio de Bibliotecas Españolas",
+      "last_verified": "2026-09-18"
+    },
+    "GC07:123": {
+      "bica_library_id": "GC07",
+      "bica_branch_id": "123",
+      "name": "Biblioteca Pública Municipal de Santa Brígida \"Francisco Morales Padrón\"",
+      "municipality": "Santa Brígida",
+      "island": "Gran Canaria",
+      "address": "Calle Calvario, 23, 35003 Santa Brígida",
+      "phone": "928 648 181 (ext. 0320)",
+      "email": "biblioteca@santabrigida.es",
+      "opening_hours": [
+        "Lunes: cerrado",
+        "Martes a viernes: 10:00–14:00 y 16:00–19:00",
+        "Sábado: 10:00–13:30",
+        "Domingo: cerrado"
+      ],
+      "directory_url": "https://bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-santa-brigida-francisco-morales-padron",
+      "last_verified": "2026-09-18"
+    },
+    "GC08:124": {
+      "bica_library_id": "GC08",
+      "bica_branch_id": "124",
+      "name": "Biblioteca Pública Municipal de Santa María de Guía \"Miguel Santiago\"",
+      "municipality": "Santa María de Guía de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Calle Santiago Betancor Brito, 7, 35450 Santa María de Guía de Gran Canaria",
+      "phone": "928 895 477",
+      "email": "biblioteca@santamariadeguia.es",
+      "opening_hours": [
+        "Lunes a viernes: 7:30–22:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 8:00–20:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-santa-maria-de-guia-miguel-santiago",
+      "last_verified": "2026-09-18"
+    },
+    "GC10:127": {
+      "bica_library_id": "GC10",
+      "bica_branch_id": "127",
+      "name": "Biblioteca Pública Municipal Joaquín Artiles",
+      "municipality": "Agüimes",
+      "island": "Gran Canaria",
+      "address": "Calle Juan Alvarado y Saz, 55, 35260 Agüimes",
+      "phone": "928 787 677",
+      "email": "bibliotecas@aguimes.es",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–21:00"
+      ],
+      "directory_url": "https://aguimes.es/bibliotecas/",
+      "source_label": "Ayuntamiento de Agüimes",
+      "last_verified": "2026-09-18"
+    },
+    "GC10:128": {
+      "bica_library_id": "GC10",
+      "bica_branch_id": "128",
+      "name": "Biblioteca Pública Municipal de Arinaga",
+      "municipality": "Agüimes",
+      "island": "Gran Canaria",
+      "address": "Avenida Polizón, 34, 35118 Arinaga, Agüimes",
+      "phone": "928 180 034",
+      "email": "bibliotecas@aguimes.es",
+      "opening_hours": [
+        "Lunes a viernes: 15:00–21:00"
+      ],
+      "directory_url": "https://aguimes.es/bibliotecas/",
+      "source_label": "Ayuntamiento de Agüimes",
+      "last_verified": "2026-09-18"
+    },
+    "GC10:129": {
+      "bica_library_id": "GC10",
+      "bica_branch_id": "129",
+      "name": "Biblioteca Pública Municipal Infantil y Juvenil Cruce de Arinaga",
+      "municipality": "Agüimes",
+      "island": "Gran Canaria",
+      "address": "Avenida de Ansite, 117, 35118 Cruce de Arinaga, Agüimes",
+      "phone": "928 180 200",
+      "email": "bibliotecas@aguimes.es",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–20:00"
+      ],
+      "directory_url": "https://aguimes.es/bibliotecas/",
+      "source_label": "Ayuntamiento de Agüimes",
+      "last_verified": "2026-09-18"
+    },
+    "GC10:151": {
+      "bica_library_id": "GC10",
+      "bica_branch_id": "151",
+      "name": "Biblioteca Pública Municipal para adultos de Cruce de Arinaga",
+      "municipality": "Agüimes",
+      "island": "Gran Canaria",
+      "address": "Calle Beletén, s/n, 35118 Cruce de Arinaga, Agüimes",
+      "phone": "928 189 271",
+      "email": "bibliotecacruce@aguimes.es",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–22:00",
+        "Sábado: 9:00–13:00",
+        "Domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-para-adultos-de-cruce-de-arinaga",
+      "last_verified": "2026-09-18"
+    },
+    "GC11:130": {
+      "bica_library_id": "GC11",
+      "bica_branch_id": "130",
+      "name": "Biblioteca Pública Municipal de Arucas",
+      "municipality": "Arucas",
+      "island": "Gran Canaria",
+      "address": "Calle León y Castillo, 5, 35400 Arucas",
+      "phone": "928 633 461",
+      "email": "biblioteca@arucas.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–14:00 y 16:00–21:00",
+        "Sábado: 10:00–13:00",
+        "Domingo: cerrado",
+        "Agosto: lunes a viernes, 9:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-arucas",
+      "last_verified": "2026-09-18"
+    },
+    "GC12:132": {
+      "bica_library_id": "GC12",
+      "bica_branch_id": "132",
+      "name": "Biblioteca Central de Santa Lucía",
+      "municipality": "Santa Lucía de Tirajana",
+      "island": "Gran Canaria",
+      "address": "Calle Manuel Becerra, 28, 35110 Cruce de Sardina, Santa Lucía de Tirajana",
+      "phone": "928 759 526",
+      "email": "biblioteca@ateneosantalucia.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:30–22:45",
+        "Sábado y domingo: 9:00–21:00",
+        "Verano y Navidad: lunes a viernes, 8:30–21:45"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-central-de-santa-lucia",
+      "last_verified": "2026-09-18"
+    },
+    "GC12:133": {
+      "bica_library_id": "GC12",
+      "bica_branch_id": "133",
+      "name": "Biblioteca Pública Municipal de Santa Lucía de Tirajana - El Cruce de Sardina",
+      "municipality": "Santa Lucía de Tirajana",
+      "island": "Gran Canaria",
+      "address": "Calle Primero de Mayo, 2, Parque del Cruce de Sardina, 35110 Santa Lucía de Tirajana",
+      "phone": "928 759 526",
+      "email": "biblioteca@ateneosantalucia.es",
+      "opening_hours": [
+        "Lunes a viernes: 15:00–20:00",
+        "Agosto: cerrado"
+      ],
+      "directory_url": "https://directoriobibliotecas.mcu.es/",
+      "source_label": "Directorio de Bibliotecas Españolas",
+      "last_verified": "2026-09-18"
+    },
+    "GC16:137": {
+      "bica_library_id": "GC16",
+      "bica_branch_id": "137",
+      "name": "Biblioteca Pública Municipal de Maspalomas",
+      "municipality": "San Bartolomé de Tirajana",
+      "island": "Gran Canaria",
+      "address": "Centro Cultural Maspalomas, Avenida Tejeda, 72, 35100 Maspalomas, San Bartolomé de Tirajana",
+      "phone": "928 723 400 (ext. 1815/1817/1818)",
+      "email": "biblioteca@maspalomas.com",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–21:45",
+        "Sábado y domingo, sala de estudio: 9:00–14:00 y 16:00–21:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-maspalomas",
+      "last_verified": "2026-09-18"
+    },
+    "GC16:138": {
+      "bica_library_id": "GC16",
+      "bica_branch_id": "138",
+      "name": "Biblioteca Pública Municipal de El Tablero",
+      "municipality": "San Bartolomé de Tirajana",
+      "island": "Gran Canaria",
+      "address": "Centro Cultural El Tablero, Calle Venezuela, s/n, 35109 El Tablero, San Bartolomé de Tirajana",
+      "phone": "928 723 400 (ext. 1820)",
+      "email": "biblioteca@maspalomas.com",
+      "opening_hours": [
+        "Lunes a viernes: 15:00–21:45",
+        "Sábado y domingo: cerrado",
+        "Agosto: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-el-tablero",
+      "last_verified": "2026-09-18"
+    },
+    "GC16:179": {
+      "bica_library_id": "GC16",
+      "bica_branch_id": "179",
+      "name": "Biblioteca Municipal Pancho Guerra",
+      "municipality": "San Bartolomé de Tirajana",
+      "island": "Gran Canaria",
+      "address": "Centro Cultural Pancho Guerra, Calle Santiago Cazorla, 1, 35290 Tunte, San Bartolomé de Tirajana",
+      "phone": "928 127 133",
+      "directory_url": "https://www.bibliotecaspublicas.es/maspalomas/La-Biblioteca/Localizacion-Horarios.html",
+      "source_label": "Red de Bibliotecas Públicas de San Bartolomé de Tirajana",
+      "last_verified": "2026-09-18"
+    },
+    "GC17:142": {
+      "bica_library_id": "GC17",
+      "bica_branch_id": "142",
+      "name": "Biblioteca Pública Municipal de Gáldar",
+      "municipality": "Gáldar",
+      "island": "Gran Canaria",
+      "address": "Calle Guaires, s/n, 35460 Gáldar",
+      "phone": "928 895 400",
+      "email": "biblioteca@galdar.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–21:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 8:30–20:00",
+        "Abre 12 sábados al año: 9:00–13:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-galdar",
+      "last_verified": "2026-09-18"
+    },
+    "GC19:149": {
+      "bica_library_id": "GC19",
+      "bica_branch_id": "149",
+      "name": "Biblioteca Pública Municipal \"Manuel Alemán\"",
+      "municipality": "Agaete",
+      "island": "Gran Canaria",
+      "address": "Calle Lago, 2, 35480 Agaete",
+      "phone": "928 554 428",
+      "email": "biblioteca@agaete.es",
+      "opening_hours": [
+        "Lunes: 10:00–14:00",
+        "Martes a viernes: 10:00–14:00 y 15:45–19:30",
+        "Sábado: 10:00–13:30"
+      ],
+      "directory_url": "https://agaete.es/directorio-instalaciones-municipales-cultura/biblioteca-publica-municipal-manuel-aleman",
+      "source_label": "Ayuntamiento de Agaete",
+      "last_verified": "2026-09-18"
+    },
+    "GC20:150": {
+      "bica_library_id": "GC20",
+      "bica_branch_id": "150",
+      "name": "Biblioteca Pública Municipal de Artenara",
+      "municipality": "Artenara",
+      "island": "Gran Canaria",
+      "address": "Avenida Matías Vega, 1, 35350 Artenara",
+      "phone": "928 666 117 (ext. 1)",
+      "email": "bibliotecamunicipalartenara@hotmail.com",
+      "opening_hours": [
+        "Lunes a jueves: 10:00–14:00 y 16:00–20:00",
+        "Viernes: 8:00–15:00"
+      ],
+      "directory_url": "https://www.artenara.es/portal-ciudadano/biblioteca-municipal/",
+      "source_label": "Ayuntamiento de Artenara",
+      "last_verified": "2026-09-18"
+    },
+    "GC21:152": {
+      "bica_library_id": "GC21",
+      "bica_branch_id": "152",
+      "name": "Biblioteca Insular de Gran Canaria",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Calle Remedios, 7, 35002 Las Palmas de Gran Canaria",
+      "phone": "928 382 672",
+      "email": "bibliotecainsulargc@grancanaria.com",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–20:00",
+        "Sala de estudio y acceso a Internet: 24 horas",
+        "Julio a septiembre: 8:00–19:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-insular-de-gran-canaria",
+      "last_verified": "2026-09-18"
+    },
+    "GC32:166": {
+      "bica_library_id": "GC32",
+      "bica_branch_id": "166",
+      "name": "Biblioteca del Instituto Superior de Teología de las Islas Canarias - Sede Gran Canaria",
+      "municipality": "Las Palmas de Gran Canaria",
+      "island": "Gran Canaria",
+      "address": "Campus Universitario de Tafira, Apartado 75, Tafira Alta, 35017 Las Palmas de Gran Canaria",
+      "phone": "928 452 878",
+      "email": "biblioteca@istic.es",
+      "opening_hours": [
+        "Sala de lectura, lunes a viernes: 8:00–14:00 y 15:00–20:00",
+        "Atención a usuarios, lunes a viernes: 8:00–14:00 y 15:00–19:00",
+        "Julio y septiembre: 8:00–14:00",
+        "Agosto: cerrado"
+      ],
+      "directory_url": "https://istic.es/biblioteca/",
+      "source_label": "ISTIC",
+      "last_verified": "2026-09-18"
+    },
+    "GC41:176": {
+      "bica_library_id": "GC41",
+      "bica_branch_id": "176",
+      "name": "Biblioteca Pública Municipal de La Aldea de San Nicolás",
+      "municipality": "La Aldea de San Nicolás",
+      "island": "Gran Canaria",
+      "address": "Calle Juan del Río Ayala, 4, 35470 La Aldea de San Nicolás",
+      "phone": "928 892 158",
+      "email": "biblioteca@aytolaaldea.com",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–20:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 17:00–20:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/gran-canaria/biblioteca-publica-municipal-de-la-aldea-de-san-nicolas",
+      "last_verified": "2026-09-18"
+    },
     "LG00:700": {
       "bica_library_id": "LG00",
       "bica_branch_id": "700",
