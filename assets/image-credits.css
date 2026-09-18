@@ -25,3 +25,24 @@
 .author-books .book-cover .image-credit-panel{right:0;width:min(14rem,calc(100vw - 2rem));max-width:14rem;max-height:12rem;padding:.55rem .65rem;font-size:.78rem;line-height:1.35;border-radius:10px}
 .author-books .book-cover .image-credit-panel p{margin:.3rem 0}
 @media(max-width:700px){.author-books .book-cover .image-credit-panel{width:min(13rem,calc(100vw - 3rem));max-width:13rem}}
+
+
+/* Mobile related-book credits: let the disclosure escape the thumbnail/card frame. */
+@media(max-width:700px){
+  .author-books .card,
+  .author-books .book-cover{overflow:visible}
+  .author-books .book-cover .image-credit{z-index:40}
+  .author-books .book-cover .image-credit-panel{
+    position:fixed;
+    left:1rem;
+    right:1rem;
+    bottom:1rem;
+    width:auto;
+    max-width:none;
+    max-height:min(50vh,22rem);
+    padding:.8rem .9rem;
+    font-size:.86rem;
+    line-height:1.5;
+    z-index:1000;
+  }
+}
