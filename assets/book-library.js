@@ -59,16 +59,25 @@
 
   function contactMarkup(contact) {
     if (!contact) return '<p class="branch-contact-pending">Contacto y horario pendientes de verificar.</p>';
-    const bits = [];
-    if (contact.phone) bits.push(`<a href="tel:${esc(String(contact.phone).replace(/\s+/g,''))}">Tel. ${esc(contact.phone)}</a>`);
-    if (contact.email) bits.push(`<a href="mailto:${esc(contact.email)}">${esc(contact.email)}</a>`);
-    if (contact.address) bits.push(`<span>${esc(contact.address)}</span>`);
-    if (contact.opening_hours) {
-      const hours = Array.isArray(contact.opening_hours) ? contact.opening_hours.join(' · ') : contact.opening_hours;
-      bits.push(`<span>Horario: ${esc(hours)}</span>`);
+    const rows = [];
+    if (contact.status_note) {
+      rows.push(`<p class="branch-status-note">${esc(contact.status_note)}</p>`);
     }
-    return bits.length
-      ? `<div class="branch-contact">${bits.join('')}</div>`
+    if (contact.address) {
+      rows.push(`<div class="branch-contact-item"><span class="branch-contact-label">Dirección</span><span>${esc(contact.address)}</span></div>`);
+    }
+    if (contact.opening_hours) {
+      const hours = Array.isArray(contact.opening_hours) ? contact.opening_hours : [contact.opening_hours];
+      rows.push(`<div class="branch-contact-item"><span class="branch-contact-label">Horario</span><span class="branch-opening-hours">${hours.map(line => `<span>${esc(line)}</span>`).join('')}</span></div>`);
+    }
+    if (contact.phone) {
+      rows.push(`<div class="branch-contact-item"><span class="branch-contact-label">Teléfono</span><span>${esc(contact.phone)}</span></div>`);
+    }
+    if (contact.email) {
+      rows.push(`<div class="branch-contact-item"><span class="branch-contact-label">Correo</span><a href="mailto:${esc(contact.email)}">${esc(contact.email)}</a></div>`);
+    }
+    return rows.length
+      ? `<div class="branch-contact">${rows.join('')}</div>`
       : '<p class="branch-contact-pending">Contacto y horario pendientes de verificar.</p>';
   }
 
@@ -123,20 +132,30 @@
     if (!records.length) return '';
     if (records.length === 1) {
       const record = records[0];
-      return `<p class="branch-bica-link"><a class="bica-reserve-link" href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer">Consultar y reservar en RED BICA</a></p>`;
+      return `<a class="branch-primary-action" href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer"><span>Consultar en RED BICA</span><small>Disponibilidad y reserva</small></a>`;
     }
-    return `<div class="branch-bica-link"><span class="catalog-sub">Ediciones disponibles en este punto</span>${records.map(record => `<a class="bica-reserve-link" href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer">Ficha BICA ${esc(record.bica_id)}</a>`).join(' · ')}</div>`;
+    return `<details class="branch-edition-details"><summary>Consultar ${records.length} ediciones en RED BICA</summary><div class="branch-edition-links">${records.map(record => `<a href="${esc(record.permalink)}" target="_blank" rel="noopener noreferrer">Ficha BICA ${esc(record.bica_id)}</a>`).join('')}</div></details>`;
   }
 
   function renderBranch(branchRecordMap, libraryId, library, branchId, branch) {
     const label = libraryDisplay(libraryId, library, branchId, branch);
-    return `<article class="branch-availability">
-      <div class="branch-availability-head">
-        <div><strong>${esc(label.name)}</strong><span class="catalog-sub">${esc(label.meta)}</span></div>
-        ${availabilityMarkup(branch.available, branch.copies)}
+    const available = Number(branch.available || 0);
+    const copies = Number(branch.copies || 0);
+    const stateClass = available > 0 ? 'is-available' : 'is-unavailable';
+    const stateLabel = available > 0 ? 'Disponible ahora' : 'Sin disponibilidad inmediata';
+    const countLabel = `${available} ${available === 1 ? 'disponible' : 'disponibles'} de ${copies} ${copies === 1 ? 'ejemplar' : 'ejemplares'}`;
+
+    return `<article class="branch-availability ${stateClass}">
+      <div class="branch-card-main">
+        <div class="branch-library-identity">
+          <h4>${esc(label.name)}</h4>
+          <p class="branch-availability-copy"><strong>${stateLabel}</strong><span>${esc(countLabel)}</span></p>
+        </div>
+        ${branchBicaLinks(branchRecordMap, libraryId, branchId)}
       </div>
-      ${branchBicaLinks(branchRecordMap, libraryId, branchId)}
-      ${label.directory ? `<details class="branch-directory-details"><summary>Información de la biblioteca</summary><div class="branch-directory-body">${contactMarkup(label.directory)}<p><a href="${esc(label.directory.directory_url)}" target="_blank" rel="noopener noreferrer">Ver ficha oficial de la biblioteca</a></p></div></details>` : contactMarkup(branch.contact)}
+      ${label.directory
+        ? `<details class="branch-directory-details"><summary><span>Dirección, horario y contacto</span></summary><div class="branch-directory-body">${contactMarkup(label.directory)}<p class="branch-official-link"><a href="${esc(label.directory.directory_url)}" target="_blank" rel="noopener noreferrer">Ver ficha oficial</a></p></div></details>`
+        : contactMarkup(branch.contact)}
     </article>`;
   }
 
