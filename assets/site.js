@@ -1,4 +1,19 @@
+const updateStickyHeaderOffset=()=>{
+  const header=document.querySelector('.site-header');
+  if(!header)return;
+  const gap=16;
+  document.documentElement.style.setProperty('--sticky-header-offset',`${Math.ceil(header.getBoundingClientRect().height+gap)}px`);
+};
+
+updateStickyHeaderOffset();
+window.addEventListener('resize',updateStickyHeaderOffset,{passive:true});
+if('ResizeObserver' in window){
+  const stickyHeader=document.querySelector('.site-header');
+  if(stickyHeader)new ResizeObserver(updateStickyHeaderOffset).observe(stickyHeader);
+}
+
 document.addEventListener('DOMContentLoaded',()=>{
+  updateStickyHeaderOffset();
   document.querySelectorAll('.site-header').forEach(header=>{
     const nav=header.querySelector('.nav');
     const menu=header.querySelector('.menu');
