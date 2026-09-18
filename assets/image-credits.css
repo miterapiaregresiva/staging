@@ -77,3 +77,11 @@
     z-index:1001;
   }
 }
+
+
+/* Related-book credit copy: keep inherited catalogue text styles from darkening the overlay. */
+.author-books .book-cover .image-credit-panel,
+.author-books .book-cover .image-credit-panel p,
+.author-books .book-cover .image-credit-panel strong,
+.author-books .book-cover .image-credit-panel span{color:#fff}
+.author-books .book-cover .image-credit-panel a{color:#fff}
