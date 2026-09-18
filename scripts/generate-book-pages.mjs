@@ -32,6 +32,9 @@ const coverCredit=hasCover && cover.credit_source && cover.credit_url
  ? `<details class="image-credit"><summary aria-label="Información y créditos de la imagen" title="Información y créditos de la imagen"><span aria-hidden="true">i</span></summary><div class="image-credit-panel"><p>Portada de una edición de <em>${esc(data.title)}</em>.</p><p><a href="${esc(cover.credit_url)}" target="_blank" rel="noopener noreferrer">Fuente: ${esc(cover.credit_source)}</a></p></div></details>`
  : '';
 const paragraphs=data.about.map(p=>`<p>${esc(p)}</p>`).join('');
+const languageNames={es:'ES',en:'EN',de:'DE',fr:'FR',it:'IT',pt:'PT'};
+const languageTags=(data.languages||['es']).map(code=>`<span class="tag">${esc(languageNames[code]||String(code).toUpperCase())}</span>`).join('');
+const languageLabel=(data.languages||[]).length>1?'Idiomas':'Idioma';
 const isbns=(data.isbns||[data.primary_isbn]).filter(Boolean).map(x=>`<li><strong>${esc(x)}</strong></li>`).join('');
 const archiveAccess = x => {
   if (x.access === 'preview') return {detail:'Internet Archive · vista previa', action:'Ver vista previa en Internet Archive'};
@@ -66,7 +69,7 @@ if (hasCover) bookLd.image=cover.src;
 const jsonLd=JSON.stringify({"@context":"https://schema.org","@graph":[bookLd,{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://miterapiaregresiva.com/"},{"@type":"ListItem","position":2,"name":"Biblioteca","item":"https://miterapiaregresiva.com/biblioteca-de-terapia-regresiva/"},{"@type":"ListItem","position":3,"name":"Autores","item":"https://miterapiaregresiva.com/autores/"},{"@type":"ListItem","position":4,"name":author.name,"item":`https://miterapiaregresiva.com/autores/${authorSlug}/`},{"@type":"ListItem","position":5,"name":data.title,"item":canonical}]}]});
 const values={
   TITLE:esc(data.title), ORIGINAL_TITLE:esc(data.original_title), AUTHOR:esc(author.name), AUTHORS_DISPLAY:esc(authorsDisplay), AUTHOR_SLUG:esc(authorSlug),
-  SLUG:esc(data.slug), LEAD:esc(data.lead), EYEBROW:esc(data.eyebrow || `Libro de ${authorsDisplay}`), ABOUT:paragraphs, ISBNS:isbns, COVER_SRC:esc(cover.src), COVER_ALT:esc(cover.alt), COVER_CREDIT:coverCredit,
+  SLUG:esc(data.slug), LEAD:esc(data.lead), EYEBROW:esc(data.eyebrow || `Libro de ${authorsDisplay}`), ABOUT:paragraphs, LANGUAGE_LABEL:languageLabel, LANGUAGE_TAGS:languageTags, ISBNS:isbns, COVER_SRC:esc(cover.src), COVER_ALT:esc(cover.alt), COVER_CREDIT:coverCredit,
   ARCHIVE:archive, ONLINE_HEADING:onlineHeading, PRIMARY_ACTIONS:primaryActions, AVAILABILITY_SECTIONS:availabilitySections, DATA_SOURCE:esc(data.data_source||`/data/library/${authorSlug}.json`),
   AVAILABILITY_SOURCE:esc(availabilityEnabled ? (data.availability_source||`/data/availability/${authorSlug}.json`) : ''), WORK_SLUG:esc(data.work_slug),
   JSON_LD:jsonLd, PURCHASE:purchase, RELATED_AUTHOR:relatedCards(data.related_author_books), RELATED_REGRESSION:relatedCards(data.related_regression_books), PRIMARY_ISBN:esc(data.primary_isbn||''), CANONICAL:canonical
