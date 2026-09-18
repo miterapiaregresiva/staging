@@ -4,21 +4,43 @@ Fecha: 2026-09-17
 
 ## Criterio de uso
 
-Para portadas que todavía no están almacenadas localmente, usar como primera opción **Open Library Covers API** cuando exista una edición identificada y con portada disponible.
+La biblioteca utiliza una única portada canónica por ficha y esa misma portada debe repetirse en la página del autor, el índice de libros y todos los bloques de libros relacionados.
 
-Open Library indica expresamente que su Covers API puede utilizarse para mostrar portadas en páginas públicas y recomienda enlazar de cortesía a la ficha del libro. Preferir identificadores `OLID` frente a ISBN para evitar límites innecesarios.
+Prioridad técnica para resolver una portada:
 
-Patrón recomendado:
+1. `cover.webp`
+2. `cover.png`
+3. `cover.jpg` o `cover.jpeg`
+4. dummy común `Portada`
 
-```html
-<a href="https://openlibrary.org/books/OLXXXXXXXXM/" target="_blank" rel="noopener noreferrer" aria-label="Ver ficha del libro en Open Library">
-  <img src="https://covers.openlibrary.org/b/olid/OLXXXXXXXXM-L.jpg?default=false" alt="Portada de Título" loading="lazy">
-</a>
+Objetivo de estructura:
+
+```text
+assets/images/books/
+  _shared/
+    cover.webp
+  {autor-slug}/
+    {libro-slug}/
+      cover.webp
 ```
 
-Cuando ya exista una portada local procedente de Internet Archive, mantener la copia local actual y no sustituirla solo por homogeneidad.
+Mientras una portada todavía no esté materializada como asset local, staging puede utilizar temporalmente una fuente remota seleccionada y documentada. La procedencia debe mantenerse en `licencias-de-recursos/` y en el icono de información de la propia imagen.
 
-No utilizar portadas de Amazon, Google Images, editoriales o librerías como fuente de imagen salvo que exista permiso o una política explícita de reutilización.
+No mezclar ediciones distintas de una misma obra entre fichas y tarjetas: una obra tiene una portada visual canónica hasta que se decida sustituirla en todo el sitio.
+
+### Brian Weiss
+
+Para las nueve fichas actuales se ha fijado como fuente visual coherente **Penguin Libros**. Las cubiertas seleccionadas son las mismas en:
+
+- ficha de autor;
+- índice de libros;
+- ficha individual;
+- bloques «Otros libros de Brian Weiss»;
+- bloques de libros relacionados.
+
+La fuente visual no implica que la cubierta tenga licencia abierta. Los derechos sobre ilustración, diseño editorial, marcas y logotipos siguen perteneciendo a sus titulares.
+
+Para otros autores, si no existe asset local ni fuente editorial seleccionada, Open Library/Internet Archive puede utilizarse como fuente de apoyo siempre que la edición y la procedencia queden identificadas.
 
 ## Portadas ya locales
 
