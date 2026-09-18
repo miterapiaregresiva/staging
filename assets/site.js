@@ -13,7 +13,7 @@ if('ResizeObserver' in window){
 }
 
 
-const scrollToAnchoredSection=(hash,{behavior='smooth'}={})=>{
+const scrollToAnchoredSection=(hash,{behavior='smooth',focusTarget=false}={})=>{
   if(!hash||hash==='#')return false;
   let id;
   try{id=decodeURIComponent(hash.slice(1));}catch{id=hash.slice(1)}
@@ -24,7 +24,15 @@ const scrollToAnchoredSection=(hash,{behavior='smooth'}={})=>{
   const headerHeight=Math.ceil(header.getBoundingClientRect().height);
   const breathingRoom=28;
   const top=Math.max(0,target.getBoundingClientRect().top+window.scrollY-headerHeight-breathingRoom);
-  window.scrollTo({top,behavior});
+  const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({top,behavior:reduceMotion?'auto':behavior});
+  if(focusTarget){
+    const focusNode=target.matches('h1,h2,h3,h4,h5,h6')?target:target.querySelector('h1,h2,h3,h4,h5,h6');
+    if(focusNode){
+      if(!focusNode.hasAttribute('tabindex'))focusNode.setAttribute('tabindex','-1');
+      requestAnimationFrame(()=>focusNode.focus({preventScroll:true}));
+    }
+  }
   return true;
 };
 
@@ -38,7 +46,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(!hash||hash==='#'||!document.getElementById(hash.slice(1)))return;
     event.preventDefault();
     if(location.hash!==hash)history.pushState(null,'',hash);
-    requestAnimationFrame(()=>scrollToAnchoredSection(hash,{behavior:'smooth'}));
+    requestAnimationFrame(()=>scrollToAnchoredSection(hash,{behavior:'smooth',focusTarget:event.detail===0}));
   });
 
   if(location.hash){
