@@ -140,6 +140,13 @@ Cada enlace debe indicar claramente que abre un ejemplar concreto en Internet Ar
 
 Mostrar el logotipo de Internet Archive como identificación visual del servicio, sin sustituir el texto accesible de la sección.
 
+Los ejemplares de Internet Archive deben mostrarse como **fichas compactas**, no como filas a ancho completo:
+
+- ancho aproximado de tarjeta: 180–220 px en escritorio;
+- distribución en rejilla y alineación al inicio;
+- cada ficha identifica un ejemplar concreto, su idioma y el enlace de lectura/préstamo;
+- en móvil pueden pasar a una sola columna, manteniendo un ancho contenido y sin ocupar innecesariamente toda la página.
+
 Si solo existe un ejemplar en otro idioma, indicarlo de forma explícita. Ejemplo: `Mirrors of Time` disponible en inglés cuando no haya copia en español en la selección.
 
 ### 7. Préstamo gratuito en Canarias
