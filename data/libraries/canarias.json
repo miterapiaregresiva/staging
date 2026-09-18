@@ -4,6 +4,347 @@
   "source_label": "Directorio de Bibliotecas de Canarias",
   "last_verified": "2026-09-18",
   "libraries": {
+    "EH01:603": {
+      "bica_library_id": "EH01",
+      "bica_branch_id": "603",
+      "name": "Biblioteca Pública Municipal de Valverde",
+      "municipality": "Valverde",
+      "island": "El Hierro",
+      "address": "Calle San Francisco, s/n, 38900 Valverde",
+      "phone": "922 550 452",
+      "email": "biblioteca@aytovalverde.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:30 y 16:00–19:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/el-hierro/biblioteca-publica-municipal-de-valverde",
+      "last_verified": "2026-09-18"
+    },
+    "LG00:700": {
+      "bica_library_id": "LG00",
+      "bica_branch_id": "700",
+      "name": "Biblioteca Pública Municipal de San Sebastián de La Gomera",
+      "municipality": "San Sebastián de La Gomera",
+      "island": "La Gomera",
+      "address": "Calle Real, 40, 38800 San Sebastián de La Gomera",
+      "phone": "922 871 554",
+      "email": "biblioteca@sansebastiangomera.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:30–13:00 y 16:30–20:00",
+        "Sábado y domingo: cerrado",
+        "Verano: lunes a viernes, 9:00–15:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-gomera/biblioteca-publica-municipal-de-san-sebastian-de-la-gomera",
+      "last_verified": "2026-09-18"
+    },
+    "LP02:502": {
+      "bica_library_id": "LP02",
+      "bica_branch_id": "502",
+      "name": "Biblioteca Pública Municipal de Los Llanos de Aridane - María Nieves Pérez Acosta",
+      "municipality": "Los Llanos de Aridane",
+      "island": "La Palma",
+      "address": "Plaza de España, s/n, Casa de Cultura, 2ª planta, 38760 Los Llanos de Aridane",
+      "phone": "922 461 557",
+      "email": "biblioteca@aridane.org",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–21:00",
+        "Sábado: 9:00–14:00",
+        "Del 1 de julio al 30 de septiembre: lunes a viernes, 8:00–14:00"
+      ],
+      "directory_url": "https://directoriobibliotecas.mcu.es/dimbe.cmd?accion=detalle_biblioteca&apartado=buscador&filtro=4&ps=3800542",
+      "source_label": "Directorio de Bibliotecas Españolas",
+      "last_verified": "2026-09-18"
+    },
+    "LP05:505": {
+      "bica_library_id": "LP05",
+      "bica_branch_id": "505",
+      "name": "Biblioteca Pública Municipal de Puntallana",
+      "municipality": "Puntallana",
+      "island": "La Palma",
+      "address": "Casa de la Cultura, Calle República de Venezuela, 38715 Puntallana",
+      "phone": "922 430 200",
+      "email": "biblioteca@puntallana.es",
+      "opening_hours": [
+        "Lunes a viernes: 14:30–20:30",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 15:00–20:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-publica-municipal-de-puntallana",
+      "last_verified": "2026-09-18"
+    },
+    "LP07:507": {
+      "bica_library_id": "LP07",
+      "bica_branch_id": "507",
+      "name": "Biblioteca Pública Municipal de Barlovento",
+      "municipality": "Barlovento",
+      "island": "La Palma",
+      "address": "Travesía del Casco Urbano, 7, 38726 Barlovento",
+      "phone": "671 065 304",
+      "email": "cultura@barlovento.es",
+      "opening_hours": [
+        "Lunes a jueves: 16:00–19:00",
+        "Viernes, sábado y domingo: cerrado",
+        "Septiembre: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-publica-municipal-de-barlovento",
+      "last_verified": "2026-09-18"
+    },
+    "LP08:508": {
+      "bica_library_id": "LP08",
+      "bica_branch_id": "508",
+      "name": "Biblioteca Pública Municipal de Tijarafe",
+      "municipality": "Tijarafe",
+      "island": "La Palma",
+      "address": "Calle Real, 4, 38780 Tijarafe",
+      "phone": "922 490 363 / 695 822 517",
+      "email": "biblioteca@tijarafe.org",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–20:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: 11:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-publica-municipal-de-tijarafe",
+      "last_verified": "2026-09-18"
+    },
+    "LP09:509": {
+      "bica_library_id": "LP09",
+      "bica_branch_id": "509",
+      "name": "Biblioteca Pública Municipal de Tazacorte",
+      "municipality": "Tazacorte",
+      "island": "La Palma",
+      "address": "Avenida de la Constitución, bajos L4, 38770 Tazacorte",
+      "phone": "922 481 009",
+      "email": "biblioteca@tazacorte.es",
+      "opening_hours": [
+        "Lunes a jueves: 8:00–13:00 y 16:30–19:30",
+        "Viernes: 8:00–14:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 8:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-publica-municipal-de-tazacorte",
+      "last_verified": "2026-09-18"
+    },
+    "LP10:510": {
+      "bica_library_id": "LP10",
+      "bica_branch_id": "510",
+      "name": "Biblioteca de la Casa de la Cultura de Velhoco",
+      "municipality": "Santa Cruz de La Palma",
+      "island": "La Palma",
+      "address": "Casa de la Cultura de Velhoco, Calle Velhoco, 70, 38700 Santa Cruz de La Palma",
+      "phone": "922 420 007",
+      "email": "culturapilar@santacruzdelapalma.es",
+      "opening_hours": [
+        "Lunes a viernes: 14:00–21:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: 9:00–12:00 y 16:00–20:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-de-la-casa-de-la-cultura-de-velhoco",
+      "last_verified": "2026-09-18"
+    },
+    "LP11:513": {
+      "bica_library_id": "LP11",
+      "bica_branch_id": "513",
+      "name": "Biblioteca de la Real Sociedad Cosmológica",
+      "municipality": "Santa Cruz de La Palma",
+      "island": "La Palma",
+      "address": "Calle Van de Walle, 6, 38700 Santa Cruz de La Palma",
+      "phone": "922 414 230",
+      "email": "sociedadlacosmologica@gmail.com",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–21:00",
+        "Sábado: 9:00–14:00",
+        "Domingo: cerrado",
+        "Verano: lunes a viernes, 8:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-de-la-real-sociedad-cosmologica",
+      "last_verified": "2026-09-18"
+    },
+    "LP13:515": {
+      "bica_library_id": "LP13",
+      "bica_branch_id": "515",
+      "name": "Biblioteca Pública Municipal de Puntagorda",
+      "municipality": "Puntagorda",
+      "island": "La Palma",
+      "address": "Calle Pino de la Virgen, s/n, 38789 Puntagorda",
+      "email": "bibliotecadepuntagorda@hotmail.com",
+      "opening_hours": [
+        "Lunes: 8:00–13:00 y 16:00–20:00",
+        "Martes: 16:00–20:00",
+        "Miércoles y jueves: 8:00–13:00 y 16:00–20:00",
+        "Viernes: 8:00–13:00",
+        "Sábado y domingo: cerrado",
+        "Agosto: lunes a viernes, 9:00–13:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-publica-municipal-de-puntagorda",
+      "last_verified": "2026-09-18"
+    },
+    "LP14:519": {
+      "bica_library_id": "LP14",
+      "bica_branch_id": "519",
+      "name": "Biblioteca Pública Municipal de Breña Baja \"Mauro Fernández Santos\"",
+      "municipality": "Breña Baja",
+      "island": "La Palma",
+      "address": "Calle El Monacal, 55, 38712 San Antonio, Breña Baja",
+      "phone": "608 179 060",
+      "email": "biblioteca@bbaja.es",
+      "opening_hours": [
+        "Lunes a viernes: 10:00–14:00 y 17:00–21:00",
+        "Sábado: 9:00–14:00",
+        "Domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-publica-municipal-de-brena-baja-mauro-fernandez-santos",
+      "last_verified": "2026-09-18"
+    },
+    "LP15:517": {
+      "bica_library_id": "LP15",
+      "bica_branch_id": "517",
+      "name": "Biblioteca Pública Municipal de Garafía \"Anselmo Pérez de Brito\"",
+      "municipality": "Villa de Garafía",
+      "island": "La Palma",
+      "address": "Calle Díaz y Suárez, s/n, 38787 Villa de Garafía",
+      "phone": "674 773 855",
+      "email": "biblioteca@garafia.org",
+      "opening_hours": [
+        "Lunes, miércoles y viernes: 14:30–20:00",
+        "Martes y jueves: 9:00–14:30",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-publica-municipal-de-garafia-anselmo-perez-de-brito",
+      "last_verified": "2026-09-18"
+    },
+    "TF00:200": {
+      "bica_library_id": "TF00",
+      "bica_branch_id": "200",
+      "name": "Biblioteca Pública del Estado en Santa Cruz de Tenerife",
+      "municipality": "Santa Cruz de Tenerife",
+      "island": "Tenerife",
+      "address": "Calle Comodoro Rolín, 1, 38007 Santa Cruz de Tenerife",
+      "phone": "922 479 312",
+      "email": "bpetf.bibliotecas@gobiernodecanarias.org",
+      "opening_hours": [
+        "Lunes a viernes: 8:30–20:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/santa-cruz-de-tenerife/contactanos",
+      "source_label": "Biblioteca de Canarias",
+      "last_verified": "2026-09-18"
+    },
+    "TF01:201": {
+      "bica_library_id": "TF01",
+      "bica_branch_id": "201",
+      "name": "Biblioteca Municipal Central de Santa Cruz de Tenerife (TEA)",
+      "municipality": "Santa Cruz de Tenerife",
+      "island": "Tenerife",
+      "address": "Calle Fuente Morales, s/n, Edificio TEA, Santa Cruz de Tenerife",
+      "phone": "922 849 060",
+      "email": "bibliotecamunicipalcentral@santacruzdetenerife.es",
+      "opening_hours": [
+        "Sala de estudio: todos los días, 24 horas",
+        "Servicio bibliotecario: lunes a viernes, 9:00–20:00"
+      ],
+      "directory_url": "https://www.tenerife.es/santa-cruz-de-tenerife",
+      "source_label": "Cabildo de Tenerife",
+      "last_verified": "2026-09-18"
+    },
+    "TF01:204": {
+      "bica_library_id": "TF01",
+      "bica_branch_id": "204",
+      "name": "Biblioguagua Municipal de Santa Cruz de Tenerife",
+      "municipality": "Santa Cruz de Tenerife",
+      "island": "Tenerife",
+      "address": "Calle Fuente Morales, s/n, 38003 Santa Cruz de Tenerife",
+      "phone": "922 849 060 / 609 127 422",
+      "email": "biblioguaguamunicipal@santacruzdetenerife.es",
+      "opening_hours": [
+        "Lunes a viernes: 13:30–20:30",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: 13:30–19:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioguagua-municipal-de-santa-cruz-de-tenerife",
+      "last_verified": "2026-09-18"
+    },
+    "TF05:208": {
+      "bica_library_id": "TF05",
+      "bica_branch_id": "208",
+      "name": "Biblioteca Pública Municipal de San Miguel de Abona",
+      "municipality": "San Miguel de Abona",
+      "island": "Tenerife",
+      "address": "Calle de la Iglesia, s/n, 38620 San Miguel de Abona",
+      "phone": "922 167 473",
+      "email": "biblioteca@sanmigueldeabona.org",
+      "opening_hours": [
+        "Lunes a viernes: 7:45–20:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-san-miguel-de-abona",
+      "last_verified": "2026-09-18"
+    },
+    "TF06:209": {
+      "bica_library_id": "TF06",
+      "bica_branch_id": "209",
+      "name": "Biblioteca Pública Municipal de Tegueste",
+      "municipality": "Tegueste",
+      "island": "Tenerife",
+      "address": "Centro Cultural Príncipe Felipe, Calle El Casino, 7, 2ª planta, 38280 Tegueste",
+      "phone": "922 316 128",
+      "email": "biblioteca@tegueste.org",
+      "opening_hours": [
+        "Lunes a viernes: 7:30–21:30",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 8:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-tegueste",
+      "last_verified": "2026-09-18"
+    },
+    "TF07:210": {
+      "bica_library_id": "TF07",
+      "bica_branch_id": "210",
+      "name": "Biblioteca Pública Municipal de Puerto de la Cruz \"Tomás de Iriarte\"",
+      "municipality": "Puerto de la Cruz",
+      "island": "Tenerife",
+      "address": "Calle Puerto Viejo, 11, 38400 Puerto de la Cruz",
+      "phone": "922 380 015",
+      "email": "bibliopuertodelacruz@gmail.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–20:30",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-puerto-de-la-cruz-tomas-de-iriarte",
+      "last_verified": "2026-09-18"
+    },
+    "TF09:213": {
+      "bica_library_id": "TF09",
+      "bica_branch_id": "213",
+      "name": "Biblioteca Municipal Adrián Alemán de Armas",
+      "municipality": "San Cristóbal de La Laguna",
+      "island": "Tenerife",
+      "address": "Calle Juan de Vera, 9, 38201 San Cristóbal de La Laguna",
+      "phone": "922 259 940",
+      "email": "bibliotecamunicipal@aytolalaguna.es",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–21:00",
+        "Verano (julio a septiembre): lunes a viernes, 9:00–20:00"
+      ],
+      "directory_url": "https://www.aytolalaguna.es/servicios/cultura/biblioteca/",
+      "source_label": "Ayuntamiento de San Cristóbal de La Laguna",
+      "last_verified": "2026-09-18"
+    },
+    "TF10:214": {
+      "bica_library_id": "TF10",
+      "bica_branch_id": "214",
+      "name": "Biblioteca Pública Municipal de La Orotava",
+      "municipality": "La Orotava",
+      "island": "Tenerife",
+      "address": "Calle Tomás Pérez, 3, 38300 La Orotava",
+      "phone": "922 335 804",
+      "email": "biblioteca@villadelaorotava.org",
+      "opening_hours": [
+        "Lunes a viernes: 8:30–21:00",
+        "Sábado: 9:00–14:00",
+        "Domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-la-orotava",
+      "last_verified": "2026-09-18"
+    },
     "TF11:215": {
       "bica_library_id": "TF11",
       "bica_branch_id": "215",
@@ -18,7 +359,490 @@
         "Sábado y domingo: cerrado",
         "Sala de estudio: fines de semana y festivos, 9:00–19:30"
       ],
-      "directory_url": "https://bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-los-cristianos",
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-los-cristianos",
+      "last_verified": "2026-09-18"
+    },
+    "TF11:217": {
+      "bica_library_id": "TF11",
+      "bica_branch_id": "217",
+      "name": "Biblioteca Arona",
+      "municipality": "Arona",
+      "island": "Tenerife",
+      "address": "CEIP Óscar Domínguez, Calle El Calvario, 20, 38640 Arona",
+      "phone": "608 641 303",
+      "email": "redbibliotecasarona@arona.org",
+      "opening_hours": [
+        "Lunes a viernes: 15:30–19:30",
+        "Actualmente figura como temporalmente cerrada"
+      ],
+      "directory_url": "https://www.bibliotecaspublicas.es/arona/Conocenos/nuestras-bibliotecas-salas-de-estudios.html",
+      "source_label": "Red de Bibliotecas Públicas de Arona",
+      "last_verified": "2026-09-18"
+    },
+    "TF11:218": {
+      "bica_library_id": "TF11",
+      "bica_branch_id": "218",
+      "name": "Biblioteca Pública Municipal de Cabo Blanco",
+      "municipality": "Arona",
+      "island": "Tenerife",
+      "address": "Centro Cívico de Cabo Blanco, Calle Vista Martín, 8, 38626 Cabo Blanco, Arona",
+      "phone": "922 720 143",
+      "email": "sfernandez@arona.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–20:30",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-cabo-blanco",
+      "last_verified": "2026-09-18"
+    },
+    "TF11:219": {
+      "bica_library_id": "TF11",
+      "bica_branch_id": "219",
+      "name": "Sala de Estudios El Fraile",
+      "municipality": "Arona",
+      "island": "Tenerife",
+      "address": "Centro Cívico El Fraile, Calle Salvador González Alayón, 80, 38632 El Fraile, Arona",
+      "phone": "922 761 600",
+      "email": "redbibliotecasarona@arona.org",
+      "opening_hours": [
+        "Lunes a viernes: 15:00–20:00",
+        "Actualmente figura como temporalmente cerrada"
+      ],
+      "directory_url": "https://www.bibliotecaspublicas.es/arona/Conocenos/nuestras-bibliotecas-salas-de-estudios.html",
+      "source_label": "Red de Bibliotecas Públicas de Arona",
+      "last_verified": "2026-09-18"
+    },
+    "TF11:222": {
+      "bica_library_id": "TF11",
+      "bica_branch_id": "222",
+      "name": "Sala de Estudios La Camella",
+      "municipality": "Arona",
+      "island": "Tenerife",
+      "address": "Centro Cívico de La Camella, Carretera General TF-28, 38627 La Camella, Arona",
+      "phone": "922 761 600",
+      "email": "redbibliotecasarona@arona.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–20:30"
+      ],
+      "directory_url": "https://www.bibliotecaspublicas.es/arona/Conocenos/nuestras-bibliotecas-salas-de-estudios.html",
+      "source_label": "Red de Bibliotecas Públicas de Arona",
+      "last_verified": "2026-09-18"
+    },
+    "TF12:223": {
+      "bica_library_id": "TF12",
+      "bica_branch_id": "223",
+      "name": "Biblioteca Pública Municipal de Granadilla de Abona",
+      "municipality": "Granadilla de Abona",
+      "island": "Tenerife",
+      "address": "Plaza González Mena, s/n, 38600 Granadilla de Abona",
+      "phone": "922 759 983",
+      "email": "bibliotecagranadilla@granadilladeabona.org",
+      "opening_hours": [
+        "Lunes, miércoles y viernes: 8:00–15:00",
+        "Martes y jueves: 13:00–20:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 8:00–18:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-granadilla-de-abona",
+      "last_verified": "2026-09-18"
+    },
+    "TF12:242": {
+      "bica_library_id": "TF12",
+      "bica_branch_id": "242",
+      "name": "Biblioteca Pública Municipal de San Isidro",
+      "municipality": "Granadilla de Abona",
+      "island": "Tenerife",
+      "address": "Calle Santa María de la Cabeza, 3, 38611 San Isidro, Granadilla de Abona",
+      "phone": "922 759 983",
+      "email": "bibliotecasanisidro@granadilladeabona.org",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–20:00",
+        "Sábado y domingo: cerrado",
+        "Verano, Navidad, Carnaval y Semana Santa: lunes a viernes, 8:00–19:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-san-isidro",
+      "last_verified": "2026-09-18"
+    },
+    "TF13:224": {
+      "bica_library_id": "TF13",
+      "bica_branch_id": "224",
+      "name": "Biblioteca Pública Municipal de Los Realejos \"Viera y Clavijo\"",
+      "municipality": "Los Realejos",
+      "island": "Tenerife",
+      "address": "Plaza La Unión, 1, 38410 Los Realejos",
+      "phone": "922 341 007",
+      "email": "biblioteca.viera.clavijo@losrealejos.es",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–20:00",
+        "Sábado: 9:00–18:00, solo sala de estudio",
+        "Domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-los-realejos-viera-y-clavijo",
+      "last_verified": "2026-09-18"
+    },
+    "TF14:226": {
+      "bica_library_id": "TF14",
+      "bica_branch_id": "226",
+      "name": "Biblioteca Pública Municipal de la Villa de Candelaria",
+      "municipality": "Candelaria",
+      "island": "Tenerife",
+      "address": "Calle Alcalde Juan Castellano Castellano, s/n, 38530 Candelaria",
+      "phone": "922 956 210",
+      "email": "bibliocandelaria@candelaria.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–20:00",
+        "Sábado: 9:00–14:00",
+        "Domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-la-villa-de-candelaria",
+      "last_verified": "2026-09-18"
+    },
+    "TF14:227": {
+      "bica_library_id": "TF14",
+      "bica_branch_id": "227",
+      "name": "Biblioteca Pública Municipal de Las Caletillas",
+      "municipality": "Candelaria",
+      "island": "Tenerife",
+      "address": "Bajos Plaza del CIT, 38530 Las Caletillas, Candelaria",
+      "phone": "922 956 212",
+      "email": "bibliocaletillas@candelaria.es",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–20:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-las-caletillas",
+      "last_verified": "2026-09-18"
+    },
+    "TF14:228": {
+      "bica_library_id": "TF14",
+      "bica_branch_id": "228",
+      "name": "Biblioteca Pública Municipal de Igueste de Candelaria",
+      "municipality": "Candelaria",
+      "island": "Tenerife",
+      "address": "Plaza de La Libertad, s/n, 38520 Igueste de Candelaria",
+      "phone": "922 505 548",
+      "email": "biblioigueste@candelaria.es",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–20:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-igueste-de-candelaria",
+      "last_verified": "2026-09-18"
+    },
+    "TF14:231": {
+      "bica_library_id": "TF14",
+      "bica_branch_id": "231",
+      "name": "Biblioteca Pública Municipal de Araya",
+      "municipality": "Candelaria",
+      "island": "Tenerife",
+      "address": "Calle Simón Higuera Mederos, s/n, 38540 Araya, Candelaria",
+      "phone": "922 956 213",
+      "email": "biblioaraya@candelaria.es",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–20:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-araya",
+      "last_verified": "2026-09-18"
+    },
+    "TF16:241": {
+      "bica_library_id": "TF16",
+      "bica_branch_id": "241",
+      "name": "Biblioteca Pública Municipal de Guía de Isora",
+      "municipality": "Guía de Isora",
+      "island": "Tenerife",
+      "address": "Calle del Campo, 13, 38680 Guía de Isora",
+      "phone": "922 853 089",
+      "email": "biblioteca@guiadeisora.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–13:00 y 15:00–20:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-guia-de-isora",
+      "last_verified": "2026-09-18"
+    },
+    "TF17:261": {
+      "bica_library_id": "TF17",
+      "bica_branch_id": "261",
+      "name": "Biblioteca Pública Municipal de Buenavista del Norte",
+      "municipality": "Buenavista del Norte",
+      "island": "Tenerife",
+      "address": "Plaza de los Remedios, s/n, 38480 Buenavista del Norte",
+      "phone": "922 127 865",
+      "email": "biblioteca@buenavistadelnorte.es",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–13:30 y 17:00–20:00",
+        "Sábado y domingo: cerrado",
+        "Julio y agosto: lunes, miércoles y viernes 9:00–14:00; martes y jueves 9:00–14:00 y 19:00–21:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-buenavista-del-norte",
+      "last_verified": "2026-09-18"
+    },
+    "TF18:262": {
+      "bica_library_id": "TF18",
+      "bica_branch_id": "262",
+      "name": "Biblioteca Pública Municipal de La Zarza",
+      "municipality": "Fasnia",
+      "island": "Tenerife",
+      "address": "Calle El Calvario, 4, 38579 La Zarza, Fasnia",
+      "phone": "922 530 792",
+      "email": "biblionieves@yahoo.es",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–17:45",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-la-zarza",
+      "last_verified": "2026-09-18"
+    },
+    "TF19:244": {
+      "bica_library_id": "TF19",
+      "bica_branch_id": "244",
+      "name": "Biblioteca Pública Municipal de Garachico",
+      "municipality": "Garachico",
+      "island": "Tenerife",
+      "address": "Plaza de la Libertad, 1, 38450 Garachico",
+      "phone": "922 830 000 (ext. 216/288) / 922 830 340",
+      "email": "bibliotecacasco@garachico.es",
+      "opening_hours": [
+        "Lunes a viernes: 11:00–18:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 9:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-garachico",
+      "last_verified": "2026-09-18"
+    },
+    "TF19:245": {
+      "bica_library_id": "TF19",
+      "bica_branch_id": "245",
+      "name": "Biblioteca Pública Municipal de Genovés",
+      "municipality": "Garachico",
+      "island": "Tenerife",
+      "address": "Calle Real, 71, 38459 Genovés, Garachico",
+      "phone": "922 830 000 (ext. 216/288) / 922 830 344",
+      "email": "bibliotecagenoves@garachico.es",
+      "opening_hours": [
+        "Lunes a viernes: 15:00–19:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 10:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-genoves",
+      "last_verified": "2026-09-18"
+    },
+    "TF20:247": {
+      "bica_library_id": "TF20",
+      "bica_branch_id": "247",
+      "name": "Biblioteca Pública Municipal de Tabaiba",
+      "municipality": "El Rosario",
+      "island": "Tenerife",
+      "address": "Calle Francia, 2, 38190 Tabaiba, El Rosario",
+      "phone": "922 682 303",
+      "email": "bibliotecatabaiba@ayuntamientoelrosario.org",
+      "opening_hours": [
+        "Lunes, martes, miércoles y viernes: 15:00–20:30",
+        "Jueves: 8:30–14:00",
+        "Sábado y domingo: cerrado",
+        "Julio y agosto: lunes 15:00–20:30; martes a viernes 8:30–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-tabaiba",
+      "last_verified": "2026-09-18"
+    },
+    "TF22:249": {
+      "bica_library_id": "TF22",
+      "bica_branch_id": "249",
+      "name": "Biblioteca Pública Municipal de La Corujera",
+      "municipality": "Santa Úrsula",
+      "island": "Tenerife",
+      "address": "Calle Guanches, 71, 38390 La Corujera, Santa Úrsula",
+      "phone": "922 304 471",
+      "email": "bibliocorujera@aytosantaursula.com",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–19:00",
+        "Sábado y domingo: cerrado",
+        "Cierre especial: agosto y primera mitad de septiembre; última semana de diciembre y primera de enero"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-la-corujera",
+      "last_verified": "2026-09-18"
+    },
+    "TF22:260": {
+      "bica_library_id": "TF22",
+      "bica_branch_id": "260",
+      "name": "Biblioteca Pública Municipal de Santa Úrsula",
+      "municipality": "Santa Úrsula",
+      "island": "Tenerife",
+      "address": "Calle Alcalde Alejo Pérez, 3, 38390 Santa Úrsula",
+      "phone": "922 304 463",
+      "email": "bibliocasco@aytosantaursula.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–14:00 y 16:00–20:00",
+        "Sábado y domingo: cerrado",
+        "Agosto: lunes a viernes, 9:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-santa-ursula",
+      "last_verified": "2026-09-18"
+    },
+    "TF23:250": {
+      "bica_library_id": "TF23",
+      "bica_branch_id": "250",
+      "name": "Biblioteca Pública Municipal de El Sauzal",
+      "municipality": "El Sauzal",
+      "island": "Tenerife",
+      "address": "Centro Cultural del Casco, Calle Manuel Nepomuceno, 12, 38360 El Sauzal",
+      "phone": "922 570 000 (ext. 148)",
+      "email": "biblioteca@elsauzal.es",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–21:00",
+        "Sábado y domingo: cerrado",
+        "Agosto: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-el-sauzal",
+      "last_verified": "2026-09-18"
+    },
+    "TF25:252": {
+      "bica_library_id": "TF25",
+      "bica_branch_id": "252",
+      "name": "Biblioteca Pública Municipal de La Guancha",
+      "municipality": "La Guancha",
+      "island": "Tenerife",
+      "address": "Rambla Cristóbal Barrios, 5, 38440 La Guancha",
+      "phone": "922 828 002 (ext. 415)",
+      "email": "biblioteca@laguancha.es",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–13:00 y 17:00–19:00",
+        "Sábado y domingo: cerrado",
+        "Agosto y Navidad: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-la-guancha",
+      "last_verified": "2026-09-18"
+    },
+    "TF26:253": {
+      "bica_library_id": "TF26",
+      "bica_branch_id": "253",
+      "name": "Biblioteca Pública Municipal de Güímar",
+      "municipality": "Güímar",
+      "island": "Tenerife",
+      "address": "Calle Poeta Arístides Hernández Mora, s/n, 38500 Güímar",
+      "phone": "922 514 330",
+      "email": "bibliotecaguimar@gmail.com",
+      "opening_hours": [
+        "Lunes a domingo: 9:00–21:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-guimar",
+      "last_verified": "2026-09-18"
+    },
+    "TF27:254": {
+      "bica_library_id": "TF27",
+      "bica_branch_id": "254",
+      "name": "Biblioteca Pública Municipal de La Matanza de Acentejo",
+      "municipality": "La Matanza de Acentejo",
+      "island": "Tenerife",
+      "address": "Avenida Tinguaro, 17, 38370 La Matanza de Acentejo",
+      "phone": "922 577 120 (ext. 285)",
+      "email": "centrodeestudios@matanceros.es",
+      "opening_hours": [
+        "Lunes a viernes: 17:00–21:00",
+        "Sábado y domingo: cerrado",
+        "Cerrada del 31 de julio al 31 de agosto"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-la-matanza-de-acentejo",
+      "last_verified": "2026-09-18"
+    },
+    "TF29:256": {
+      "bica_library_id": "TF29",
+      "bica_branch_id": "256",
+      "name": "Biblioteca Pública Municipal de Puerto de Santiago",
+      "municipality": "Santiago del Teide",
+      "island": "Tenerife",
+      "address": "Calle Los Ángeles, 53, 38683 Puerto de Santiago, Santiago del Teide",
+      "phone": "922 861 257",
+      "email": "biblioteca.puerto@santiagodelteide.org",
+      "opening_hours": [
+        "Lunes a viernes: 15:30–20:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-puerto-de-santiago",
+      "last_verified": "2026-09-18"
+    },
+    "TF29:283": {
+      "bica_library_id": "TF29",
+      "bica_branch_id": "283",
+      "name": "Biblioteca Pública Municipal de Santiago del Teide",
+      "municipality": "Santiago del Teide",
+      "island": "Tenerife",
+      "address": "Calle Juan Cabeza, 5, 38680 Santiago del Teide",
+      "phone": "922 863 611",
+      "email": "biblioteca@santiagodelteide.org",
+      "opening_hours": [
+        "Lunes a viernes: 15:00–20:00",
+        "Sábado y domingo: cerrado",
+        "Verano y Navidad: lunes a viernes, 9:00–13:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-santiago-del-teide",
+      "last_verified": "2026-09-18"
+    },
+    "TF29:284": {
+      "bica_library_id": "TF29",
+      "bica_branch_id": "284",
+      "name": "Biblioteca Pública Municipal de Tamaimo",
+      "municipality": "Santiago del Teide",
+      "island": "Tenerife",
+      "address": "Centro Cultural Guaninfa, Avenida Coronel Gorrín, 28, 2ª planta, 38684 Tamaimo, Santiago del Teide",
+      "phone": "922 863 964",
+      "email": "biblioteca.tamaimo@santiagodelteide.org",
+      "opening_hours": [
+        "Lunes a viernes: 10:00–14:00 y 15:00–20:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-tamaimo",
+      "last_verified": "2026-09-18"
+    },
+    "TF30:257": {
+      "bica_library_id": "TF30",
+      "bica_branch_id": "257",
+      "name": "Biblioteca Pública Municipal de Tacoronte",
+      "municipality": "Tacoronte",
+      "island": "Tenerife",
+      "address": "Carretera General del Norte, 85, 38350 Tacoronte",
+      "phone": "922 563 213",
+      "email": "biblioteca@aytotacoronte.org",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–21:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-tacoronte",
+      "last_verified": "2026-09-18"
+    },
+    "TF32:259": {
+      "bica_library_id": "TF32",
+      "bica_branch_id": "259",
+      "name": "Biblioteca Municipal de Vilaflor",
+      "municipality": "Vilaflor de Chasna",
+      "island": "Tenerife",
+      "address": "Casa de la Cruz, Calle El Calvario, s/n, 38613 Vilaflor de Chasna",
+      "phone": "922 709 244",
+      "email": "bibliovilaflor@gmail.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–13:00 y 16:00–20:00"
+      ],
+      "directory_url": "https://vilaflordechasna.es/cultura",
+      "source_label": "Ayuntamiento de Vilaflor de Chasna",
+      "last_verified": "2026-09-18"
+    },
+    "TF53:278": {
+      "bica_library_id": "TF53",
+      "bica_branch_id": "278",
+      "name": "Centro de Documentación de Canarias y América (CEDOCAM)",
+      "municipality": "San Cristóbal de La Laguna",
+      "island": "Tenerife",
+      "address": "Calle Anchieta, 9, 38201 San Cristóbal de La Laguna",
+      "phone": "922 266 312",
+      "email": "cedocam@museosdetenerife.org",
+      "opening_hours": [
+        "Lunes, miércoles, jueves y viernes: 8:00–15:00",
+        "Martes: 10:00–17:00",
+        "Fines de semana y festivos: cerrado"
+      ],
+      "directory_url": "https://www.museosdetenerife.org/cedocam-centro-de-documentacion-de-canarias-y-america/visitas/",
+      "source_label": "Museos de Tenerife",
       "last_verified": "2026-09-18"
     }
   }
