@@ -455,3 +455,85 @@
     font-size:.94rem
   }
 }
+
+
+/* Author-page image treatment: visible provenance, stable natural covers */
+.author-profile .author-visual{
+  padding:.45rem .45rem 0;
+  overflow:hidden
+}
+.author-profile .author-photo-credit{
+  margin:0;
+  padding:.7rem .3rem .78rem;
+  color:#74655f;
+  font-size:.72rem;
+  line-height:1.42
+}
+.author-profile .author-photo-credit a{
+  color:#76503f;
+  text-underline-offset:.12em
+}
+
+.author-profile .author-books .book-cover{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  height:270px;
+  aspect-ratio:auto;
+  margin:0 0 .5rem;
+  padding:1rem .75rem .7rem;
+  border-radius:5px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#fbf7f1 0%,#f3ece3 100%)
+}
+.author-profile .author-books .book-cover::after{
+  left:10%;
+  right:10%;
+  bottom:.42rem
+}
+.author-profile .author-books .book-cover img{
+  width:auto;
+  height:auto;
+  max-width:88%;
+  max-height:238px;
+  object-fit:contain;
+  box-shadow:0 8px 18px rgba(65,45,35,.13)
+}
+.author-profile .author-cover-credit{
+  min-height:2.4em;
+  margin:.1rem 0 .75rem!important;
+  color:#887870!important;
+  font-size:.7rem!important;
+  line-height:1.35!important
+}
+.author-profile .author-cover-credit a{
+  color:#765c50;
+  font-weight:600;
+  text-decoration-thickness:.06em;
+  text-underline-offset:.12em
+}
+
+@media(max-width:900px){
+  .author-profile .author-books .book-cover{height:250px}
+  .author-profile .author-books .book-cover img{max-height:220px}
+}
+@media(max-width:700px){
+  .author-profile .author-books .book-cover{
+    height:205px;
+    aspect-ratio:auto;
+    padding:.7rem .4rem .55rem
+  }
+  .author-profile .author-books .book-cover img{
+    max-width:90%;
+    max-height:178px
+  }
+  .author-profile .author-cover-credit{
+    min-height:0;
+    margin:.05rem 0 .6rem!important;
+    font-size:.66rem!important
+  }
+}
+@media(max-width:430px){
+  .author-profile .author-books .book-cover{height:280px;aspect-ratio:auto}
+  .author-profile .author-books .book-cover img{max-height:248px}
+}
