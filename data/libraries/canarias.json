@@ -20,6 +20,152 @@
       "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/el-hierro/biblioteca-publica-municipal-de-valverde",
       "last_verified": "2026-09-18"
     },
+    "FV00:300": {
+      "bica_library_id": "FV00",
+      "bica_branch_id": "300",
+      "name": "Centro Bibliotecario Insular de Fuerteventura",
+      "municipality": "Puerto del Rosario",
+      "island": "Fuerteventura",
+      "address": "Calle Eliseo Gómez Ordóñez, 3, 35600 Puerto del Rosario",
+      "phone": "928 344 683",
+      "email": "biblioteca@cabildofuer.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–20:30",
+        "Sala de estudio: todos los días, 8:00–24:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/fuerteventura/centro-bibliotecario-insular-de-fuerteventura",
+      "last_verified": "2026-09-18"
+    },
+    "FV01:301": {
+      "bica_library_id": "FV01",
+      "bica_branch_id": "301",
+      "name": "Biblioteca Pública Municipal de La Oliva \"Raíz del Pueblo\"",
+      "municipality": "La Oliva",
+      "island": "Fuerteventura",
+      "address": "Calle Francisco Fuentes Martín, 11, 35640 La Oliva",
+      "phone": "928 868 015",
+      "email": "biblioteca@raizdelpueblo.org",
+      "opening_hours": [
+        "Lunes a viernes: 16:00–21:00",
+        "Verano y Navidad: lunes a viernes, 9:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/fuerteventura/biblioteca-publica-municipal-de-la-oliva-raiz-del-pueblo",
+      "last_verified": "2026-09-18"
+    },
+    "FV01:302": {
+      "bica_library_id": "FV01",
+      "bica_branch_id": "302",
+      "name": "Biblioteca Pública Municipal de Corralejo",
+      "municipality": "La Oliva",
+      "island": "Fuerteventura",
+      "address": "Calle Huriamen, s/n, 35640 Corralejo, La Oliva",
+      "phone": "928 866 329",
+      "email": "biblioteca@laoliva.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:30–20:00",
+        "Verano y Navidad: lunes a viernes, 8:30–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/fuerteventura/biblioteca-publica-municipal-de-corralejo",
+      "last_verified": "2026-09-18"
+    },
+    "FV02:303": {
+      "bica_library_id": "FV02",
+      "bica_branch_id": "303",
+      "name": "Biblioteca Pública Municipal de Puerto del Rosario",
+      "municipality": "Puerto del Rosario",
+      "island": "Fuerteventura",
+      "address": "Calle Ramiro de Maeztu, 1, 35600 Puerto del Rosario",
+      "phone": "928 859 440",
+      "email": "biblioteca@puertodelrosario.org",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–14:00 (horario reducido por obras)",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/fuerteventura/biblioteca-publica-municipal-de-puerto-del-rosario",
+      "status_note": "Horario reducido por obras de acondicionamiento y mejora.",
+      "last_verified": "2026-09-18"
+    },
+    "FV03:304": {
+      "bica_library_id": "FV03",
+      "bica_branch_id": "304",
+      "name": "Biblioteca Municipal de Antigua \"El Portón\"",
+      "municipality": "Antigua",
+      "island": "Fuerteventura",
+      "address": "Calle Alcalde Montesdeoca Cabrera, 7, 35630 Antigua",
+      "phone": "928 549 663",
+      "email": "biblioteca@ayto-antigua.es",
+      "opening_hours": [
+        "Horario habitual publicado: lunes a viernes, 14:00–20:30",
+        "Julio y agosto: lunes a viernes, 8:00–14:30"
+      ],
+      "directory_url": "https://ayto-antigua.es/instalaciones-municipales/",
+      "source_label": "Ayuntamiento de Antigua",
+      "last_verified": "2026-09-18"
+    },
+    "FV05:308": {
+      "bica_library_id": "FV05",
+      "bica_branch_id": "308",
+      "name": "Biblioteca Pública Municipal de Pájara",
+      "municipality": "Pájara",
+      "island": "Fuerteventura",
+      "address": "Peatonal Fuerteventura, 6, 35628 Pájara",
+      "phone": "928 342 589",
+      "email": "cultura@pajara.es",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–19:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/fuerteventura/biblioteca-publica-municipal-de-pajara",
+      "last_verified": "2026-09-18"
+    },
+    "FV05:309": {
+      "bica_library_id": "FV05",
+      "bica_branch_id": "309",
+      "name": "Biblioteca Pública Municipal de Morro Jable",
+      "municipality": "Pájara",
+      "island": "Fuerteventura",
+      "address": "Calle Mascona, 34, 35625 Morro Jable, Pájara",
+      "phone": "928 541 977",
+      "email": "cultura@pajara.es",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–12:00 y 16:00–20:00",
+        "Sábado y domingo: cerrado"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/fuerteventura/biblioteca-publica-municipal-de-morro-jable",
+      "last_verified": "2026-09-18"
+    },
+    "FV06:310": {
+      "bica_library_id": "FV06",
+      "bica_branch_id": "310",
+      "name": "Biblioteca Pública Municipal de Tuineje",
+      "municipality": "Tuineje",
+      "island": "Fuerteventura",
+      "address": "Calle Eustaquio Gopar, s/n, 35629 Tuineje",
+      "phone": "928 164 356",
+      "email": "tuineje@ayuntamientotuineje.com",
+      "opening_hours": [
+        "Lunes a viernes: 16:30–20:30",
+        "Verano y Navidad: cierre por vacaciones del personal"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/fuerteventura/biblioteca-publica-municipal-de-tuineje",
+      "last_verified": "2026-09-18"
+    },
+    "FV06:311": {
+      "bica_library_id": "FV06",
+      "bica_branch_id": "311",
+      "name": "Biblioteca Pública Municipal de Gran Tarajal",
+      "municipality": "Tuineje",
+      "island": "Fuerteventura",
+      "address": "Calle Tindaya, s/n, 35620 Gran Tarajal, Tuineje",
+      "phone": "928 870 590",
+      "email": "biblioteca@tuineje.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–20:00",
+        "Julio y agosto: lunes a viernes, 8:00–15:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/fuerteventura/biblioteca-publica-municipal-de-gran-tarajal",
+      "last_verified": "2026-09-18"
+    },
     "GC00:100": {
       "bica_library_id": "GC00",
       "bica_branch_id": "100",
@@ -765,6 +911,167 @@
         "Sábado y domingo: cerrado"
       ],
       "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/la-palma/biblioteca-publica-municipal-de-garafia-anselmo-perez-de-brito",
+      "last_verified": "2026-09-18"
+    },
+    "LZ00:417": {
+      "bica_library_id": "LZ00",
+      "bica_branch_id": "417",
+      "name": "Biblioteca Insular de Lanzarote",
+      "municipality": "Arrecife",
+      "island": "Lanzarote",
+      "address": "Avenida Medular, 42, 35500 Arrecife",
+      "phone": "928 810 100",
+      "email": "biblioteca@cabildodelanzarote.com",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–21:00",
+        "Sala de estudio: lunes a viernes, 21:00–23:00; fines de semana y festivos, 9:00–23:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/lanzarote/biblioteca-insular-de-lanzarote",
+      "last_verified": "2026-09-18"
+    },
+    "LZ01:401": {
+      "bica_library_id": "LZ01",
+      "bica_branch_id": "401",
+      "name": "Biblioteca Pública Central de Arrecife",
+      "municipality": "Arrecife",
+      "island": "Lanzarote",
+      "address": "Centro Cívico de Arrecife, El Forito, s/n (San Francisco Javier), 35500 Arrecife",
+      "phone": "630 706 805",
+      "email": "bibliotecacentral@arrecife.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–20:00",
+        "Verano y Navidad: lunes a viernes, 8:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/lanzarote/biblioteca-publica-central-de-arrecife",
+      "last_verified": "2026-09-18"
+    },
+    "LZ02:404": {
+      "bica_library_id": "LZ02",
+      "bica_branch_id": "404",
+      "name": "Biblioteca Pública Municipal de Tías",
+      "municipality": "Tías",
+      "island": "Lanzarote",
+      "address": "Calle San Antonio, 3, 35572 Tías",
+      "phone": "928 834 378",
+      "email": "biblioteca@ayuntamientodetias.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–21:00",
+        "Verano y Navidad: lunes a viernes, 8:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/lanzarote/biblioteca-publica-municipal-de-tias",
+      "last_verified": "2026-09-18"
+    },
+    "LZ02:405": {
+      "bica_library_id": "LZ02",
+      "bica_branch_id": "405",
+      "name": "Biblioteca Pública Municipal de Puerto del Carmen",
+      "municipality": "Tías",
+      "island": "Lanzarote",
+      "address": "Calle Bajamar, 15, 35510 Puerto del Carmen, Tías",
+      "phone": "928 513 013",
+      "email": "bibliotecapc@ayuntamientodetias.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–21:00",
+        "Verano y Navidad: lunes a viernes, 8:00–14:00"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/lanzarote/biblioteca-publica-municipal-de-puerto-del-carmen",
+      "last_verified": "2026-09-18"
+    },
+    "LZ03:406": {
+      "bica_library_id": "LZ03",
+      "bica_branch_id": "406",
+      "name": "Biblioteca Pública Municipal de Playa Honda",
+      "municipality": "San Bartolomé",
+      "island": "Lanzarote",
+      "address": "Calle Fayna, 32, 35509 Playa Honda, San Bartolomé",
+      "phone": "928 822 302",
+      "email": "ciberbiblioteca@sanbartolome.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–21:00",
+        "Sábado: 10:00–13:00",
+        "Verano, Navidad, Semana Santa y Carnavales: lunes a viernes, 8:00–13:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/lanzarote/biblioteca-publica-municipal-de-playa-honda",
+      "last_verified": "2026-09-18"
+    },
+    "LZ04:409": {
+      "bica_library_id": "LZ04",
+      "bica_branch_id": "409",
+      "name": "Biblioteca Municipal de Teguise \"Nieves Castillo Bonilla\"",
+      "municipality": "Teguise",
+      "island": "Lanzarote",
+      "address": "Plaza Clavijo y Fajardo, 10, 35530 Teguise",
+      "phone": "928 845 834",
+      "email": "biblioteca@teguise.es",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–20:00"
+      ],
+      "directory_url": "https://teguise.es/bibliotecas/",
+      "source_label": "Ayuntamiento de Teguise",
+      "last_verified": "2026-09-18"
+    },
+    "LZ04:412": {
+      "bica_library_id": "LZ04",
+      "bica_branch_id": "412",
+      "name": "Biblioteca de Tahíche",
+      "municipality": "Teguise",
+      "island": "Lanzarote",
+      "address": "Centro Sociocultural de Tahíche, 35507 Tahíche, Teguise",
+      "phone": "928 845 834",
+      "email": "biblioteca@teguise.es",
+      "directory_url": "https://teguise.es/teguise-activa-las-bibliotecas-de-sus-pueblos-con-el-proyecto-biblioviva/",
+      "source_label": "Ayuntamiento de Teguise",
+      "last_verified": "2026-09-18"
+    },
+    "LZ04:427": {
+      "bica_library_id": "LZ04",
+      "bica_branch_id": "427",
+      "name": "Biblioteca de Costa Teguise",
+      "municipality": "Teguise",
+      "island": "Lanzarote",
+      "address": "Centro Cívico de Costa Teguise, Calle La Fragata, 12, 35508 Costa Teguise",
+      "phone": "928 845 834",
+      "email": "biblioteca@teguise.es",
+      "opening_hours": [
+        "Biblioteca/espacio de lectura: lunes a viernes, 8:00–20:00",
+        "Centro Cívico: lunes a viernes, 8:00–21:00; sábado, 10:00–15:00"
+      ],
+      "directory_url": "https://teguise.es/teguise-registra-el-mayor-numero-de-prestamos-para-la-lectura-en-lanzarote-en-2023/",
+      "source_label": "Ayuntamiento de Teguise",
+      "last_verified": "2026-09-18"
+    },
+    "LZ05:413": {
+      "bica_library_id": "LZ05",
+      "bica_branch_id": "413",
+      "name": "Biblioteca Pública Municipal de Tinajo",
+      "municipality": "Tinajo",
+      "island": "Lanzarote",
+      "address": "Plaza de San Roque, 8, 35560 Tinajo",
+      "phone": "928 840 212",
+      "email": "biblioteca.tinajo@gmail.com",
+      "opening_hours": [
+        "Lunes a viernes: 9:00–20:00",
+        "Verano y Navidad: lunes a viernes, 10:00–19:30"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/lanzarote/biblioteca-publica-municipal-de-tinajo",
+      "last_verified": "2026-09-18"
+    },
+    "LZ07:425": {
+      "bica_library_id": "LZ07",
+      "bica_branch_id": "425",
+      "name": "Biblioteca Pública Municipal de Haría \"María Luisa Perdomo Sosa\"",
+      "municipality": "Haría",
+      "island": "Lanzarote",
+      "address": "Calle La Longuera, 4, 35520 Haría",
+      "phone": "928 835 311 / 637 893 240",
+      "email": "biblioteca@ayuntamientodeharia.com",
+      "opening_hours": [
+        "Lunes a viernes: 8:00–22:00",
+        "Sábado: 8:00–14:00",
+        "Horario especial de verano y Navidad: horario de mañana"
+      ],
+      "directory_url": "https://www.bibliotecadecanarias.org/biblioteca/lanzarote/biblioteca-publica-municipal-de-haria-maria-luisa-perdomo-sosa",
+      "status_note": "La ficha del Directorio indica cierre por obras; conviene comprobar el estado antes de desplazarse.",
       "last_verified": "2026-09-18"
     },
     "TF00:200": {
