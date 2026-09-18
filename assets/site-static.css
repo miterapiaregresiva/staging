@@ -1,3 +1,9 @@
+:root{--sticky-header-offset:112px}
+html{scroll-padding-top:var(--sticky-header-offset)}
+main [id]{scroll-margin-top:var(--sticky-header-offset)}
+@media(min-width:701px) and (max-width:900px){:root{--sticky-header-offset:150px}}
+@media(max-width:700px){:root{--sticky-header-offset:84px}}
+
 /* Static UI materialized in HTML/CSS. JavaScript only enhances interaction. */
 .mobile-menu-toggle{display:none}
 .editorial-link{font-weight:550;text-decoration:underline;text-decoration-thickness:.08em;text-underline-offset:.22em}
