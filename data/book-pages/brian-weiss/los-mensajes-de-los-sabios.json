@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "title": "Los mensajes de los sabios",
+  "slug": "los-mensajes-de-los-sabios",
+  "original_title": "Messages from the Masters",
+  "authors": [
+    {
+      "name": "Brian Weiss",
+      "slug": "brian-weiss"
+    }
+  ],
+  "lead": "Brian Weiss reúne relatos, enseñanzas y ejercicios relacionados con el amor, las relaciones, la ansiedad, la muerte y la espiritualidad.",
+  "about": [
+    "Los mensajes de los sabios reúne experiencias relatadas por pacientes y participantes en actividades dirigidas por Brian Weiss, junto con reflexiones y ejercicios propuestos por el autor.",
+    "Una parte central del libro gira alrededor de los «Sabios» o «Maestros», figuras que aparecen en algunos de esos relatos y cuyos mensajes se presentan en capítulos dedicados al amor, la pérdida, las relaciones, el miedo y la muerte.",
+    "La obra alterna testimonios, comentarios de Weiss, ejercicios de meditación y pasajes orientados a aplicar esas enseñanzas a situaciones de la vida cotidiana."
+  ],
+  "languages": [
+    "es"
+  ],
+  "primary_isbn": "9788440697424",
+  "isbns": [
+    "9788440697424",
+    "9788466303712",
+    "9788466621670",
+    "9781947783409"
+  ],
+  "cover": {
+    "src": "https://www.penguinlibros.com/es/1981454-thickbox_default/los-mensajes-de-los-sabios.webp",
+    "alt": "Portada de Los mensajes de los sabios de Brian Weiss",
+    "credit_source": "Penguin Libros",
+    "credit_url": "https://www.penguinlibros.com/es/1981454-thickbox_default/los-mensajes-de-los-sabios.webp"
+  },
+  "archive_copies": [
+    {
+      "label": "Ejemplar",
+      "language": "es",
+      "url": "https://archive.org/details/losmensajesdelos00bria"
+    }
+  ],
+  "purchase": {
+    "todostuslibros": "https://www.todostuslibros.com/busquedas?titulo=Los+mensajes+de+los+sabios&autor=Brian+Weiss",
+    "iberlibro": "https://www.iberlibro.com/servlet/SearchResults?an=brian%20weiss&tn=Los%20mensajes%20de%20los%20sabios",
+    "osdad": "https://osdad.org/listado-de-libros-de-segunda-mano/"
+  },
+  "availability_source": "/data/availability/brian-weiss.json",
+  "data_source": "/data/library/brian-weiss.json",
+  "work_slug": "los-mensajes-de-los-sabios",
+  "related_author_books": [
+    {
+      "title": "Muchas vidas, muchos maestros",
+      "slug": "muchas-vidas-muchos-maestros",
+      "original_title": "Many Lives, Many Masters",
+      "cover": "https://www.penguinlibros.com/es/2638748-thickbox_default/muchas-vidas-muchos-maestros.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/2638748-thickbox_default/muchas-vidas-muchos-maestros.webp"
+      }
+    },
+    {
+      "title": "A través del tiempo",
+      "slug": "a-traves-del-tiempo",
+      "original_title": "Through Time Into Healing",
+      "cover": "https://www.penguinlibros.com/es/2322304-thickbox_default/a-traves-del-tiempo.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/2322304-thickbox_default/a-traves-del-tiempo.webp"
+      }
+    },
+    {
+      "title": "Lazos de amor",
+      "slug": "lazos-de-amor",
+      "original_title": "Only Love Is Real",
+      "cover": "https://www.penguinlibros.com/es/1999383-thickbox_default/lazos-de-amor.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/1999383-thickbox_default/lazos-de-amor.webp"
+      }
+    },
+    {
+      "title": "Muchos cuerpos, una misma alma",
+      "slug": "muchos-cuerpos-una-misma-alma",
+      "original_title": "Same Soul, Many Bodies",
+      "cover": "https://www.penguinlibros.com/es/2381856-thickbox_default/muchos-cuerpos-una-misma-alma.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/2381856-thickbox_default/muchos-cuerpos-una-misma-alma.webp"
+      }
+    }
+  ],
+  "related_regression_books": [
+    {
+      "title": "Eliminar el estrés",
+      "slug": "eliminar-el-estres",
+      "original_title": "Eliminating Stress, Finding Inner Peace",
+      "cover": "https://www.penguinlibros.com/es/1483509-thickbox_default/eliminar-el-estres.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/1483509-thickbox_default/eliminar-el-estres.webp"
+      }
+    },
+    {
+      "title": "Meditación",
+      "slug": "meditacion",
+      "original_title": "Meditation",
+      "cover": "https://www.penguinlibros.com/es/2251738-thickbox_default/meditacion.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/2251738-thickbox_default/meditacion.webp"
+      }
+    },
+    {
+      "title": "Espejos del tiempo",
+      "slug": "espejos-del-tiempo",
+      "original_title": "Mirrors of Time",
+      "cover": "https://www.penguinlibros.com/es/1484236-thickbox_default/espejos-del-tiempo.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/1484236-thickbox_default/espejos-del-tiempo.webp"
+      }
+    },
+    {
+      "title": "Los milagros existen",
+      "slug": "los-milagros-existen",
+      "original_title": "Miracles Happen",
+      "cover": "https://www.penguinlibros.com/es/2322306-thickbox_default/los-milagros-existen.webp",
+      "credit": {
+        "source": "Penguin Libros",
+        "url": "https://www.penguinlibros.com/es/2322306-thickbox_default/los-milagros-existen.webp"
+      }
+    }
+  ]
+}
