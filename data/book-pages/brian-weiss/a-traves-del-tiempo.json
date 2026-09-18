@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "title": "A través del tiempo",
+  "slug": "a-traves-del-tiempo",
+  "original_title": "Through Time Into Healing",
+  "authors": [{"name":"Brian Weiss","slug":"brian-weiss"}],
+  "lead": "Reúne distintos casos presentados por Brian Weiss para desarrollar su trabajo con regresiones a vidas pasadas y su aplicación dentro de la terapia.",
+  "about": [
+    "En A través del tiempo, Brian Weiss reúne casos de pacientes que participan en sesiones de regresión y describe las escenas, recuerdos y emociones que aparecen durante el proceso.",
+    "Los capítulos relacionan esos relatos con miedos, vínculos personales, conflictos y síntomas presentes, y muestran la forma en que Weiss incorpora la regresión a su trabajo terapéutico.",
+    "El libro amplía el material presentado en Muchas vidas, muchos maestros mediante una sucesión de casos, explicaciones del procedimiento y reflexiones del autor sobre las experiencias narradas por sus pacientes."
+  ],
+  "languages": ["es"],
+  "primary_isbn": "9788440676139",
+  "isbns": ["9788440676139","9788440696137"],
+  "cover": {
+    "src": "https://www.penguinlibros.com/es/2322304-thickbox_default/a-traves-del-tiempo.webp",
+    "alt": "Portada de A través del tiempo de Brian Weiss",
+    "credit_source": "Penguin Libros",
+    "credit_url": "https://www.penguinlibros.com/es/2322304-thickbox_default/a-traves-del-tiempo.webp"
+  },
+  "archive_copies": [
+    {"label":"Ejemplar","language":"es","url":"https://archive.org/details/travesdeltiempo0000bria"}
+  ],
+  "purchase": {
+    "todostuslibros": "https://www.todostuslibros.com/busquedas?titulo=A+trav%C3%A9s+del+tiempo&autor=Brian+Weiss",
+    "iberlibro": "https://www.iberlibro.com/servlet/SearchResults?an=brian%20weiss&tn=A%20trav%C3%A9s%20del%20tiempo",
+    "osdad": "https://osdad.org/listado-de-libros-de-segunda-mano/"
+  },
+  "availability_source": "/data/availability/brian-weiss.json",
+  "work_slug": "a-traves-del-tiempo"
+}
