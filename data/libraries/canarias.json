@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "source": "https://bibliotecadecanarias.org/directorio-de-bibliotecas-de-canarias",
+  "source_label": "Directorio de Bibliotecas de Canarias",
+  "last_verified": "2026-09-18",
+  "libraries": {
+    "TF11:215": {
+      "bica_library_id": "TF11",
+      "bica_branch_id": "215",
+      "name": "Biblioteca Pública Municipal de Los Cristianos",
+      "municipality": "Arona",
+      "island": "Tenerife",
+      "directory_url": "https://bibliotecadecanarias.org/biblioteca/tenerife/biblioteca-publica-municipal-de-los-cristianos"
+    }
+  }
+}
