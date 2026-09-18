@@ -1,6 +1,6 @@
 # Portadas de libros — inventario y fuentes
 
-Fecha: 2026-09-17
+Fecha: 2026-09-18
 
 ## Criterio de uso
 
