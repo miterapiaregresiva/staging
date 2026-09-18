@@ -42,17 +42,21 @@ La fuente visual no implica que la cubierta tenga licencia abierta. Los derechos
 
 Para otros autores, si no existe asset local ni fuente editorial seleccionada, Open Library/Internet Archive puede utilizarse como fuente de apoyo siempre que la edición y la procedencia queden identificadas.
 
-## Portadas ya locales
+## Inventario actual
 
 ### Brian Weiss
 
-- [x] `Muchas vidas, muchos maestros`
-- [x] `A través del tiempo`
-- [x] `Los milagros existen`
-- [x] `Los mensajes de los sabios`
-- [x] `Muchos cuerpos, una misma alma` — disponible como asset aunque actualmente no aparece entre las obras seleccionadas de la ficha.
-- [ ] `Lazos de amor` — Open Library: `OL9721449M`; Internet Archive: `lazosdeamor0000bria`.
-- [ ] `Eliminar el estrés` — localizar edición con portada utilizable; la ficha ya enlaza a Internet Archive.
+Portadas canónicas definidas en staging con fuente visual Penguin Libros. Pendiente materializarlas como assets locales siguiendo la estructura `assets/images/books/brian-weiss/{libro-slug}/cover.webp`.
+
+- [ ] `Muchas vidas, muchos maestros`
+- [ ] `A través del tiempo`
+- [ ] `Lazos de amor`
+- [ ] `Los mensajes de los sabios`
+- [ ] `Muchos cuerpos, una misma alma`
+- [ ] `Eliminar el estrés`
+- [ ] `Meditación`
+- [ ] `Espejos del tiempo`
+- [ ] `Los milagros existen`
 
 ### Helen Wambach
 
@@ -137,6 +141,8 @@ Para otros autores, si no existe asset local ni fuente editorial seleccionada, O
 - [ ] Revisar la bibliografía seleccionada de la ficha y localizar sus portadas en Open Library/Internet Archive.
 
 ## Implementación
+
+- [ ] Materializar las nueve portadas canónicas de Brian Weiss como WebP locales manteniendo Penguin Libros como procedencia documentada.
 
 - [ ] Añadir `https://covers.openlibrary.org` a `img-src` de la CSP únicamente en las páginas que utilicen portadas remotas de Open Library, o decidir una normalización global antes del corte a producción.
 - [ ] Enlazar cada portada remota a la ficha correspondiente de Open Library como atribución/cortesía.
