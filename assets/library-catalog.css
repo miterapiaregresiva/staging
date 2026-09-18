@@ -129,3 +129,11 @@
 .book-buy-options .ttl-buy-copy strong,.book-buy-options .service-card-copy strong{margin:0;font-size:1rem;line-height:1.35;color:var(--text)}
 .book-buy-options .ttl-buy-copy span,.book-buy-options .service-card-copy span{font-size:.86rem;line-height:1.45;color:var(--muted)}
 @media(max-width:700px){.book-buy-options .ttl-buy-card,.book-buy-options .book-buy-link.service-buy-link{grid-template-columns:82px minmax(0,1fr);gap:.75rem;min-height:82px;padding:.85rem}.book-buy-options .ttl-mark{max-width:76px;font-size:.72rem}.book-buy-options .service-card-logo{max-width:76px;max-height:44px}.author-books .card{padding:.9rem}.author-books .book-cover{margin:-.9rem -.9rem .75rem}}
+
+
+/* Lazos pilot: availability reads as quiet catalogue metadata, not KPI cards. */
+.book-availability-summary{display:flex;flex-wrap:wrap;gap:.45rem 1.35rem;margin:1.15rem 0 .85rem;padding:.85rem 0;border-top:1px solid rgba(55,35,61,.10);border-bottom:1px solid rgba(55,35,61,.10)}
+.book-availability-summary>div{display:flex;align-items:baseline;gap:.38rem;padding:0;border:0;border-radius:0;background:transparent}
+.book-availability-summary strong{display:inline;font-size:1rem;font-weight:700;line-height:1.4;color:var(--text)}
+.book-availability-summary span{font-size:.86rem;line-height:1.4;color:var(--muted)}
+@media(max-width:700px){.book-availability-summary{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1rem}.book-availability-summary>div{display:block}.book-availability-summary strong{margin-right:.25rem}}
