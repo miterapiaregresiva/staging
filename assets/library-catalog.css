@@ -98,3 +98,17 @@
 .archive-copy-grid .catalog-sub{margin-top:.45rem;line-height:1.35}
 .archive-copy-grid li>a{display:inline-flex;align-items:center;margin-top:auto;padding-top:.9rem;font-size:.9rem;font-weight:700;line-height:1.3}
 @media(max-width:520px){.archive-copy-grid{grid-template-columns:minmax(0,240px)}}
+
+
+/* Book detail: calm first view and progressive disclosure. */
+.book-primary-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.25rem 0 1rem}
+.book-primary-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.68rem 1rem;border:1px solid rgba(107,63,120,.28);border-radius:999px;background:#fff;text-decoration:none;font-size:.92rem;font-weight:700}
+.book-primary-actions a:first-child{background:var(--accent);border-color:var(--accent);color:#fff}
+.book-edition-details{max-width:680px;margin-top:.8rem;border-top:1px solid rgba(55,35,61,.11);border-bottom:1px solid rgba(55,35,61,.11)}
+.book-edition-details>summary{padding:.8rem 0;cursor:pointer;color:var(--muted);font-size:.9rem;font-weight:650;list-style:none}
+.book-edition-details>summary::-webkit-details-marker{display:none}
+.book-edition-details>summary::after{content:'＋';float:right;color:var(--accent);font-weight:500}
+.book-edition-details[open]>summary::after{content:'−'}
+.book-edition-details-body{padding:0 0 1rem}
+.book-edition-details-body>p{margin:.8rem 0 .35rem;font-size:.86rem;color:var(--muted)}
+@media(max-width:700px){.book-hero{gap:1.35rem}.book-cover-feature{grid-row:1;justify-self:center;max-width:180px}.book-hero-copy{grid-row:2}.book-primary-actions{margin-top:1rem}.book-primary-actions a{flex:1 1 145px}.book-edition-details{margin-top:.45rem}}
