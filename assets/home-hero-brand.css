@@ -1,9 +1,0 @@
-.home-hero .hero-split{display:block}
-.home-hero .hero-copy{min-width:0;max-width:var(--measure)}
-.home-hero .hero-brand-panel{display:none!important}
-@media(max-width:900px){
-  .home-hero .hero-copy{width:100%;max-width:var(--measure)}
-}
-@media(max-width:520px){
-  .home-hero{padding-top:2rem}
-}
