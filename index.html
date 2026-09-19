@@ -13,7 +13,7 @@ button,a{font:inherit}a{color:inherit}.shell{max-width:1240px;margin:auto;paddin
 h1,h2,h3{font-weight:500;line-height:1.1}h1{font-size:clamp(42px,7vw,78px);margin:.1em 0 .25em}h2{font-size:clamp(29px,4vw,44px);margin:0}p{max-width:72ch}.lede{font-size:clamp(20px,2.3vw,28px);color:#504940;max-width:32ch;margin:0 0 46px}
 .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 40px;font:15px system-ui,sans-serif}.toolbar strong{margin-right:4px}.density{border:1px solid #b9aa98;background:#fff9f0;padding:9px 12px;border-radius:999px;cursor:pointer}.density[aria-pressed="true"]{background:#3c332d;color:white;border-color:#3c332d}
 .shelf{margin:0 0 58px}.shelfHead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:14px}.shelfHead a{text-decoration:none;border-bottom:1px solid transparent}.shelfHead a:hover,.shelfHead a:focus-visible{border-bottom-color:currentColor}.count{font:14px system-ui,sans-serif;color:var(--muted)}
-.books{display:flex;gap:clamp(18px,2.5vw,34px);overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;padding:14px 8px 25px 4px;scrollbar-width:thin}.books:after{content:"";min-width:8px}.shelfLine{height:14px;border-radius:3px;background:linear-gradient(#b99c77,#8c6e4e);box-shadow:0 7px 12px rgb(70 48 27/.18);margin-top:-16px}
+.books{display:flex;gap:clamp(18px,2.5vw,34px);overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;padding:14px 8px 25px 4px;scrollbar-width:auto;scrollbar-color:#8c6e4e #e7dac9;cursor:grab;-webkit-overflow-scrolling:touch}.books:active{cursor:grabbing}.books::-webkit-scrollbar{height:12px}.books::-webkit-scrollbar-track{background:#e7dac9;border-radius:999px}.books::-webkit-scrollbar-thumb{background:#8c6e4e;border:3px solid #e7dac9;border-radius:999px}.books:focus-visible{outline:2px solid #745b47;outline-offset:5px}.books:after{content:"";min-width:8px}.shelfLine{height:14px;border-radius:3px;background:linear-gradient(#b99c77,#8c6e4e);box-shadow:0 7px 12px rgb(70 48 27/.18);margin-top:-16px}
 .book{flex:0 0 var(--cover);scroll-snap-align:start;text-decoration:none;display:block}.cover{aspect-ratio:2/3;border-radius:3px 7px 7px 3px;box-shadow:var(--shadow);padding:16px 13px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}.book:hover .cover,.book:focus-visible .cover{transform:translateY(-7px);box-shadow:0 18px 34px rgb(59 43 30/.22)}.cover:before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:rgb(0 0 0/.12)}.cover b{font-size:clamp(13px,1.3vw,18px);line-height:1.12}.cover small{font:11px/1.3 system-ui,sans-serif;letter-spacing:.04em}.bookTitle{font:14px/1.3 system-ui,sans-serif;margin:11px 0 0}.bookAuthor{font:12px/1.3 system-ui,sans-serif;color:var(--muted)}
 .c1{background:#d6c19f}.c2{background:#9c8066;color:#fff}.c3{background:#c7b7ad}.c4{background:#e0d3bd}.c5{background:#6d6259;color:#fff}.c6{background:#d8c9b4}.c7{background:#a89a89;color:#fff}
 .breadcrumbs{font:14px system-ui,sans-serif;color:var(--muted);margin:4px 0 30px}.breadcrumbs a{color:inherit}.authorHero{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:start;margin-bottom:44px}.portrait{width:150px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,#e4d7c3,#a79582);display:grid;place-items:center;font:44px system-ui,sans-serif;color:#fff;box-shadow:var(--shadow)}
@@ -55,14 +55,14 @@ function controls(){return `<div class="toolbar" aria-label="Tamaño de las port
  <button class="density" data-density="zoomed" aria-pressed="${density==="zoomed"}">Portadas grandes</button></div>`}
 function general(){
  return header()+`<main><h1>Biblioteca</h1><p class="lede">Una biblioteca organizada por autores. Cada estante abre una colección; cada portada abre el libro.</p>${controls()}
- ${Object.entries(AUTHORS).map(([aid,a])=>`<section class="shelf"><div class="shelfHead"><h2><a href="#/autor/${aid}">${esc(a.name)}</a></h2><span class="count">${a.books.length} obras</span></div><div class="books ${density}" aria-label="Libros de ${esc(a.name)}">${a.books.map(b=>bookCard(b,aid)).join("")}</div><div class="shelfLine" aria-hidden="true"></div></section>`).join("")}
+ ${Object.entries(AUTHORS).map(([aid,a])=>`<section class="shelf"><div class="shelfHead"><h2><a href="#/autor/${aid}">${esc(a.name)}</a></h2><span class="count">${a.books.length} obras</span></div><div class="books ${density}" tabindex="0" aria-label="Libros de ${esc(a.name)}. Desplázate horizontalmente para ver más obras.">${a.books.map(b=>bookCard(b,aid)).join("")}</div><div class="shelfLine" aria-hidden="true"></div></section>`).join("")}
  <p class="notice">Prototipo funcional. Las cubiertas son marcadores visuales provisionales para evaluar arquitectura, densidad y navegación.</p></main>`;
 }
 function authorPage(aid){
  const a=AUTHORS[aid]; if(!a)return general();
  return header()+`<main><nav class="breadcrumbs"><a href="#/biblioteca">Biblioteca</a> › ${esc(a.name)}</nav>
  <section class="authorHero"><div class="portrait" aria-hidden="true">${esc(a.initials)}</div><div><h1>${esc(a.name)}</h1><p>${esc(a.intro)}</p></div></section>
- ${controls()}<section class="shelf"><div class="shelfHead"><h2>Su estante</h2><span class="count">Desliza para recorrerlo</span></div><div class="books ${density}">${a.books.map(b=>bookCard(b,aid)).join("")}</div><div class="shelfLine"></div></section>
+ ${controls()}<section class="shelf"><div class="shelfHead"><h2>Su estante</h2><span class="count">Desliza para recorrerlo</span></div><div class="books ${density}" tabindex="0" aria-label="Libros de ${esc(a.name)}. Desplázate horizontalmente para ver más obras.">${a.books.map(b=>bookCard(b,aid)).join("")}</div><div class="shelfLine"></div></section>
  <a class="backBtn" href="#/biblioteca">← Volver a la biblioteca</a></main>`;
 }
 function bookPage(aid,bid){
@@ -89,6 +89,32 @@ function render(){
 function bind(){
  document.querySelectorAll("[data-density]").forEach(btn=>btn.addEventListener("click",()=>{density=btn.dataset.density;localStorage.setItem("libraryDensity",density);render()}));
  document.querySelectorAll("[data-zoom]").forEach(btn=>btn.addEventListener("click",e=>{e.preventDefault();e.stopPropagation();const aid=btn.dataset.author,bid=btn.dataset.zoom,b=AUTHORS[aid].books.find(x=>x.id===bid);document.getElementById("modalCover").innerHTML=cover(b,aid);document.getElementById("coverModal").classList.add("open");document.querySelector(".close").focus()}));
+ document.querySelectorAll(".books").forEach(row=>{
+   row.addEventListener("wheel",e=>{
+     if(row.scrollWidth<=row.clientWidth)return;
+     if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){
+       e.preventDefault();
+       row.scrollLeft+=e.deltaY;
+     }
+   },{passive:false});
+   let dragging=false,startX=0,startLeft=0;
+   row.addEventListener("pointerdown",e=>{
+     if(e.pointerType==="touch")return;
+     dragging=true; startX=e.clientX; startLeft=row.scrollLeft;
+     row.setPointerCapture?.(e.pointerId);
+   });
+   row.addEventListener("pointermove",e=>{
+     if(!dragging)return;
+     row.scrollLeft=startLeft-(e.clientX-startX);
+   });
+   const stop=()=>{dragging=false};
+   row.addEventListener("pointerup",stop);
+   row.addEventListener("pointercancel",stop);
+   row.addEventListener("keydown",e=>{
+     if(e.key==="ArrowRight"){e.preventDefault();row.scrollBy({left:Math.max(160,row.clientWidth*.6),behavior:"smooth"})}
+     if(e.key==="ArrowLeft"){e.preventDefault();row.scrollBy({left:-Math.max(160,row.clientWidth*.6),behavior:"smooth"})}
+   });
+ });
 }
 document.querySelector(".close").addEventListener("click",()=>document.getElementById("coverModal").classList.remove("open"));
 document.getElementById("coverModal").addEventListener("click",e=>{if(e.target.id==="coverModal")e.currentTarget.classList.remove("open")});
