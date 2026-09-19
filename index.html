@@ -339,7 +339,7 @@ function bind(){
      if(e.key==="ArrowLeft"){e.preventDefault();prev.click()}
    });
    requestAnimationFrame(update);
- }));
+ });
 }
 document.querySelector(".close").addEventListener("click",()=>document.getElementById("coverModal").classList.remove("open"));
 document.getElementById("coverModal").addEventListener("click",e=>{if(e.target.id==="coverModal")e.currentTarget.classList.remove("open")});
