@@ -6,73 +6,279 @@
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <title>Biblioteca — prototipo beta</title>
 <style>
-:root{--paper:#f4efe6;--paper2:#ebe1d2;--ink:#2d2925;--muted:#756d65;--line:#cabaa5;--accent:#745b47;--shadow:0 12px 28px rgb(59 43 30/.13);--r:18px;--cover:150px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(#f7f3ec,#eee4d7);color:var(--ink);font:18px/1.6 Georgia,"Times New Roman",serif}
-button,a{font:inherit}a{color:inherit}.shell{max-width:1240px;margin:auto;padding:24px clamp(18px,4vw,52px) 70px}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 28px}.brand{font:600 15px/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}.tag{color:var(--muted);font:14px system-ui,sans-serif}
-h1,h2,h3{font-weight:500;line-height:1.1}h1{font-size:clamp(42px,7vw,78px);margin:.1em 0 .25em}h2{font-size:clamp(29px,4vw,44px);margin:0}p{max-width:72ch}.lede{font-size:clamp(20px,2.3vw,28px);color:#504940;max-width:32ch;margin:0 0 46px}
-.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 40px;font:15px system-ui,sans-serif}.toolbar strong{margin-right:4px}.density{border:1px solid #b9aa98;background:#fff9f0;padding:9px 12px;border-radius:999px;cursor:pointer}.density[aria-pressed="true"]{background:#3c332d;color:white;border-color:#3c332d}
-.shelf{margin:0 0 58px}.shelfHead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:14px}.shelfHead a{text-decoration:none;border-bottom:1px solid transparent}.shelfHead a:hover,.shelfHead a:focus-visible{border-bottom-color:currentColor}.count{font:14px system-ui,sans-serif;color:var(--muted)}
-.books{display:flex;gap:clamp(18px,2.5vw,34px);overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;padding:14px 8px 25px 4px;scrollbar-width:auto;scrollbar-color:#8c6e4e #e7dac9;cursor:grab;-webkit-overflow-scrolling:touch}.books:active{cursor:grabbing}.books::-webkit-scrollbar{height:12px}.books::-webkit-scrollbar-track{background:#e7dac9;border-radius:999px}.books::-webkit-scrollbar-thumb{background:#8c6e4e;border:3px solid #e7dac9;border-radius:999px}.books:focus-visible{outline:2px solid #745b47;outline-offset:5px}.books:after{content:"";min-width:8px}.shelfLine{height:14px;border-radius:3px;background:linear-gradient(#b99c77,#8c6e4e);box-shadow:0 7px 12px rgb(70 48 27/.18);margin-top:-16px}
-.book{flex:0 0 var(--cover);scroll-snap-align:start;text-decoration:none;display:block}.cover{aspect-ratio:2/3;border-radius:3px 7px 7px 3px;box-shadow:var(--shadow);padding:16px 13px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}.book:hover .cover,.book:focus-visible .cover{transform:translateY(-7px);box-shadow:0 18px 34px rgb(59 43 30/.22)}.cover:before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:rgb(0 0 0/.12)}.cover b{font-size:clamp(13px,1.3vw,18px);line-height:1.12}.cover small{font:11px/1.3 system-ui,sans-serif;letter-spacing:.04em}.bookTitle{font:14px/1.3 system-ui,sans-serif;margin:11px 0 0}.bookAuthor{font:12px/1.3 system-ui,sans-serif;color:var(--muted)}
-.c1{background:#d6c19f}.c2{background:#9c8066;color:#fff}.c3{background:#c7b7ad}.c4{background:#e0d3bd}.c5{background:#6d6259;color:#fff}.c6{background:#d8c9b4}.c7{background:#a89a89;color:#fff}
-.breadcrumbs{font:14px system-ui,sans-serif;color:var(--muted);margin:4px 0 30px}.breadcrumbs a{color:inherit}.bookNav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px}.bookNav a{display:inline-flex;align-items:center;gap:6px;border:1px solid #a9957c;border-radius:999px;padding:9px 13px;text-decoration:none;font:14px system-ui,sans-serif;background:#fffaf3}.bookNav a:hover,.bookNav a:focus-visible{background:#3c332d;color:#fff}.authorHero{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:start;margin-bottom:44px}.portrait{width:150px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,#e4d7c3,#a79582);display:grid;place-items:center;font:44px system-ui,sans-serif;color:#fff;box-shadow:var(--shadow)}
-.openBook{display:grid;grid-template-columns:minmax(240px,330px) minmax(0,1fr);gap:clamp(28px,6vw,80px);align-items:start}.heroCover{width:min(100%,320px);margin:auto}.heroCover .cover{padding:28px 22px}.heroCover .cover b{font-size:28px}.bookMeta{font:14px system-ui,sans-serif;color:var(--muted);margin-bottom:22px}.bookCopy{font-size:20px}.flap{margin-top:34px;border-left:1px solid var(--line);padding:2px 0 2px 24px}.flap summary{cursor:pointer;font:600 14px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}.flapInner{display:grid;grid-template-columns:68px 1fr;gap:16px;margin-top:18px}.miniPortrait{width:68px;aspect-ratio:1;border-radius:50%;background:#b5a38e;display:grid;place-items:center;color:#fff;font:20px system-ui,sans-serif}.sources{margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}.sourceLinks{display:flex;flex-wrap:wrap;gap:12px}.sourceLinks a,.backBtn{display:inline-block;border:1px solid #a9957c;border-radius:999px;padding:10px 15px;text-decoration:none;font:15px system-ui,sans-serif;background:#fffaf3}.sourceLinks a:hover,.sourceLinks a:focus-visible,.backBtn:hover,.backBtn:focus-visible{background:#3c332d;color:white}
-.coverZoom{position:absolute;right:9px;top:9px;border:0;border-radius:50%;width:34px;height:34px;background:rgb(255 255 255/.86);cursor:zoom-in;font:18px system-ui,sans-serif}.zoomed{--cover:230px}.compact{--cover:112px}.modal{position:fixed;inset:0;background:rgb(34 29 25/.78);display:none;place-items:center;padding:24px;z-index:30}.modal.open{display:grid}.modalCard{width:min(420px,85vw);position:relative}.modalCard .cover{min-height:min(72vh,650px)}.close{position:absolute;right:-10px;top:-10px;z-index:2;width:42px;height:42px;border-radius:50%;border:0;background:white;font-size:24px;cursor:pointer}
+:root{
+  --paper:#f4efe6;--ink:#2d2925;--muted:#756d65;--line:#cabaa5;--accent:#745b47;
+  --shadow:0 12px 28px rgb(59 43 30/.13);--cover:150px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(#f7f3ec,#eee4d7);color:var(--ink);font:18px/1.6 Georgia,"Times New Roman",serif}
+button,input,a{font:inherit}a{color:inherit}
+.shell{max-width:1240px;margin:auto;padding:24px clamp(18px,4vw,52px) 70px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 28px}
+.brand{font:600 15px/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.tag{color:var(--muted);font:14px system-ui,sans-serif}
+h1,h2,h3{font-weight:500;line-height:1.1}
+h1{font-size:clamp(42px,7vw,78px);margin:.1em 0 .25em}
+h2{font-size:clamp(29px,4vw,44px);margin:0}
+p{max-width:72ch}
+.lede{font-size:clamp(20px,2.3vw,28px);color:#504940;max-width:34ch;margin:0 0 30px}
+
+.libraryNav{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 18px;font:15px system-ui,sans-serif}
+.libraryNav strong{margin-right:4px}
+.viewTab,.density{border:1px solid #b9aa98;background:#fff9f0;padding:9px 13px;border-radius:999px;cursor:pointer}
+.viewTab[aria-pressed="true"],.density[aria-pressed="true"]{background:#3c332d;color:white;border-color:#3c332d}
+
+.searchWrap{position:relative;max-width:680px;margin:0 0 24px}
+.searchWrap input{width:100%;border:1px solid #b9aa98;border-radius:999px;background:#fffaf3;padding:13px 46px 13px 18px;color:var(--ink);outline:none}
+.searchWrap input:focus{border-color:#745b47;box-shadow:0 0 0 3px rgb(116 91 71/.12)}
+.searchIcon{position:absolute;right:17px;top:50%;transform:translateY(-50%);font:18px system-ui,sans-serif;color:var(--muted);pointer-events:none}
+.resultInfo{font:14px system-ui,sans-serif;color:var(--muted);margin:-10px 0 30px}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 38px;font:15px system-ui,sans-serif}
+.toolbar strong{margin-right:4px}
+
+.shelf{margin:0 0 58px}
+.shelfHead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:14px}
+.shelfHead a{text-decoration:none;border-bottom:1px solid transparent}
+.shelfHead a:hover,.shelfHead a:focus-visible{border-bottom-color:currentColor}
+.count{font:14px system-ui,sans-serif;color:var(--muted)}
+
+.shelfViewport{position:relative}
+.books{
+  display:flex;gap:clamp(18px,2.5vw,34px);overflow-x:auto;overflow-y:hidden;
+  overscroll-behavior-inline:contain;scroll-snap-type:x proximity;
+  padding:14px 8px 25px 4px;scrollbar-width:thin;scrollbar-color:#8c6e4e #e7dac9;
+  -webkit-overflow-scrolling:touch;
+}
+.books::-webkit-scrollbar{height:8px}
+.books::-webkit-scrollbar-track{background:#e7dac9;border-radius:999px}
+.books::-webkit-scrollbar-thumb{background:#8c6e4e;border-radius:999px}
+.books:focus-visible{outline:2px solid #745b47;outline-offset:5px}
+.books:after{content:"";min-width:8px;flex:0 0 8px}
+.shelfLine{height:14px;border-radius:3px;background:linear-gradient(#b99c77,#8c6e4e);box-shadow:0 7px 12px rgb(70 48 27/.18);margin-top:-16px}
+
+.shelfArrow{
+  position:absolute;top:42%;translate:0 -50%;z-index:5;width:44px;height:44px;border-radius:50%;
+  border:1px solid #aa957d;background:rgb(255 250 243/.96);box-shadow:0 5px 16px rgb(59 43 30/.18);
+  display:grid;place-items:center;cursor:pointer;font:24px/1 system-ui,sans-serif;
+}
+.shelfArrow:hover,.shelfArrow:focus-visible{background:#3c332d;color:#fff}
+.shelfArrow[disabled]{opacity:0;pointer-events:none}
+.shelfArrow.prev{left:-18px}.shelfArrow.next{right:-18px}
+
+.book{flex:0 0 var(--cover);scroll-snap-align:start;text-decoration:none;display:block}
+.cover{
+  aspect-ratio:2/3;border-radius:3px 7px 7px 3px;box-shadow:var(--shadow);padding:16px 13px;
+  display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;
+  transition:transform .18s ease,box-shadow .18s ease
+}
+.book:hover .cover,.book:focus-visible .cover{transform:translateY(-7px);box-shadow:0 18px 34px rgb(59 43 30/.22)}
+.cover:before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:rgb(0 0 0/.12)}
+.cover b{font-size:clamp(13px,1.3vw,18px);line-height:1.12}
+.cover small{font:11px/1.3 system-ui,sans-serif;letter-spacing:.04em}
+.bookTitle{font:14px/1.3 system-ui,sans-serif;margin:11px 0 0}
+.bookAuthor{font:12px/1.3 system-ui,sans-serif;color:var(--muted)}
+
+.c1{background:#d6c19f}.c2{background:#9c8066;color:#fff}.c3{background:#c7b7ad}.c4{background:#e0d3bd}
+.c5{background:#6d6259;color:#fff}.c6{background:#d8c9b4}.c7{background:#a89a89;color:#fff}
+
+.alpha{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 28px;font:14px system-ui,sans-serif}
+.alpha a{min-width:34px;height:34px;display:grid;place-items:center;border:1px solid #c7b7a5;border-radius:50%;text-decoration:none;background:#fffaf3}
+.alpha a:hover,.alpha a:focus-visible{background:#3c332d;color:#fff}
+.alpha a.muted{opacity:.35;pointer-events:none}
+.azGroup{margin:0 0 44px}.azLetter{font-size:48px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:18px}
+.azList{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.azItem{display:block;padding:16px;border:1px solid #d4c6b4;border-radius:14px;background:rgb(255 250 243/.65);text-decoration:none}
+.azItem strong{display:block}.azItem span{font:13px system-ui,sans-serif;color:var(--muted)}
+
+.topicIntro{font:14px system-ui,sans-serif;color:var(--muted);margin:-12px 0 34px}
+.topicPills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.topicPills a{font:13px system-ui,sans-serif;text-decoration:none;border:1px solid #c4b39e;border-radius:999px;padding:7px 10px;background:#fffaf3}
+.topicPills a:hover,.topicPills a:focus-visible{background:#3c332d;color:#fff}
+
+.breadcrumbs{font:14px system-ui,sans-serif;color:var(--muted);margin:4px 0 30px}.breadcrumbs a{color:inherit}
+.bookNav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px}
+.bookNav a{display:inline-flex;align-items:center;gap:6px;border:1px solid #a9957c;border-radius:999px;padding:9px 13px;text-decoration:none;font:14px system-ui,sans-serif;background:#fffaf3}
+.bookNav a:hover,.bookNav a:focus-visible{background:#3c332d;color:#fff}
+.authorHero{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:start;margin-bottom:44px}
+.portrait{width:150px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,#e4d7c3,#a79582);display:grid;place-items:center;font:44px system-ui,sans-serif;color:#fff;box-shadow:var(--shadow)}
+.openBook{display:grid;grid-template-columns:minmax(240px,330px) minmax(0,1fr);gap:clamp(28px,6vw,80px);align-items:start}
+.heroCover{width:min(100%,320px);margin:auto}.heroCover .cover{padding:28px 22px}.heroCover .cover b{font-size:28px}
+.bookMeta{font:14px system-ui,sans-serif;color:var(--muted);margin-bottom:22px}.bookCopy{font-size:20px}
+.flap{margin-top:34px;border-left:1px solid var(--line);padding:2px 0 2px 24px}
+.flap summary{cursor:pointer;font:600 14px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.flapInner{display:grid;grid-template-columns:68px 1fr;gap:16px;margin-top:18px}
+.miniPortrait{width:68px;aspect-ratio:1;border-radius:50%;background:#b5a38e;display:grid;place-items:center;color:#fff;font:20px system-ui,sans-serif}
+.sources{margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+.sourceLinks{display:flex;flex-wrap:wrap;gap:12px}
+.sourceLinks a,.backBtn{display:inline-block;border:1px solid #a9957c;border-radius:999px;padding:10px 15px;text-decoration:none;font:15px system-ui,sans-serif;background:#fffaf3}
+.sourceLinks a:hover,.sourceLinks a:focus-visible,.backBtn:hover,.backBtn:focus-visible{background:#3c332d;color:white}
+.coverZoom{position:absolute;right:9px;top:9px;border:0;border-radius:50%;width:34px;height:34px;background:rgb(255 255 255/.86);cursor:zoom-in;font:18px system-ui,sans-serif}
+
+.zoomed{--cover:230px}.compact{--cover:112px}
+.modal{position:fixed;inset:0;background:rgb(34 29 25/.78);display:none;place-items:center;padding:24px;z-index:30}
+.modal.open{display:grid}.modalCard{width:min(420px,85vw);position:relative}.modalCard .cover{min-height:min(72vh,650px)}
+.close{position:absolute;right:-10px;top:-10px;z-index:2;width:42px;height:42px;border-radius:50%;border:0;background:white;font-size:24px;cursor:pointer}
 .notice{font:13px system-ui,sans-serif;color:var(--muted);margin-top:60px}
-@media(max-width:700px){body{font-size:17px}.shell{padding-inline:18px}.topbar{align-items:flex-start}.tag{display:none}.bookNav{position:sticky;top:8px;z-index:10;width:max-content;max-width:100%;padding:4px;border-radius:999px;background:rgb(247 243 236/.92);backdrop-filter:blur(8px);box-shadow:0 5px 18px rgb(59 43 30/.12)}.authorHero{grid-template-columns:88px 1fr}.portrait{width:88px;font-size:28px}.openBook{grid-template-columns:1fr}.heroCover{width:min(74vw,300px)}.books{gap:18px}.shelf{margin-bottom:44px}.shelfHead{align-items:center}.zoomed{--cover:68vw}.compact{--cover:38vw}:root{--cover:43vw}.lede{margin-bottom:34px}}
+
+@media(max-width:700px){
+  body{font-size:17px}.shell{padding-inline:18px}.topbar{align-items:flex-start}.tag{display:none}
+  .libraryNav{gap:7px}.viewTab{padding:8px 11px}.searchWrap{margin-bottom:18px}
+  .bookNav{position:sticky;top:8px;z-index:10;width:max-content;max-width:100%;padding:4px;border-radius:999px;background:rgb(247 243 236/.92);backdrop-filter:blur(8px);box-shadow:0 5px 18px rgb(59 43 30/.12)}
+  .authorHero{grid-template-columns:88px 1fr}.portrait{width:88px;font-size:28px}.openBook{grid-template-columns:1fr}.heroCover{width:min(74vw,300px)}
+  .books{gap:18px;scrollbar-width:none}.books::-webkit-scrollbar{display:none}
+  .shelf{margin-bottom:44px}.shelfHead{align-items:center}.shelfArrow{display:none}
+  :root{--cover:calc((100vw - 36px - 18px)/2)}
+  .compact{--cover:calc((100vw - 36px - 18px*1.25)/2.25)}
+  .zoomed{--cover:calc((100vw - 36px - 18px*.25)/1.25)}
+  .lede{margin-bottom:26px}.toolbar{margin-bottom:30px}
+}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="shell" id="app"></div>
-<div class="modal" id="coverModal" role="dialog" aria-modal="true" aria-label="Portada ampliada"><div class="modalCard"><button class="close" aria-label="Cerrar">×</button><div id="modalCover"></div></div></div>
+<div class="modal" id="coverModal" role="dialog" aria-modal="true" aria-label="Portada ampliada">
+  <div class="modalCard"><button class="close" aria-label="Cerrar">×</button><div id="modalCover"></div></div>
+</div>
 <script>
 const AUTHORS={
- "michael-newton":{name:"Michael Newton",initials:"MN",intro:"Biblioteca de obras asociadas a Michael Newton. Prototipo de navegación por autor.",books:[
-  {id:"journey-of-souls",title:"Journey of Souls",cover:"c2"},
-  {id:"destiny-of-souls",title:"Destiny of Souls",cover:"c3"},
-  {id:"life-between-lives",title:"Life Between Lives",cover:"c4"},
-  {id:"memories-of-the-afterlife",title:"Memories of the Afterlife",cover:"c5"},
-  {id:"wisdom-of-souls",title:"Wisdom of Souls",cover:"c1"},
-  {id:"case-studies",title:"Case studies · prototipo",cover:"c6"}
- ]},
- "brian-weiss":{name:"Brian Weiss",initials:"BW",intro:"Ejemplo de un autor con solo dos obras en este prototipo.",books:[
-  {id:"many-lives-many-masters",title:"Many Lives, Many Masters",cover:"c7"},
-  {id:"through-time-into-healing",title:"Through Time into Healing",cover:"c1"}
- ]}
+ "michael-newton":{
+   name:"Michael Newton",initials:"MN",
+   intro:"Biblioteca de obras asociadas a Michael Newton. Prototipo de navegación por autor.",
+   books:[
+    {id:"journey-of-souls",title:"Journey of Souls",cover:"c2",topics:["Vida entre vidas","Casos y experiencias"]},
+    {id:"destiny-of-souls",title:"Destiny of Souls",cover:"c3",topics:["Vida entre vidas"]},
+    {id:"life-between-lives",title:"Life Between Lives",cover:"c4",topics:["Vida entre vidas","Métodos y práctica"]},
+    {id:"memories-of-the-afterlife",title:"Memories of the Afterlife",cover:"c5",topics:["Casos y experiencias"]},
+    {id:"wisdom-of-souls",title:"Wisdom of Souls",cover:"c1",topics:["Vida entre vidas"]},
+    {id:"case-studies",title:"Case studies · prototipo",cover:"c6",topics:["Casos y experiencias"]}
+   ]
+ },
+ "brian-weiss":{
+   name:"Brian Weiss",initials:"BW",
+   intro:"Ejemplo de un autor con solo dos obras en este prototipo.",
+   books:[
+    {id:"many-lives-many-masters",title:"Many Lives, Many Masters",cover:"c7",topics:["Regresión","Casos y experiencias"]},
+    {id:"through-time-into-healing",title:"Through Time into Healing",cover:"c1",topics:["Regresión","Métodos y práctica"]}
+   ]
+ }
 };
+const TOPICS=["Vida entre vidas","Regresión","Métodos y práctica","Casos y experiencias"];
 let density=localStorage.getItem("libraryDensity")||"standard";
-const esc=s=>s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+let libraryView=localStorage.getItem("libraryView")||"authors";
+let searchTerm="";
+
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+function allBooks(){
+  return Object.entries(AUTHORS).flatMap(([aid,a])=>a.books.map(b=>({...b,aid,author:a.name})));
+}
 function cover(book,author,withZoom=false){
  return `<div class="cover ${book.cover}">${withZoom?'<button class="coverZoom" type="button" aria-label="Ampliar portada" data-zoom="'+esc(book.id)+'" data-author="'+esc(author)+'">⌕</button>':''}<b>${esc(book.title)}</b><small>${esc(AUTHORS[author].name)}<br>Portada provisional</small></div>`;
 }
-function bookCard(book,aid){return `<a class="book" href="#/libro/${aid}/${book.id}" aria-label="${esc(book.title)}, ${esc(AUTHORS[aid].name)}">${cover(book,aid)}<div class="bookTitle">${esc(book.title)}</div><div class="bookAuthor">${esc(AUTHORS[aid].name)}</div></a>`}
-function header(){return `<header class="topbar"><a class="brand" href="#/biblioteca">miterapiaregresiva.com · laboratorio</a><span class="tag">Prototipo beta · no indexable</span></header>`}
-function controls(){return `<div class="toolbar" aria-label="Tamaño de las portadas"><strong>Vista</strong>
+function bookCard(book,aid){
+ return `<a class="book" href="#/libro/${aid}/${book.id}" aria-label="${esc(book.title)}, ${esc(AUTHORS[aid].name)}">${cover(book,aid)}<div class="bookTitle">${esc(book.title)}</div><div class="bookAuthor">${esc(AUTHORS[aid].name)}</div></a>`;
+}
+function header(){
+ return `<header class="topbar"><a class="brand" href="#/biblioteca">miterapiaregresiva.com · laboratorio</a><span class="tag">Prototipo beta · no indexable</span></header>`;
+}
+function controls(){
+ return `<div class="toolbar" aria-label="Tamaño de las portadas"><strong>Vista de portadas</strong>
  <button class="density" data-density="compact" aria-pressed="${density==="compact"}">Compacta</button>
  <button class="density" data-density="standard" aria-pressed="${density==="standard"}">Estándar</button>
- <button class="density" data-density="zoomed" aria-pressed="${density==="zoomed"}">Portadas grandes</button></div>`}
+ <button class="density" data-density="zoomed" aria-pressed="${density==="zoomed"}">Grandes</button></div>`;
+}
+function libraryControls(){
+ return `<nav class="libraryNav" aria-label="Explorar biblioteca"><strong>Explorar por</strong>
+ <button class="viewTab" data-view="authors" aria-pressed="${libraryView==="authors"}">Autores</button>
+ <button class="viewTab" data-view="topics" aria-pressed="${libraryView==="topics"}">Temáticas</button>
+ <button class="viewTab" data-view="az" aria-pressed="${libraryView==="az"}">A–Z</button>
+ </nav>
+ <div class="searchWrap"><label class="srOnly" for="librarySearch"></label><input id="librarySearch" type="search" placeholder="Buscar por título, autor o temática" value="${esc(searchTerm)}" autocomplete="off"><span class="searchIcon" aria-hidden="true">⌕</span></div>`;
+}
+function shelf(title,books,opts={}){
+ const id=opts.id||"";
+ const titleHtml=opts.href?`<a href="${opts.href}">${esc(title)}</a>`:esc(title);
+ return `<section class="shelf"${id?' id="'+esc(id)+'"':''}>
+   <div class="shelfHead"><h2>${titleHtml}</h2><span class="count">${books.length} ${books.length===1?"obra":"obras"}</span></div>
+   <div class="shelfViewport">
+     <button class="shelfArrow prev" type="button" aria-label="Ver libros anteriores">‹</button>
+     <div class="books ${density}" tabindex="0" aria-label="${esc(title)}. Desplázate horizontalmente para ver más obras.">${books.map(b=>bookCard(b,b.aid||opts.aid)).join("")}</div>
+     <button class="shelfArrow next" type="button" aria-label="Ver más libros">›</button>
+   </div>
+   <div class="shelfLine" aria-hidden="true"></div>
+ </section>`;
+}
+function filteredBooks(){
+ const q=searchTerm.trim().toLocaleLowerCase("es");
+ if(!q)return allBooks();
+ return allBooks().filter(b=>
+   b.title.toLocaleLowerCase("es").includes(q) ||
+   b.author.toLocaleLowerCase("es").includes(q) ||
+   b.topics.some(t=>t.toLocaleLowerCase("es").includes(q))
+ );
+}
+function authorsView(books){
+ return Object.entries(AUTHORS).map(([aid,a])=>{
+   const subset=books.filter(b=>b.aid===aid);
+   if(!subset.length)return "";
+   return shelf(a.name,subset,{aid,href:"#/autor/"+aid});
+ }).join("");
+}
+function topicsView(books){
+ return `<p class="topicIntro">Temáticas de demostración para probar la navegación. La clasificación definitiva se revisará con el catálogo real.</p>`+
+ TOPICS.map(topic=>{
+   const subset=books.filter(b=>b.topics.includes(topic));
+   if(!subset.length)return "";
+   return shelf(topic,subset,{id:"tema-"+slug(topic)});
+ }).join("");
+}
+function azView(books){
+ const sorted=[...books].sort((a,b)=>a.title.localeCompare(b.title,"es",{sensitivity:"base"}));
+ const letters=[...new Set(sorted.map(b=>b.title[0].toUpperCase()))];
+ const nav="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(l=>letters.includes(l)?`<a href="#letra-${l}">${l}</a>`:`<a class="muted" aria-disabled="true">${l}</a>`).join("");
+ const groups=letters.map(l=>{
+   const items=sorted.filter(b=>b.title[0].toUpperCase()===l).map(b=>`<a class="azItem" href="#/libro/${b.aid}/${b.id}"><strong>${esc(b.title)}</strong><span>${esc(b.author)}</span></a>`).join("");
+   return `<section class="azGroup" id="letra-${l}"><h2 class="azLetter">${l}</h2><div class="azList">${items}</div></section>`;
+ }).join("");
+ return `<nav class="alpha" aria-label="Índice alfabético">${nav}</nav>${groups}`;
+}
 function general(){
- return header()+`<main><h1>Biblioteca</h1><p class="lede">Una biblioteca organizada por autores. Cada estante abre una colección; cada portada abre el libro.</p>${controls()}
- ${Object.entries(AUTHORS).map(([aid,a])=>`<section class="shelf"><div class="shelfHead"><h2><a href="#/autor/${aid}">${esc(a.name)}</a></h2><span class="count">${a.books.length} obras</span></div><div class="books ${density}" tabindex="0" aria-label="Libros de ${esc(a.name)}. Desplázate horizontalmente para ver más obras.">${a.books.map(b=>bookCard(b,aid)).join("")}</div><div class="shelfLine" aria-hidden="true"></div></section>`).join("")}
- <p class="notice">Prototipo funcional. Las cubiertas son marcadores visuales provisionales para evaluar arquitectura, densidad y navegación.</p></main>`;
+ const books=filteredBooks();
+ let content=libraryView==="topics"?topicsView(books):libraryView==="az"?azView(books):authorsView(books);
+ if(!books.length)content=`<p>No se han encontrado obras con “${esc(searchTerm)}”.</p>`;
+ return header()+`<main>
+   <h1>Biblioteca</h1>
+   <p class="lede">Una biblioteca para recorrer por autores, temáticas o alfabéticamente.</p>
+   ${libraryControls()}
+   <p class="resultInfo">${books.length} ${books.length===1?"obra":"obras"} en esta vista</p>
+   ${libraryView!=="az"?controls():""}
+   ${content}
+   <p class="notice">Prototipo funcional. Las cubiertas y parte de la clasificación temática son provisionales para evaluar arquitectura y navegación.</p>
+ </main>`;
 }
 function authorPage(aid){
  const a=AUTHORS[aid]; if(!a)return general();
- return header()+`<main><nav class="breadcrumbs"><a href="#/biblioteca">Biblioteca</a> › ${esc(a.name)}</nav>
+ const books=a.books.map(b=>({...b,aid}));
+ return header()+`<main>
+ <nav class="breadcrumbs"><a href="#/biblioteca">Biblioteca</a> › ${esc(a.name)}</nav>
  <section class="authorHero"><div class="portrait" aria-hidden="true">${esc(a.initials)}</div><div><h1>${esc(a.name)}</h1><p>${esc(a.intro)}</p></div></section>
- ${controls()}<section class="shelf"><div class="shelfHead"><h2>Su estante</h2><span class="count">Desliza para recorrerlo</span></div><div class="books ${density}" tabindex="0" aria-label="Libros de ${esc(a.name)}. Desplázate horizontalmente para ver más obras.">${a.books.map(b=>bookCard(b,aid)).join("")}</div><div class="shelfLine"></div></section>
- <a class="backBtn" href="#/biblioteca">← Volver a la biblioteca</a></main>`;
+ ${controls()}
+ ${shelf("Su estante",books,{aid})}
+ <a class="backBtn" href="#/biblioteca">← Volver a la biblioteca</a>
+ </main>`;
 }
 function bookPage(aid,bid){
  const a=AUTHORS[aid], b=a?.books.find(x=>x.id===bid); if(!a||!b)return general();
  const q=encodeURIComponent('"'+b.title+'" '+a.name);
- return header()+`<main><nav class="breadcrumbs"><a href="#/biblioteca">Biblioteca</a> › <a href="#/autor/${aid}">${esc(a.name)}</a> › ${esc(b.title)}</nav>
+ return header()+`<main>
+ <nav class="breadcrumbs"><a href="#/biblioteca">Biblioteca</a> › <a href="#/autor/${aid}">${esc(a.name)}</a> › ${esc(b.title)}</nav>
  <nav class="bookNav" aria-label="Navegación del libro"><a href="#/autor/${aid}">← Volver al estante</a><a href="#/biblioteca">Biblioteca</a></nav>
  <div class="openBook"><div class="heroCover">${cover(b,aid,true)}</div><article>
  <p class="bookMeta">Obra · ${esc(a.name)}</p><h1>${esc(b.title)}</h1>
  <p class="bookCopy">Esta vista prueba la experiencia de “abrir” una obra: la portada permanece presente, la información se lee con calma y la autoría vive en la solapa, sin convertir la página en una ficha técnica.</p>
+ <div class="topicPills" aria-label="Temáticas">${b.topics.map(t=>`<a href="#/biblioteca?tema=${encodeURIComponent(t)}" data-topic-link="${esc(t)}">${esc(t)}</a>`).join("")}</div>
  <details class="flap" open><summary>Solapa · sobre ${esc(a.name)}</summary><div class="flapInner"><div class="miniPortrait" aria-hidden="true">${esc(a.initials)}</div><div><strong>${esc(a.name)}</strong><p>Resumen breve del autor para mantener el contexto del libro sin duplicar su página completa.</p><a href="#/autor/${aid}">Explorar su biblioteca →</a></div></div></details>
  <section class="sources"><h2>Dónde encontrar este libro</h2><p>Accesos de prueba a las fuentes ya previstas para la biblioteca.</p><div class="sourceLinks">
  <a target="_blank" rel="noopener noreferrer" href="https://archive.org/search?query=${q}">Buscar en Internet Archive</a>
@@ -81,45 +287,66 @@ function bookPage(aid,bid){
  <p><a class="backBtn" href="#/autor/${aid}">← Volver al estante de ${esc(a.name)}</a></p>
  </article></div></main>`;
 }
+function slug(s){return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"")}
 function render(){
- const p=location.hash.replace(/^#\//,"").split("/"); let html;
- if(p[0]==="autor")html=authorPage(p[1]); else if(p[0]==="libro")html=bookPage(p[1],p[2]); else html=general();
+ const raw=location.hash.replace(/^#\//,"");
+ const path=raw.split("?")[0].split("/");
+ let html;
+ if(path[0]==="autor") html=authorPage(path[1]);
+ else if(path[0]==="libro") html=bookPage(path[1],path[2]);
+ else {
+   const params=new URLSearchParams(raw.includes("?")?raw.split("?")[1]:"");
+   const topic=params.get("tema");
+   if(topic){libraryView="topics";searchTerm=topic}
+   html=general();
+ }
  document.getElementById("app").innerHTML=html;
  bind();
 }
 function bind(){
- document.querySelectorAll("[data-density]").forEach(btn=>btn.addEventListener("click",()=>{density=btn.dataset.density;localStorage.setItem("libraryDensity",density);render()}));
- document.querySelectorAll("[data-zoom]").forEach(btn=>btn.addEventListener("click",e=>{e.preventDefault();e.stopPropagation();const aid=btn.dataset.author,bid=btn.dataset.zoom,b=AUTHORS[aid].books.find(x=>x.id===bid);document.getElementById("modalCover").innerHTML=cover(b,aid);document.getElementById("coverModal").classList.add("open");document.querySelector(".close").focus()}));
- document.querySelectorAll(".books").forEach(row=>{
-   row.addEventListener("wheel",e=>{
-     if(row.scrollWidth<=row.clientWidth)return;
-     if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){
-       e.preventDefault();
-       row.scrollLeft+=e.deltaY;
-     }
-   },{passive:false});
-   let dragging=false,startX=0,startLeft=0;
-   row.addEventListener("pointerdown",e=>{
-     if(e.pointerType==="touch")return;
-     dragging=true; startX=e.clientX; startLeft=row.scrollLeft;
-     row.setPointerCapture?.(e.pointerId);
-   });
-   row.addEventListener("pointermove",e=>{
-     if(!dragging)return;
-     row.scrollLeft=startLeft-(e.clientX-startX);
-   });
-   const stop=()=>{dragging=false};
-   row.addEventListener("pointerup",stop);
-   row.addEventListener("pointercancel",stop);
+ document.querySelectorAll("[data-density]").forEach(btn=>btn.addEventListener("click",()=>{
+   density=btn.dataset.density;localStorage.setItem("libraryDensity",density);render();
+ }));
+ document.querySelectorAll("[data-view]").forEach(btn=>btn.addEventListener("click",()=>{
+   libraryView=btn.dataset.view;searchTerm="";localStorage.setItem("libraryView",libraryView);render();
+ }));
+ const search=document.getElementById("librarySearch");
+ if(search){
+   search.addEventListener("input",()=>{searchTerm=search.value;const pos=search.selectionStart;render();const n=document.getElementById("librarySearch");n?.focus();n?.setSelectionRange(pos,pos)});
+ }
+ document.querySelectorAll("[data-topic-link]").forEach(a=>a.addEventListener("click",e=>{
+   e.preventDefault();libraryView="topics";searchTerm=a.dataset.topicLink;localStorage.setItem("libraryView","topics");location.hash="#/biblioteca";render();
+ }));
+ document.querySelectorAll("[data-zoom]").forEach(btn=>btn.addEventListener("click",e=>{
+   e.preventDefault();e.stopPropagation();
+   const aid=btn.dataset.author,bid=btn.dataset.zoom,b=AUTHORS[aid].books.find(x=>x.id===bid);
+   document.getElementById("modalCover").innerHTML=cover(b,aid);
+   document.getElementById("coverModal").classList.add("open");
+   document.querySelector(".close").focus();
+ }));
+ document.querySelectorAll(".shelfViewport").forEach(v=>{
+   const row=v.querySelector(".books"),prev=v.querySelector(".prev"),next=v.querySelector(".next");
+   const update=()=>{
+     const max=row.scrollWidth-row.clientWidth;
+     prev.disabled=row.scrollLeft<=2;
+     next.disabled=row.scrollLeft>=max-2 || max<=2;
+   };
+   prev.addEventListener("click",()=>row.scrollBy({left:-Math.max(220,row.clientWidth*.72),behavior:"smooth"}));
+   next.addEventListener("click",()=>row.scrollBy({left:Math.max(220,row.clientWidth*.72),behavior:"smooth"}));
+   row.addEventListener("scroll",update,{passive:true});
    row.addEventListener("keydown",e=>{
-     if(e.key==="ArrowRight"){e.preventDefault();row.scrollBy({left:Math.max(160,row.clientWidth*.6),behavior:"smooth"})}
-     if(e.key==="ArrowLeft"){e.preventDefault();row.scrollBy({left:-Math.max(160,row.clientWidth*.6),behavior:"smooth"})}
+     if(e.key==="ArrowRight"){e.preventDefault();next.click()}
+     if(e.key==="ArrowLeft"){e.preventDefault();prev.click()}
    });
- });
+   requestAnimationFrame(update);
+ }));
 }
 document.querySelector(".close").addEventListener("click",()=>document.getElementById("coverModal").classList.remove("open"));
 document.getElementById("coverModal").addEventListener("click",e=>{if(e.target.id==="coverModal")e.currentTarget.classList.remove("open")});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")document.getElementById("coverModal").classList.remove("open")});
-window.addEventListener("hashchange",render);render();
+window.addEventListener("resize",()=>document.querySelectorAll(".books").forEach(x=>x.dispatchEvent(new Event("scroll"))));
+window.addEventListener("hashchange",render);
+render();
 </script>
-</body></html>
+</body>
+</html>
